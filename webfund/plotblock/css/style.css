@@ -14,8 +14,7 @@ div{
 }
 #navigation{
  display: inline;
- width: 2000px;
- background-color: blue;
+  background-color: blue;
 }
 #main_content{
     display: inline-block;
