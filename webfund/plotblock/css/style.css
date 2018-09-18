@@ -1,0 +1,35 @@
+/*CSS reset settings here*/
+div{
+    padding: 10px;
+    margin: 10px;
+}
+#wrapper{
+ width: auto;
+ background-color: silver;
+ margin: 0px auto;
+}
+#header{
+ min-height: 150px;
+ background-color: green;
+}
+#navigation{
+ display: inline;
+ width: 2000px;
+ background-color: blue;
+}
+#main_content{
+    display: inline-block;
+    min-height: 400px;
+ background-color: red;
+}
+.subcontents{
+ display: inline-block;
+ min-height: 200px;
+ width: 200px;
+ background-color: yellow;
+}
+#advertisement{
+ min-height: 120px;
+ width: 660px;
+ background-color: purple;
+}
