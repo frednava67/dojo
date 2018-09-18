@@ -19,10 +19,10 @@
     background-color: blue;
    }
    #main_content{
-       display: inline-block;
        vertical-align: top;
+       display: inline-block;
     min-height: 400px;
-        width: 700px;
+        width: 766px;
     background-color: red;
    }
    .subcontents{
