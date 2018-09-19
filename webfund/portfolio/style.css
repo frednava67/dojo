@@ -1,70 +1,29 @@
 /*CSS reset settings here*/
     *{
-        padding: 5px;
-        margin: 10px;
-        color: white;
-    }
-
-    .topbotzero{
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
-
-    a, span {
-        margin: 0px;
         padding: 0px;
+        margin: 0px;
+    }
+    
+    .wrapper{
+        background-color: lightgray;
+        width: 1000px;
+        min-height: 300px
     }
 
-   .wrapper{
-        width: 970px;
-        min-height: 150px;
-        background-color: #004d66;
-   }
-   
-   #top{
-        width: 950px;
+    #top{
+
+    }
+
+    #topleft{
+        display: inline-block;
+        width: 495px;
         height: 50px;
-        background-color: red;
-        border-radius: 15px;
-        display: table-cell;
-        vertical-align: middle;
-        font-size: 30px;
-        font-weight: bold;
-   }
-
-   #nav{
-        display: inline-block;
-        width: 100%;
-        min-height: 150px;
-        width: 25%;
-        background-color: blue;
-        border-radius: 15px;
-        margin-left: 0px;
-   }
-
-   #main{
-        display: inline-block;
-        vertical-align: top;
-        width: 680px;
-        min-height: 150px;
-        background-color: black;
-        border-radius: 15px;
-        margin-left: 0px;
-        margin-right: 0px;
-   }
-
-   #foot{
-        width: 950px;
-        height: 30px;
-        background-color: gray;
-        border-radius: 15px;
-        display: table-cell;
-        vertical-align: middle;
-   }
-
-    .coloredtext{
-        color: #938fc7;
+        background-color: green;
     }
 
+    #topright{
+        display: inline-block;
+        width: 495px;
+        height: 50px;
+        background-color: pink;
+    }
