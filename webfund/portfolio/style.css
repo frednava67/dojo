@@ -11,7 +11,7 @@
     }
 
     #top{
-
+        background-color: red;
     }
 
     #topleft{
@@ -19,9 +19,25 @@
         width: 495px;
         height: 50px;
         background-color: green;
+        vertical-align: top;
     }
 
     #topright{
+        display: inline-block;
+        width: 495px;
+        height: 50px;
+        background-color: pink;
+    }
+
+    #maintopleft{
+        display: inline-block;
+        width: 495px;
+        height: 50px;
+        background-color: green;
+        vertical-align: top;
+    }
+
+    #maintopright{
         display: inline-block;
         width: 495px;
         height: 50px;
