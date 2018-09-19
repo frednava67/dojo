@@ -11,19 +11,35 @@
     }
 
     .gradientheader{
-        background-image: linear-gradient(silver, darkgray, silver);
+        background-image: linear-gradient(#b2b2b5, #8b8996, #b2b2b5);
         color: white;
     }
 
-    .pinkdiv{
+    .icondiv{
         display: inline-block;
-        width: 58px;
-        height: 58px;
-        background-color: pink;
+        width: 44px;
+        height: 44px;
     }
 
     .descbox{
         height: 150px;;
+    }
+
+    .mbbutton{
+        height: 42px;
+        line-height: 42px;
+        vertical-align: middle;
+        text-align:center;
+    }
+
+    button {
+        padding: 5px;
+        border-radius: 8px;
+        color: white;
+        background-color: #407d61;
+        border: 1px solid black;
+        box-shadow: 3px 3px 3px #888888;
+
     }
 
     #top{
@@ -51,14 +67,18 @@
 
     #maintop{
         height: 300px;
-        padding-bottom: 10px;
+    }
 
+    #maintop h3{
+        padding-left: 10px;
+        height: 40px;
+        line-height: 40px;
+        vertical-align: middle;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     #mainbottom{
         height: 700px;
-        padding-top: 10px;   
-    
     }
 
 
@@ -79,11 +99,11 @@
 
     #maintopright{
         display: inline-block;
-        width: 455px;
+        width: 458px;
         height: 260px;
         vertical-align: top;
-        margin: 10px;
         background-color: #ded1dd;
+        margin-top: 20px;
     }
 
     #maintopright p{
@@ -92,35 +112,64 @@
 
     }    
 
-
-
     #mainbottom p{
-        height: 150px;
+        height: 145px;
+        margin-left: 7px;
+        margin-right: 7px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
     }
 
+    #mainbottom h3{
+        padding-left: 10px;
+        height: 40px;
+        line-height: 40px;
+        vertical-align: middle;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
     #mainbottomleft{
-        margin: 10px;
+        margin-top: 5px;
+        margin-left: 20px;
         vertical-align: top;
         display: inline-block;
-        width: 310px;
-        height: 500px;
+        width: 275px;
+        height: 525px;
         background-color: #ded1dd;
     }
 
     #mainbottomcenter{
-        margin: 10px;
+        margin-top: 5px;
+        margin-left: 20px;
         vertical-align: top;
         display: inline-block;
-        width: 310px;
-        height: 500px;
+        width: 275px;
+        height: 525px;
         background-color: #ded1dd;
     }
 
     #mainbottomright{
-        margin: 10px;
+        margin-top: 5px;
+        margin-left: 20px;
         vertical-align: top;
         display: inline-block;
-        width: 310px;
-        height: 500px;
+        width: 275px;
+        height: 525px;
         background-color: #ded1dd;
     }
+
+    #mblgrid{
+        margin-left: 20px;
+        margin-top: 15px;
+    }
+
+    #mbcgrid{
+        margin-left: 20px;
+        margin-top: 15px;
+    }
+    #mbrgrid{
+        margin-left: 20px;
+        margin-top: 15px;
+    }
+
