@@ -46,12 +46,10 @@
         background-color: #407d61;
         border: 1px solid black;
         box-shadow: 3px 3px 3px #888888;
-
     }
 
     #top{
         background-color: #f3f3f3;
-
     }
 
     #topleft{
@@ -79,12 +77,12 @@
     }
     
     #main{
-    background-image: radial-gradient(#6f5964, #1b0b0f, #1b0b0f);
+        background-image: radial-gradient(#6f5964, #1b0b0f, #1b0b0f);
         height: 852px;
     }
 
     #maintop{
-        height: 300px;
+        height: 298px;
     }
 
     #maintop h3{
@@ -102,23 +100,21 @@
 
     #maintopleft{
         display: inline-block;
-        width: 390px;
-        height: 260px;
-        background-color:linear-gradient(to right, red , yellow);
+        width: 388px;
+        height: 258px;
         vertical-align: top;
         margin: 20px;
+        background-color: #c0c0c0;
     }
 
     #maintopleft img{
-        padding: 5px;
-    
-    
+        padding: 4px;    
     }
 
     #maintopright{
         display: inline-block;
-        width: 458px;
-        height: 260px;
+        width: 460px;
+        height: 258px;
         vertical-align: top;
         background-color: #ded1dd;
         margin-top: 20px;
@@ -131,7 +127,7 @@
         font-family: Arial, Helvetica, sans-serif;
         padding-left: 5px;
         font-size: 15.5px;
-                background-image: linear-gradient(to right, white , #daccd9);
+        background-image: linear-gradient(to right, white , #daccd9);
 
     }    
 
@@ -191,7 +187,6 @@
         width: 275px;
         height: 525px;
         background-image: linear-gradient(to right, white , #daccd9);
-
     }
 
     #mblgrid{
