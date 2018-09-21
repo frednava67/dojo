@@ -9,53 +9,74 @@
         <div id="wrapper">
             <div id="top">
                 <div id="topline1">
-                    <img src="img/globe.png" height="80" width="80">
-                    <label id="toplinetext">The Inter<span id="toplinespan">net<span></label>
+                    <img src="img/globe.png" alt="globe" height="80" width="80">
+                    <label id="toplinetext">The Inter<span id="toplinespan">net</span></label>
                 </div>
                 <div id="topline2">The World Wide Web</div>
             </div>
-            <div id="sidebar">
-                <div id="sbtop">
-                    <p id="sbparagraph1">So, what's an <span class="redtext">Internet?</span></p>
-                    <p id="sbparagraph2">An <span class="bluetext">inter</span>connected <span class="bluetext">Net</span>work of computers all around the world!</p>
-                    <button id="sbbutton1">WATCH A VIDEO</button>
-                    <button id="sbbutton2">MORE RESOURCES</button>
-                </div>
-                <div id="sbbottom">
-                    <div id="sbtext">Reinvent your career in just 14 weeks</div>
-                    <div id="sbimage">
-                        <img src="img/ninja.png" height="90" width="70">
+            <div id="main">
+                <div id="sidebar">
+                    <div id="sbtop">
+                        <p id="sbparagraph1">So, what's an <span class="redtext">Internet?</span></p>
+                        <p id="sbparagraph2">An <span class="bluetext">inter</span>connected <span class="bluetext">Net</span>work of computers all around the world!</p>
+                        <button id="sbbutton1">WATCH A VIDEO</button>
+                        <button id="sbbutton2">MORE RESOURCES</button>
                     </div>
-                    <button id="sbbutton3">Learn More <span id="arrow1">></span><span id="arrow2">></span><span id="arrow3">></span></button>                
+                    <div id="sbbottom">
+                        <div id="sbtext">Reinvent your career in just 14 weeks</div>
+                        <div id="sbimage">
+                            <img src="img/ninja.png" alt="ninja" height="90" width="70">
+                        </div>
+                        <button id="sbbutton3">Learn More <span id="arrow1">></span><span id="arrow2">></span><span id="arrow3">></span></button>                
+                    </div>
+                </div>
+                <div id="mainbody">
+                    <div id="mainbodytop">
+                        <div id="mbtleft">
+                            <img src="img/home.png" alt="home" height="17" width="17">
+                            <a id="mbtDNS">DNS</a>
+                        </div>
+                        <div id="mbtmiddle">
+                            <img src="img/phone.png" alt="phone" height="34" width="34">
+                        </div>
+                        <div id="mbtright">
+                            <p id="right1">Mon - Fri 9 a.m. - 5 p.m. (EST)</p>
+                            <p id="right2">855.967.3787</p>
+                            <p id="right3">International +1.617.963.0555</p>
+                        </div>
+                    </div>
+                    <div id="mainbodymiddle">
+                        <p class="mainsectionHeader">Clients and Servers</p>
+                        <p class="mainsectiontext">Computers connected to the Web are called clients and servers.</p>
+                        <div class="mainliststyle">
+                            <ul class="mainsectiontext">
+                                <li><span class="bluetext">Clients</span> are the typical <span class="bluetext">Web</span> user's Internet-connected devices (for example, your computer connected to your Wi-Fi, or your phone connected to your mobile network) and <span class="bluetext">Web-accessing software</span> available on those devices (usually a web browser like Firefox or Chrome).</li>
+                                <li><span class="bluetext">Servers</span> are computers that store <span class="bluetext">webpages</span>, <span class="bluetext">sites</span>, or <span class="bluetext">apps</span>. When a client device wants to access a webpage, a cope of the webpage is downloaded from the server onto the client machine to be displayed in the uer's web browser.</li>
+                            </ul>
+                        </div>
+                        <img src="img/client_server.jpg" alt="clientserver" height="80" width="180" class="centered">
+                        <p class="mainsectionHeader">So What Actually Happens?</p>
+                        <div class="mainliststyle">
+                            <ol class="mainsectiontext">
+                                <li>The browser goes to the <span class="bluetext">DNS Server</span> and finds the real address of the <span class="bluetext">server</span> that the website lives on.</li>
+                                <li>The browser sens an <span class="bluetext">HTTP request</span> message to the server asking it to send a copy of the website to the client.</li>
+                                <li>If the server approves the client's request, the server sends the client a <span class="bluetext">"200 OK" message</span>, which means "Permission granted! Here you go!", and then starts sending the website's files to the browser as a series of small chunks.</li>
+                                <li>The browser assembles this small chunks into a complete website and displays it to you!</li>
+                            </ol>
+                            </div>
+                    </div>
+                    <div id="mainbodybottom">
+                        <div id="bottomleft">
+                            <img src="img/html.png" alt="html" height="80" width="90">
+                        </div>
+                        <div id="bottomright">
+                            <p class="mainsectionHeader">The Big 3 - HTML, CSS, JavaScript</p>
+                            <p class="mainsectiontext">While the server can process information in many different languages, the files that they server to the client are always going to be some combination of HTML, CSS, and JavaScript!</p>
+                            <p class="mainsectiontext">Learn more about the Big 3 <span class="bluetext">here!</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="mainbody">
-                <div id="mainbodytop">
-                    <div id="mbtleft">
-                        <img src="img/home.png" height="17" width="17">
-                        <a id="mbtDNS">DNS</a>
-                    </div>
-                    <div id="mbtmiddle">
-                        <img src="img/phone.png" height="34" width="34">
-                    </div>
-                    <div id="mbtright">
-                        <p id="right1">Mon - Fri 9 a.m. - 5 p.m. (EST)</p>
-                        <p id="right2">855.967.3787</p>
-                        <p id="right3">International +1.617.963.0555</p>
-                    </div>
-
-                </div>
-                <div id="mainbodymiddle">
-
-                    </div>
-                <div id="mainbodybottom">
-                    
-                </div>
-            </div>
-        
-        
-        
-        
         </div>
     </body>
 </html>

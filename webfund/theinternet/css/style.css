@@ -22,7 +22,7 @@
     }
 
     #topline2{
-        width: 750px;
+        width: 738px;
         height: 38px;
         font-size: 24px;
         padding-left: 10px;
@@ -102,7 +102,6 @@
         background-image: url("../img/ad_background.png");
         width: 158px;
         height: 235px;
-
     }
 
     #sbtext{
@@ -134,7 +133,6 @@
     #arrow1{
         font-size: 8px;
         color:#80dbea;
-
     }
 
     #arrow2{
@@ -154,7 +152,6 @@
         display: inline-block;
         width: 544px;
         height: 520px;
-        background-color: rgb(190, 229, 232);
     }
 
     #mainbodytop{
@@ -166,7 +163,6 @@
         display: inline-block;
         height: 51px;
         width: 100px;
-
     }
 
     #mbtleft img{
@@ -179,7 +175,6 @@
         color: #477ca9;
         font-size: 14px;
         vertical-align: center;
-
     }
 
     #mbtmiddle{
@@ -189,7 +184,7 @@
     }
 
     #mbtmiddle img{
-        padding-left: 260px;
+        padding-left: 270px;
         padding-top: 8px;
     }
 
@@ -200,17 +195,69 @@
     }
 
     #right1 {
+        margin-left: 10px;
         font-size: 8px;
     }
 
     #right2{
         font-size: 20px;
-        color: #13ace1;
+        color: #16bfe3;
         font-weight: bold;
+        margin-left: 5px;
+        margin-top: 2px;
     }
 
     #right3{
         font-size: 8px;
+        margin-left: 11px;
+    }
+
+    #mainbodybottom{
+        border: solid #0a82e8;
+        border-width: 4px 4px 0px 4px
+    }
+
+    .mainsectionHeader{
+        font-size: 15px;
+        font-weight: bold;
+        color: #2463a3;
+        margin-top: 5px;
+    }
+
+    #main{
+    background-image: linear-gradient(#f8f8f8, white, white);
+    }
+
+    #bottomleft{
+        vertical-align: top;
+        display: inline-block;
+        width: 90px;
+    }
+
+    #bottomleft img{
+        margin-left: 7px;
+        margin-top: 7px;
+    }
+
+    #bottomright{
+        vertical-align: top;
+        display: inline-block;
+        margin-left: 12px;
+        width: 410px;
+    }
+
+    .mainsectiontext{
+        font-size: 11px;
+        margin-top: 5px;     
+        list-style-position: outside;
+    }
+
+    .mainsectiontext li{
+        margin-bottom: 5px;
+    }
+
+    .mainliststyle{
+        margin-left: 35px;
     }
 
     .redtext{
@@ -218,5 +265,12 @@
     }
 
     .bluetext{
-        color: #2869a0;
+        color: #63bdcf;
+    }
+
+    .centered{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 37%;
     }
