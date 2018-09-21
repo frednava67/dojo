@@ -154,8 +154,63 @@
         display: inline-block;
         width: 544px;
         height: 520px;
-        background-color: blueviolet;
-        
+        background-color: rgb(190, 229, 232);
+    }
+
+    #mainbodytop{
+        border-bottom: 1px solid gray;
+    }
+
+    #mbtleft{
+        vertical-align: top;
+        display: inline-block;
+        height: 51px;
+        width: 100px;
+
+    }
+
+    #mbtleft img{
+        margin-top: 3px;
+        margin-left: 5px;
+    }
+
+    #mbtDNS{
+        line-height: 15px;
+        color: #477ca9;
+        font-size: 14px;
+        vertical-align: center;
+
+    }
+
+    #mbtmiddle{
+        display: inline-block;
+        vertical-align: top;
+        width: 300px;
+    }
+
+    #mbtmiddle img{
+        padding-left: 260px;
+        padding-top: 8px;
+    }
+
+    #mbtright{
+        display: inline-block;
+        width: 120px;
+        height: 50px
+    }
+
+    #right1 {
+        font-size: 8px;
+    }
+
+    #right2{
+        font-size: 20px;
+        color: #13ace1;
+        font-weight: bold;
+    }
+
+    #right3{
+        font-size: 8px;
     }
 
     .redtext{
