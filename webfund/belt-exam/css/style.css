@@ -1,0 +1,85 @@
+/*CSS reset settings here*/
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #wrapper{
+        width: 1000px;
+        /* background-color: silver; */
+    }
+
+    #top{
+        width:998px;
+        height: 69px;
+        border-radius: 5px;   
+        background-image: linear-gradient(#f8f8f8, #e7e7e7, #e0e0e0);
+     
+        border: 1px solid gray;
+    }
+
+    #topmenubar{
+        vertical-align: top;
+        width: 650px;
+        height: 67px;
+        display: inline-block;
+        /* border: 1px solid gray; */
+    }
+
+    .menubar{
+        vertical-align: top;
+        padding-top: 25px;
+        display: inline-block;
+        height: 42px;
+        font-weight: bold;
+        border-right: 1px solid lightgray;
+    }
+
+    #mnuStore{
+        width: 65px;
+        padding-left: 20px;
+    }
+
+    #mnuBlog{
+        width: 60px;
+        padding-left: 20px;
+    }
+
+    #mnuForums{
+        width: 80px;
+        padding-left: 20px;
+    }
+
+    #mnuSupport{
+        width: 80px;
+        padding-left: 20px;
+    }
+
+    #mnuContact{
+        width: 85px;
+        padding-left: 20px;
+    }
+
+    #topsearchbox{
+        width: 320px;
+        height: 67px;
+        display: inline-block;
+        border: 1px solid gray;        
+    }
+
+    #middle{
+        width:998px;
+        height: 400px;
+        border: 1px solid gray;
+
+
+    }
+
+    #bottom{
+        width:998px;
+        height: 500px;
+        border: 1px solid gray;
+
+    }
+
