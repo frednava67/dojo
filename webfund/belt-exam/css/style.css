@@ -7,7 +7,6 @@
 
     #wrapper{
         width: 950px;
-        /* background-color: silver; */
     }
 
     #top{
@@ -23,7 +22,6 @@
         width: 600px;
         height: 67px;
         display: inline-block;
-        /* border: 1px solid gray; */
     }
 
     .menubar{
@@ -64,7 +62,7 @@
         width: 320px;
         height: 67px;
         display: inline-block;
-     }
+    }
 
     #searchtext{
         display: inline-block;
@@ -93,9 +91,6 @@
         width:948px;
         height: 399px;
         border: 1px solid gray;
-
-
-
     }
 
     #middletop{
@@ -109,10 +104,8 @@
     #middlebottom{
         width:948px;
         height: 38px;
-
         background-image: linear-gradient(#535353, #474747, #353535);
         border-radius: 0px 0px 5px 5px;
-
     }
 
     #textcontainer{
@@ -135,7 +128,6 @@
         background-color: #f4f4f4;
         border: 2px solid lightgray;
         border-radius: 7px;
-
     }
 
     #botrow1{
@@ -157,7 +149,6 @@
         vertical-align: top;
         height: 40px;
         width: 170px;
-
     }
 
     #br1button{
@@ -204,7 +195,6 @@
         font-weight: bold;
         font-size: 18px;
         margin-left: 10px;
-
     }
 
     #box1paragraph{
@@ -222,8 +212,6 @@
         height: 310px;
         width: 210px;
         border-right: 1px solid lightgray;
-
-        
     }
 
     #box2imglabel{
@@ -231,7 +219,6 @@
         font-weight: bold;
         font-size: 18px;
         margin-left: 10px;
-
     }
 
     #box2paragraph{
@@ -239,8 +226,6 @@
         font-size: 13px;
         margin-bottom: 8px;
     }
-
-
 
     #br2box3{
         display: inline-block;
@@ -251,8 +236,6 @@
         height: 310px;
         width: 210px;
         border-right: 1px solid lightgray;
-
-        
     }
 
     #box3imglabel{
@@ -260,7 +243,6 @@
         font-weight: bold;
         font-size: 18px;
         margin-left: 10px;
-
     }
 
     #box3paragraph{
@@ -277,8 +259,6 @@
         padding-right: 10px;
         height: 310px;
         width: 210px;
-
-        
     }
 
     #box4imglabel{
@@ -286,7 +266,6 @@
         font-weight: bold;
         font-size: 18px;
         margin-left: 10px;
-
     }
 
     #box4paragraph{
@@ -381,7 +360,6 @@
         font-size: 14px;
         margin-top: 4px;
     }
-
 
     .colorwhite{
         color: white;
