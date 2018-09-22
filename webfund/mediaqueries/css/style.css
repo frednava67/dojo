@@ -1,0 +1,69 @@
+/*CSS reset settings here*/
+    *{
+        margin: 3px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    @media screen and (min-width: 480px max-width: 1023px) {
+        
+        #i1024andhigher{
+            display: none;
+        }
+
+        #between481and1023{
+            display: none;
+        }
+
+        #i480andless{
+            display: block;
+        }
+    }
+
+    #i1024andhigher{
+        display: none;
+    }
+
+    #between481and1023{
+        display: none;
+    }
+
+    #i480andless{
+        display: none;
+    }
+
+
+    @media screen and (max-width: 1023px) {
+
+        #i1024andhigher{
+            display: none;
+        }
+
+        #between481and1023{
+            display: block;
+        }
+
+        #i480andless{
+            display: none;
+        }
+    }
+
+
+
+
+
+    .darkgraybox{
+        background-color: darkgray;
+        border: 1px solid darkgray;
+    }
+
+    .graybox{
+        background-color: lightgray;
+        border: 1px solid lightgray;
+    }
+
+    .yellowbox{
+        background-color: #ffff86;
+        border: 1px solid #ffff86;
+    }
