@@ -1,0 +1,118 @@
+/*CSS reset settings here*/
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #container{
+        width: 1024px;
+    }
+
+    .top{
+        height: 150px;
+        width: 1003px;
+        margin: 10px;
+    }
+
+    .nav{
+        display: inline-block;
+        margin: 10px;
+        height: 300px;
+        width: 225px;
+    }
+
+    .main{
+        vertical-align: top;
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        height: 500px;
+        width: 733px;
+    }
+
+    .maintop{
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        height: 150px;
+        width: 201px;
+    }
+
+    .mainbottom{
+        margin: 10px;
+        padding: 10px;
+        height: 200px;
+    }
+
+    .greenbg{
+        background-color: green;
+    }
+
+    .bluebg{
+        background-color: blue;
+    }
+
+    .redbg{
+        background-color: red;
+    }
+    .yellowbg{
+        background-color: yellow;
+    }
+
+    .purplebg{
+        background-color: purple;
+    }
+
+    @media screen and (max-width:1024px) {
+        
+        .top{
+            width: 461px;
+        }
+
+        .main{
+            width: 441px;
+        }
+
+        .maintop{
+            width: 177px;
+            height: 125px;
+        }
+
+        .mainbottom{
+            width: 400px;
+            height: 120px;
+        }
+
+        .nav{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:480px) {
+        
+        .top{
+            width: 461px;
+        }
+
+        .main{
+            width: 441px;
+            height: 623px;
+        }
+
+        .maintop{
+            display: block;
+            width: 400px;
+            height: 125px;
+        }
+
+        .mainbottom{
+            width: 400px;
+            height: 120px;
+        }
+
+        .nav{
+            display: none;
+        }
+
+    }
