@@ -124,5 +124,16 @@ function doubletrouble(arr){
 
 console.log(doubletrouble([1,"one","uno","un","isa"]));
 
+------------------------------
+
+function recursivefibonacci(n){
+  if (n==0 || n==1)
+    return n;
+  
+  return recursivefibonacci(n-2) + recursivefibonacci(n-1);
+}
+
+var n = recursivefibonacci(9);
+console.log(n);
 
 
