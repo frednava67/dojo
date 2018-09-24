@@ -133,7 +133,90 @@ function previouslengths(arr){
 console.log(previouslengths(["hello","dojo","awesome"]));
 
 -------------------
+function add7tomost(arr){
+    var retarr = [];
 
+    for (var i=0; i<arr.length; i++){
+        retarr[i] = arr[i]+7;
+    }
 
+    return retarr;
+}
 
+var oldarr = [2,4,6,7,8,9,11,22,33];
+var newarr = add7tomost(oldarr);
 
+console.log("oldarr: " + oldarr);
+console.log("newarr: " + newarr);
+
+-------------------
+
+function reversearray(arr){
+    var temp = 0;
+    for (var i=0; i<arr.length/2; i++){
+        temp = arr[i];
+        arr[i] = arr[arr.length-1-i];
+        arr[arr.length-1-i] = temp;
+    }
+    return arr;
+}
+
+console.log([2,4,6,7,8,9,11,22,33]);
+console.log(reversearray([2,4,6,7,8,9,11,22,33]));
+
+-----------------------
+
+function outlooknegative(arr){
+    for (var i=0; i<arr.length; i++){
+        if(arr[i] > 0 ){
+            arr[i] = (-1) * arr[i];
+        }
+    }
+    return arr;
+}
+
+console.log(outlooknegative([-1,3,5]));
+
+------------------------
+
+function alwayshungry(arr){
+    var x = 0;
+    for (var i=0; i<arr.length; i++){
+        if(arr[i] == "food"){
+            console.log(" yummy");
+            x++;
+        }
+    }
+    if(x==0)
+        console.log("I'm hungry");
+}
+
+console.log("---------");
+alwayshungry(["cat","dog","food",3,4,"food",42]);
+console.log("---------");
+alwayshungry(["cat","dog","f00d",3,4,"f00d",42]);
+
+-----------------------
+
+function swaptowardcenter(arr){
+    var temp = 0;
+    for (var i=0; i<arr.length/2; i++){
+        temp = arr[i];
+        arr[i] = arr[arr.length-1-i];
+        arr[arr.length-1-i] = temp;
+    }
+    return arr;
+}
+
+console.log(swaptowardcenter(["cat","dog","f00d",3,4,"f00d",42]));
+
+-------------------------
+
+function scalethearray(arr,m){
+    for (var i=0; i<arr.length; i++){
+        arr[i] = arr[i] * m;
+    }
+    return arr;
+}
+
+console.log(scalethearray([1,2,3],3));
