@@ -1,0 +1,71 @@
+function numbersgreaterthany(arr,y){
+    var num = 0;
+
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] > y)
+            num++;
+    }
+
+    console.log(num);
+}
+
+numbersgreaterthany([4,5,3,7,8,9,6,3,2], 3);  // ==> 6
+numbersgreaterthany([4,3,7,8,6,3,2], 3);  // ==> 4
+
+-------------------
+
+function maxminavg(arr){
+    var curmax = 0;
+    var curmin = 0;
+    var sum = 0;
+
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] > curmax)
+            curmax = arr[i];
+
+        if(arr[i] < curmin)
+            curmin = arr[i];
+
+        cursum = sursum + arr[i];
+    }
+
+    console.log("Max value: " + curmax);
+    console.log("Min value: " + curmin);
+    console.log("Avg: " cursum/arr.length);
+}
+
+maxminavg([4,5,3,7,8,9,6,3,2);
+maxminavg([4,3,7,8,6,3,2]);
+
+-----------------------
+
+function replacenegatives(arr){
+    for(var i=0;i<arr.length;i++){
+        if(arr[i] < 0)
+            arr[i] = "Dojo";
+    }
+
+    return arr;
+}
+
+console.log(replacenegatives([1,2,-3,-5,5]));
+
+-------------------------
+
+function removeVals(arr, beginidx, endidx){
+    var rangeval = endidx-beginidx+1;
+    
+    for(i=endidx;i<arr.length;i++){
+        arr[i-rangeval+1] = arr[i+1];
+    }
+
+    for(j=0;j<rangeval;j++){
+        arr.pop();
+    }
+
+    return arr;
+}
+
+console.log(removeVals([20,30,40,50,60,70,80,90],2,4));
+console.log(removeVals([20,30,40,50,60,70,80,90],3,4));
+console.log(removeVals([20,30,40,50,60,70,80,90],1,5));
