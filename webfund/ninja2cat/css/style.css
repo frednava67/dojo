@@ -1,0 +1,17 @@
+/*CSS reset settings here*/
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #container{
+        width: 1250px;
+        height: 650px;
+    }
+
+    img{
+        display: block;
+    }
+
+

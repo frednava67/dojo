@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Han to Chewie</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("img.imgbox").click(function(){
+                    let temp = $(this).attr("src");
+                    $(this).attr("src", $(this).attr("data-alt-src"));
+                    $(this).attr("data-alt-src", temp);
+                });
+            });
+        </script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="container">
+            <img src="img/han01.png" data-alt-src="img/chewie01.png" alt="imgslice01" height="112" width="560" class="imgbox">
+            <img src="img/chewie02.png" data-alt-src="img/han02.png" alt="imgslice02" height="112" width="560" class="imgbox">
+            <img src="img/han03.png" data-alt-src="img/chewie03.png" alt="imgslice03" height="112" width="560" class="imgbox">
+            <img src="img/chewie04.png" data-alt-src="img/han04.png" alt="imgslice04" height="112" width="560" class="imgbox">
+            <img src="img/han05.png" data-alt-src="img/chewie05.png" alt="imgslice05" height="112" width="560" class="imgbox">
+        </div>
+    </body>
+</html>
