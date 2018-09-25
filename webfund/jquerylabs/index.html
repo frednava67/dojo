@@ -4,13 +4,13 @@
     <head>
         <title>jquery labs</title>
         <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-
-
-
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript">
             $(document).ready(function(){
 
-
+                $("button.add").click(function(){
+                    $("p.add").addClass("red");
+                });
 
             });
         </script>
@@ -18,22 +18,22 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>AddClass</h1>
-        <button>AddClass</button>
-        <p>
+        <h1 class="add">AddClass</h1>
+        <button class="add">AddClass</button>
+        <p class="add">
             Click the button to add class 'red' to this paragraph
         </p>
         <hr>
-        <h1>Slidetoggle</h1>
-        <button>Slidetoggle</button>
-        <p>
+        <h1 class="slide">Slidetoggle</h1>
+        <button class="slide">Slidetoggle</button>
+        <p class="slide">
             Click the button to slidetoggle a hidden image
         </p>
-        <img>
+        <img class="slide">
         <hr>
-        <h1>Append</h1>
-        <button>Append</button>
-        <p>
+        <h1 class="append">Append</h1>
+        <button class="append">Append</button>
+        <p class="append">
             Click the button to append a new paragraph!
         </p>
 
