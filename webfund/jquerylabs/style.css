@@ -3,4 +3,6 @@
     color: red;
 }
 
-
+img.slide{
+    display: none;
+}

@@ -12,6 +12,14 @@
                     $("p.add").addClass("red");
                 });
 
+                $("button.slide").click(function(){
+                    $("img.slide").slideToggle("slow");
+                });
+
+                $("button.append").click(function(){
+                    $("p.append").append("<p>This is a new paragraph!</p>");
+                });
+
             });
         </script>
 
@@ -29,7 +37,7 @@
         <p class="slide">
             Click the button to slidetoggle a hidden image
         </p>
-        <img class="slide">
+        <img class="slide" src="watch_now.png" width="300" height="200">
         <hr>
         <h1 class="append">Append</h1>
         <button class="append">Append</button>
