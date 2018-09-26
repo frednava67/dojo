@@ -1,0 +1,62 @@
+function f01(arr){
+    for(i=0;i<arr.length;i++){
+        if(arr[i]<0){
+            arr[i] = 0;
+        }
+    }
+
+    return arr;
+}
+
+console.log(f01([1,2,-1,-30]));
+
+---------------------
+
+function f02(arr){
+    for(var i=0;i<arr.length-1;i++){
+        arr[i] = arr[i+1];
+    }
+
+    arr[i]=0;
+
+    return arr;
+
+}
+
+console.log(f02([3,2,1,3,2,1]));
+
+------------------
+
+function f03(arr){
+    var temp = 0;
+    for(var i=0; i<arr.length/2;i++){
+        temp = arr[(arr.length-1)-i];
+        arr[(arr.length-1)-i] = arr[i];
+        arr[i] = temp;
+    }
+
+    return arr;
+
+}
+
+console.log(f03([3,2,1,3,2,1]));
+
+------------------
+
+function f04(arr){
+
+    var oldlen = arr.length;
+    var newlen = oldlen*2;
+
+    for(var i=0;i<oldlen;i++){
+        var curval = arr[(oldlen-1)-i];
+        arr[(newlen-1)-2*i] = curval;
+        arr[(newlen-2)-2*i] = curval;
+    }
+
+    return arr;
+
+}
+
+console.log(f04([1,2,3,4]));
+console.log(f04([4,'Ulysses', 42, false]));

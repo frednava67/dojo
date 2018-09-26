@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jquery labs</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $("button.add").click(function(){
+                    $("p.add").addClass("red");
+                });
+
+                $("button.slide").click(function(){
+                    $("img.slide").slideToggle("slow");
+                });
+
+                $("button.append").click(function(){
+                    $("p.append").append("<p>This is a new paragraph!</p>");
+                });
+
+            });
+        </script>
+
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 class="add">AddClass</h1>
+        <button class="add">AddClass</button>
+        <p class="add">
+            Click the button to add class 'red' to this paragraph
+        </p>
+        <hr>
+        <h1 class="slide">Slidetoggle</h1>
+        <button class="slide">Slidetoggle</button>
+        <p class="slide">
+            Click the button to slidetoggle a hidden image
+        </p>
+        <img class="slide" src="watch_now.png" width="300" height="200">
+        <hr>
+        <h1 class="append">Append</h1>
+        <button class="append">Append</button>
+        <p class="append">
+            Click the button to append a new paragraph!
+        </p>
+
+    </body>
+</html>

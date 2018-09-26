@@ -1,0 +1,7 @@
+Freds-MacBook-Pro:webfund fred$ man git
+Freds-MacBook-Pro:webfund fred$ man gittutorial
+Freds-MacBook-Pro:webfund fred$ man git-add
+Freds-MacBook-Pro:webfund fred$ man git-commit
+Freds-MacBook-Pro:webfund fred$ man git-push
+Freds-MacBook-Pro:webfund fred$ man git-remote
+Freds-MacBook-Pro:webfund fred$

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Disappearing Ninja</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("img.ninjabox").click(function(){
+                    $(this).hide();
+                });
+
+                $("button.restore").click(function(){
+                    $("img.ninjabox").show();
+                });
+
+
+            });
+        </script>
+
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="container">
+            <img src="img/ninja.jpg" alt="ninja" height="300" width="300" class="ninjabox">
+            <img src="img/ninja.jpg" alt="ninja" height="300" width="300" class="ninjabox">
+            <img src="img/ninja.jpg" alt="ninja" height="300" width="300" class="ninjabox">
+            <img src="img/ninja.jpg" alt="ninja" height="300" width="300" class="ninjabox">
+            <img src="img/ninja.jpg" alt="ninja" height="300" width="300" class="ninjabox">
+            <img src="img/ninja.jpg" alt="ninja" height="300" width="300" class="ninjabox">
+            <img src="img/ninja.jpg" alt="ninja" height="300" width="300" class="ninjabox">
+            <img src="img/ninja.jpg" alt="ninja" height="300" width="300" class="ninjabox">
+        </div>
+        <button class="restore">Restore</button>
+    </body>
+</html>

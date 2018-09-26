@@ -1,0 +1,222 @@
+function makeitBig(arr) {
+
+    for (var i=0; i<arr.length; i++){
+        if(arr[i] > 0)
+            arr[i] = "big";
+    }
+
+    return arr;
+}
+
+console.log(makeitBig([-1,3,5,-5]));
+
+-------------------
+
+function printlowreturnhigh(arr){
+
+    var curmin = 0;
+    var curmax = 0;
+
+    for (var i=0; i<arr.length; i++){
+        if(arr[i] > curmax)
+            curmax = arr[i];
+
+        if(arr[i] < curmin)
+            curmin = arr[i];
+    }
+
+    console.log(curmin)
+
+    return curmax;
+}
+
+console.log(printlowreturnhigh([-1,3,5,-5]));
+
+-------------------
+
+function printonereturnanother(arr){
+
+    var firstodd = 0;
+    
+    for (var i=0; i<arr.length; i++){
+        if(arr[i]%2 == 1 && firstodd == 0)
+            firstodd = arr[i];
+
+        if(i == arr.length - 2)
+        console.log( arr[i]);
+    }
+
+    return firstodd;
+}
+
+console.log(printonereturnanother([2,4,6,7,8,9,11,22,33]));
+
+--------------------
+
+function doublevision(arr) {
+
+    for (var i=0; i<arr.length; i++){
+        arr[i] = arr[i]*2;
+    }
+
+    return arr;
+}
+
+console.log(doublevision([-1,3,5,-5]));
+
+--------------------
+
+function countpositives(arr){
+    var numpos = 0;
+
+    for (var i=0; i<arr.length; i++){
+        if(arr[i]>0){
+            numpos++;
+        }
+    }
+    arr[i-1] = numpos;
+    return arr;
+}
+
+console.log(countpositives([-1,1,1,1]));
+
+-------------------
+
+function evensandodds(arr){
+    var conseqodd = 0;
+    var conseqeven = 0;
+
+    for (var i=0; i<arr.length; i++){
+        if(arr[i]%2 == 0){ // even
+            conseqodd = 0;
+            conseqeven++;
+            if(conseqeven>=3)
+                console.log("Even more so!")
+        }
+        else { // odd
+            conseqeven = 0;
+            conseqodd++;
+            if(conseqodd>=3)
+                console.log("That's odd!")
+        }
+    }
+}
+
+evensandodds([1,2,3,4,6,8,10,11,12,13,15,16,17,19,21,23]);
+
+-------------------
+
+function incrementtheseconds(arr){
+
+    console.log("before:" + arr);
+    for (var i=0; i<arr.length; i++){
+        if(i%2==1){
+            arr[i] = arr[i]+1;
+        }
+    }
+    console.log("after:" + arr);
+    return arr;
+}
+
+incrementtheseconds([1,2,3,4,6,8,10,11,12,13,15,16,17,19,21,23]);
+
+-----------------
+
+function previouslengths(arr){
+    var temp = "";
+    for (var i=arr.length-2;i>=0; i--){
+        arr[i+1] = arr[i].length;
+    }
+    return arr;
+}
+
+console.log(previouslengths(["hello","dojo","awesome"]));
+
+-------------------
+function add7tomost(arr){
+    var retarr = [];
+
+    for (var i=0; i<arr.length; i++){
+        retarr[i] = arr[i]+7;
+    }
+
+    return retarr;
+}
+
+var oldarr = [2,4,6,7,8,9,11,22,33];
+var newarr = add7tomost(oldarr);
+
+console.log("oldarr: " + oldarr);
+console.log("newarr: " + newarr);
+
+-------------------
+
+function reversearray(arr){
+    var temp = 0;
+    for (var i=0; i<arr.length/2; i++){
+        temp = arr[i];
+        arr[i] = arr[arr.length-1-i];
+        arr[arr.length-1-i] = temp;
+    }
+    return arr;
+}
+
+console.log([2,4,6,7,8,9,11,22,33]);
+console.log(reversearray([2,4,6,7,8,9,11,22,33]));
+
+-----------------------
+
+function outlooknegative(arr){
+    for (var i=0; i<arr.length; i++){
+        if(arr[i] > 0 ){
+            arr[i] = (-1) * arr[i];
+        }
+    }
+    return arr;
+}
+
+console.log(outlooknegative([-1,3,5]));
+
+------------------------
+
+function alwayshungry(arr){
+    var x = 0;
+    for (var i=0; i<arr.length; i++){
+        if(arr[i] == "food"){
+            console.log(" yummy");
+            x++;
+        }
+    }
+    if(x==0)
+        console.log("I'm hungry");
+}
+
+console.log("---------");
+alwayshungry(["cat","dog","food",3,4,"food",42]);
+console.log("---------");
+alwayshungry(["cat","dog","f00d",3,4,"f00d",42]);
+
+-----------------------
+
+function swaptowardcenter(arr){
+    var temp = 0;
+    for (var i=0; i<arr.length/2; i++){
+        temp = arr[i];
+        arr[i] = arr[arr.length-1-i];
+        arr[arr.length-1-i] = temp;
+    }
+    return arr;
+}
+
+console.log(swaptowardcenter(["cat","dog","f00d",3,4,"f00d",42]));
+
+-------------------------
+
+function scalethearray(arr,m){
+    for (var i=0; i<arr.length; i++){
+        arr[i] = arr[i] * m;
+    }
+    return arr;
+}
+
+console.log(scalethearray([1,2,3],3));

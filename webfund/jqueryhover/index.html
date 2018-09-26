@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JQuery Hover</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta charset="UTF-8">
+
+        <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $("img").hover(function(){
+                    //in
+                    switch($(this).attr("alt")){
+                        case "artoo":
+                            $(this).attr("src", "img\\bb8.png");
+                            $(this).attr("alt", "bb8");
+                            break;
+                        case "chewbacca":
+                            $(this).attr("src", "img\\hansolo.png");
+                            $(this).attr("alt", "hansolo");
+                            break;
+                        case "rey":
+                            $(this).attr("src", "img\\kylo.png");
+                            $(this).attr("alt", "kylo");
+                            break;                            
+                        case "stormtrooper":
+                            $(this).attr("src", "img\\rangetrooper.png");
+                            $(this).attr("alt", "rangetrooper");
+                            break;                        
+                    }
+                }, function(){
+                    //out
+                    switch($(this).attr("alt")){
+                        case "bb8":
+                            $(this).attr("src", "img\\artoo.png");
+                            $(this).attr("alt", "artoo");
+                            break;
+                        case "hansolo":
+                            $(this).attr("src", "img\\chewbacca.png");
+                            $(this).attr("alt", "chewbacca");
+                            break;
+                        case "kylo":
+                            $(this).attr("src", "img\\rey.png");
+                            $(this).attr("alt", "rey");
+                            break;                            
+                        case "rangetrooper":
+                            $(this).attr("src", "img\\stormtrooper.png");
+                            $(this).attr("alt", "stormtrooper");              
+                            break;                        
+                    }                    
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="container">
+            <img src="img/artoo.png" alt="artoo" width="140" height="140">
+            <img src="img/chewbacca.png" alt="chewbacca" width="140" height="140">
+            <img src="img/rey.png" alt="rey" width="140" height="140">
+            <img src="img/stormtrooper.png" alt="stormtrooper" width="140" height="140">
+        </div>
+    </body>
+</html>
