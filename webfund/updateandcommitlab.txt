@@ -1,0 +1,5 @@
+on github.com i used the UI to create a fork of the repo and located in my github account space.
+i think cloned that newly forked repo so that I had it on my laptop locally
+i then made a small change to the html file
+i added, committed and pushed the change to github
+i then went to the pull request tab and created a new pull request for jjun to review/approve
