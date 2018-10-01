@@ -30,3 +30,21 @@ z = -4
 for i in range(x,y,z):
     print(i)    
         
+
+# loop questions
+
+# 3
+# 5
+# 1
+# 2
+
+# ------
+
+# error
+
+# ------
+
+# 0
+# 1
+# 2
+# 3
