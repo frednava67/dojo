@@ -1,13 +1,10 @@
 class Product:
-    def __init__(self, price, item_name, item_weight, item_brand, item_status):
+    def __init__(self, price, item_name, item_weight, item_brand, item_status="for sale"):
         self.price = price
         self.item_name = item_name
         self.item_weight = item_weight
         self.item_brand = item_brand
-        if item_status == "":
-            self.item_status = "for sale"
-        else:
-            self.item_status = item_status
+        self.item_status = item_status
         
     def Sell(self):
         self.item_status = "sold"
@@ -45,10 +42,11 @@ bomber_jacket = Product(70, "Leather Bomber Jacket", "5 pounds", "GAP", "for sal
 bomber_jacket.Sell().ReturnItem("like_new")
 bomber_jacket.Display_Info()
 
-shoes = Product(99, "Air Jordans", "2 pounds", "Nike", "defective")
+shoes = Product(99, "Air Jordans", "2 pounds", "Nike", "used")
 shoes.Sell().ReturnItem("used").AddTax(2).Sell()
+shoes.Display_Info()
 
-shirt = Product(55, "Pique Polo Shirt", "2 pounds", "Ralph Lauren", "used")
+shirt = Product(55, "Pique Polo Shirt", "2 pounds", "Ralph Lauren")
 shirt.Display_Info()
 
 slacks = Product(75, "Chino Pants", "3 pounds", "American Eagle", "for sale")
