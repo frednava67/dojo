@@ -34,7 +34,7 @@ class Dragon(Animal):
         return self
     def displayHealth(self):
         super().displayHealth()
-        print(" ßI am a Dragon")
+        print(" I am a Dragon")
 
 
 # Do the things
@@ -53,5 +53,5 @@ dog.displayHealth()
 hatchling = Dragon("Hatchling")
 hatchling.fly().fly().run().walk().displayHealth()
 
-dog.fly() #should produce an error
+#dog.fly() #should produce an error
 
