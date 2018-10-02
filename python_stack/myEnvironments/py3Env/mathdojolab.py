@@ -6,7 +6,6 @@ class MathDojo:
         self.result += arg1
         for arg in argv:
             self.result += arg
-
         return self
 
     def subtract(self, arg1, *argv):
