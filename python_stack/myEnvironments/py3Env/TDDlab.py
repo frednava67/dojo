@@ -48,12 +48,23 @@ def coins(i=None):
         return retarr
 
 def Factorial(i=None):
-    if i == None or type(i) is not int:
+    if i == None or type(i) is not int or i < 0:
         return None
     elif i == 0 or i == 1:
         return 1
     else:
         return i * Factorial(i-1)
+
+def Fib(i=None):
+    if i == None or type(i) is not int or i < 0:
+        return None
+    elif i == 0:
+        return 0
+    elif i == 1:
+        return 1
+    else:
+        return i + Fib(i-1)
+
 
 
 class reverseListTest(unittest.TestCase):
@@ -125,13 +136,22 @@ class FactorialTest(unittest.TestCase):
         return self.assertEqual(Factorial(1), 1)
     def test5(self):
         return self.assertEqual(Factorial(5), 120)
+    def test6(self):
+        return self.assertIsNone(Factorial(-10))
 
 class FibTest(unittest.TestCase):
     def test1(self):
         return self.assertIsNone(Fib())
     def test2(self):
         return self.assertIsNone(Fib("a"))
-
+    def test3(self):
+        return self.assertIsNone(Fib(-10))
+    def test4(self):
+        return self.assertEqual(Fib(0), 0)
+    def test5(self):
+        return self.assertEqual(Fib(1), 1)
+    def test6(self):
+        return self.assertEqual(Fib(10), 55)
 
 if __name__ == "__main__":
     unittest.main()
