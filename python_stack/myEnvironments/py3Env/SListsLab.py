@@ -14,6 +14,10 @@ class SList():
         return self
     
     def printAllValues(self):
+        if self.head == None:
+            print("======== NOTHING TO PRINT =========")
+            return self
+
         print("===== START Printing All Values ======")
         o = self.head
         while o.next != None:
@@ -82,3 +86,8 @@ sL.insertNode("Horse",3)
 sL.printAllValues()
 sL.insertNode("Yorkie",6)
 sL.printAllValues()
+sl2 = SList()
+sl2.addNode("lonely")
+sl2.printAllValues()
+sl2.removeNode("lonely")
+sl2.printAllValues()

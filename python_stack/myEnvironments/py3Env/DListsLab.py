@@ -9,6 +9,10 @@ class DList():
         self.head = None
 
     def printAllValues(self):
+        if self.head == None:
+            print("======== NOTHING TO PRINT =========")
+            return self
+
         print("===== START Printing All Values going FORWARD ======")
         o = self.head
         while o.next != None:
@@ -95,3 +99,8 @@ dL.addNode("Cherry")
 dL.printAllValues()
 dL.insertNode("Horse",3)
 dL.printAllValues()
+dl2 = DList()
+dl2.addNode("lonely")
+dl2.printAllValues()
+dl2.removeNode("lonely")
+dl2.printAllValues()
