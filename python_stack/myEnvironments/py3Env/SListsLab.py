@@ -8,9 +8,9 @@ class SList():
         self.head = None
 
     def addNode(self,val):
-        n = Node(val)
-        n.next = self.head
-        self.head = n
+        new = Node(val)
+        new.next = self.head
+        self.head = new
         return self
     
     def printAllValues(self):
@@ -24,20 +24,20 @@ class SList():
         return self
 
     def removeNode(self, val):
-        n = self.head
+        new = self.head
 
-        if n.value == val:
-            self.head = n.next
-            n.next = None
+        if new.value == val:
+            self.head = new.next
+            new.next = None
             return self
 
-        old = n
-        while n.value != val and n.next != None:
-            old = n
-            n = n.next
+        old = new
+        while new.value != val and new.next != None:
+            old = new
+            new = new.next
 
-        old.next = n.next
-        n.next = None
+        old.next = new.next
+        new.next = None
         return self
 
     def insertNode(self, val, idx):
