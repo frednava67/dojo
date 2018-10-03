@@ -42,6 +42,14 @@ class DList():
             self.head = new
         return self
 
+    def addToEnd(self, val):
+        new = Node(val)
+        o = self.head
+        while o.next != None:
+            o = o.next
+        o.next = new
+        new.prev = o
+
     def removeNode(self, val):
         new = self.head
 
@@ -86,6 +94,53 @@ class DList():
 
         return self        
 
+    def insertBeforeNode(self, val, idx):
+        new = Node(val)
+        old = self.head
+
+        if idx == 0:
+            self.head = new
+            new.next = old
+            old.prev = new
+            return self
+
+        counter = 0
+        while counter != idx-1 and old.next != None:
+            old = old.next
+            counter+=1
+
+        temp = old.next
+        temp.prev = new
+        new.next = temp
+        old.next = new
+        new.prev = old
+
+        return self
+
+    def insertAfterNode(self, val, idx):
+        new = Node(val)
+        old = self.head
+
+        if idx == 0:
+            self.head = new
+            new.next = old
+            old.prev = new
+            return self
+
+        counter = 0
+        while counter != idx and old.next != None:
+            old = old.next
+            counter+=1
+
+        temp = old.next
+        temp.prev = new
+        new.next = temp
+        old.next = new
+        new.prev = old
+
+        return self          
+
+
 dL = DList()
 dL.addNode("Epsilon")
 dL.addNode("Drudge")
@@ -103,4 +158,11 @@ dl2 = DList()
 dl2.addNode("lonely")
 dl2.printAllValues()
 dl2.removeNode("lonely")
+dl2.printAllValues()
+dl2.addNode("lonely")
+dl2.addToEnd("nomore")
+dl2.printAllValues()
+dl2.insertBeforeNode("am i",1)
+dl2.printAllValues()
+dl2.insertAfterNode("faith",1)
 dl2.printAllValues()
