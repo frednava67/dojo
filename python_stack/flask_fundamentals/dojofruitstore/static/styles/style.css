@@ -38,7 +38,6 @@
         display: inline-block;
         height: 700px;
         width: 700px;
-        border: 1px solid black;
     }
 
     .rightsection{
@@ -47,12 +46,21 @@
         vertical-align: top;
         width: 220px;
         height: 700px;
-        border: 1px solid black;
-
     }
+
+    .empty{
+        display: inline-block;
+        vertical-align: top;
+        width: 220px;
+        height: 700px;
+    }    
 
     .bolded {
         font-weight: bold;
+    }
+
+    .bordered {
+        border: 1px solid black;
     }
 
     .underlined {

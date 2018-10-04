@@ -6,11 +6,12 @@
 <body>
     <div class="rootcontainer">
         <div class="header bigleftpadding">
-            <h1>Dojo Fruit Store!</h1>
+            <h1>Thank you for your order!</h1>
         </div>
 
         <div class="leftsection bigleftpadding">
-            <h4 class="bolded underlined bigtoppadding">What would you like to buy?</h4>
+            <h4 class="bigtoppadding">We ordered {{total_ordered}} items for you and charged your student account on {{order_date}}</h4>
+            <br>
             <br>
             <table class="padded" id="purchasetable">
                 <tr class="padded">
@@ -50,5 +51,6 @@
                 </tr>
             </table>
         </div>
+        <div class="empty">.</div>
     </div>
 </body>
