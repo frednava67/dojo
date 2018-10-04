@@ -13,15 +13,15 @@
 
 <body>
     <div class="topcontainer d-flex justify-content-center">
-        <div class="formcontainer  w-50 border border-primary" style="display: inline-block; margin-top: 100px">
-            <form action="/action_page.php">
+        <div class="formcontainer  w-50 border border-primary" style="display: inline-block; margin-top: 100px; padding: 20px">
+            <form action='/result' method='post'>
                 <div class="form-group">
                     <label for="fullname">Your Name:</label>
-                    <input type="text" class="form-control" id="fullname">
+                    <input type="text" class="form-control" id="fullname" name="fullname">
                 </div>
                 <div class="form-group">
-                    <label for="email">Dojo Location:</label>
-                    <select>
+                    <label for="location">Dojo Location:</label>
+                    <select id="location" name="location">
                         <option value="San Jose">San Jose</option>
                         <option value="Seattle">Saab</option>
                         <option value="Los Angeles">Los Angeles</option>
@@ -34,20 +34,20 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="email">Favorite Language:</label>
-                    <select>
-                            <option value="Javascript">San Jose</option>
+                    <label for="favorite_language">Favorite Language:</label>
+                    <select id="favorite_language" name="favorite_language">
+                            <option value="Javascript">Javascript</option>
                             <option value="Python">Saab</option>
-                            <option value="Java">Los Angeles</option>
-                            <option value="C/C++">Dallas</option>
-                            <option value="C#">Tysons Corner</option>
+                            <option value="Java">Python</option>
+                            <option value="C/C++">C/C++</option>
+                            <option value="C#">C#</option>
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="email">Comment (optional):</label>
-                    <input type="email" class="form-control" id="email">
+                    <label for="comment">Comment (optional):</label>
+                    <input type="text" class="form-control" id="comment" name="comment" style="height: 250px">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary float-right">Submit</button>
             </form>
         </div>
     </div>
