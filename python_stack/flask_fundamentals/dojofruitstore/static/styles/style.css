@@ -1,0 +1,76 @@
+/*CSS reset settings here*/
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p {
+        padding-top: 10px;
+    }
+
+    td, th {
+        width: 250px;        
+    }
+
+    #purchasetable {
+        border-collapse: collapse;
+    }
+
+    #purchasetable td, #purchasetable th {
+        border: 1px solid #ddd;
+        width: 250px;
+    }
+
+    #purchasetable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #purchasetable tr:hover {
+        background-color: #ddd;
+    }
+
+    .rootcontainer{
+        width: 1250px;
+    }
+
+    .leftsection{
+        display: inline-block;
+        height: 700px;
+        width: 700px;
+        border: 1px solid black;
+    }
+
+    .rightsection{
+        display: inline-block;
+        background-color: #b4a6db;
+        vertical-align: top;
+        width: 220px;
+        height: 700px;
+        border: 1px solid black;
+
+    }
+
+    .bolded {
+        font-weight: bold;
+    }
+
+    .underlined {
+        text-decoration: underline;
+    }
+
+    .bigtoppadding {
+        padding-top: 75px;        
+    }
+
+    .bigleftpadding {
+        padding-left: 100px;
+    }
+
+    .padded {
+        padding: 10px;
+    }
+
+    .centered-text {
+        text-align: center;
+    }

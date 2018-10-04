@@ -1,0 +1,103 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+    <div class="rootcontainer">
+        <div class="header bigleftpadding">
+            <h1>Dojo Fruit Store!</h1>
+        </div>
+
+        <div class="leftsection bigleftpadding">
+            <form action='/checkout' method='post'>
+                <h4 class="bolded underlined bigtoppadding">What would you like to buy?</h4>
+                <br>
+                <table class="padded" id="purchasetable">
+                    <tr class="padded">
+                        <th class="padded">Fruit Name</th>
+                        <th class="padded">Quantity</th>
+                    </tr>
+                    <tr>
+                        <td class="padded">Strawberry</td>
+                        <td class="padded">
+                            <select name="strawberry_quantity">
+                                <option value="0" name="strawberry_quantity">0</option>
+                                <option value="1" name="strawberry_quantity">1</option>
+                                <option value="2" name="strawberry_quantity">2</option>
+                                <option value="3" name="strawberry_quantity">3</option>
+                                <option value="4" name="strawberry_quantity">4</option>
+                                <option value="5" name="strawberry_quantity">5</option>
+                                <option value="6" name="strawberry_quantity">6</option>
+                                <option value="7" name="strawberry_quantity">7</option>
+                                <option value="8" name="strawberry_quantity">8</option>
+                                <option value="9" name="strawberry_quantity">9</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="padded">
+                        <td class="padded">Raspberry</td>
+                        <td class="padded">
+                            <select name="raspberry_quantity">
+                                <option value="0" name="raspberry_quantity">0</option>
+                                <option value="1" name="raspberry_quantity">1</option>
+                                <option value="2" name="raspberry_quantity">2</option>
+                                <option value="3" name="raspberry_quantity">3</option>
+                                <option value="4" name="raspberry_quantity">4</option>
+                                <option value="5" name="raspberry_quantity">5</option>
+                                <option value="6" name="raspberry_quantity">6</option>
+                                <option value="7" name="raspberry_quantity">7</option>
+                                <option value="8" name="raspberry_quantity">8</option>
+                                <option value="9" name="raspberry_quantity">9</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="padded">
+                        <td class="padded">Apple</td>
+                        <td class="padded">
+                            <select name="apple_quantity">
+                                <option value="0" name="apple_quantity">0</option>
+                                <option value="1" name="apple_quantity">1</option>
+                                <option value="2" name="apple_quantity">2</option>
+                                <option value="3" name="apple_quantity">3</option>
+                                <option value="4" name="apple_quantity">4</option>
+                                <option value="5" name="apple_quantity">5</option>
+                                <option value="6" name="apple_quantity">6</option>
+                                <option value="7" name="apple_quantity">7</option>
+                                <option value="8" name="apple_quantity">8</option>
+                                <option value="9" name="apple_quantity">9</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <h4 class="bolded underlined bigtoppadding">Your Information</h4>
+                <br>
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type='text' name='name'></td>
+                    </tr>
+                    <tr>
+                        <td>Your Student ID:</td>
+                        <td><input type='text' name='student_id'></td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <input type='submit' value='Buy me stuff!'>
+            </form>
+        </div>
+
+        <div class="rightsection">
+            <p class="centered-text">Welcome to Dojo Fruit Store!</p>
+            <br>
+            <p class="padded centered-text">Your dojo decided to buy fruits for all the students! Please use this app
+                to tell us what you would like to have! Once we get your student account automatically.</p>
+            <br>
+            <p class="padded centered-text">Dojo Fruit Store is proudly built using Flask.</p>
+            </p>
+        </div>
+
+    </div>
+</body>
