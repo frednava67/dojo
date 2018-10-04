@@ -24,8 +24,17 @@
         {% set bgcolor = "red" %}
         {% for i in range(rows): %}
             {% for j in range(columns): %}
-                {% if j%2==1 %}
-                    {% set bgcolor= "black" %}
+                {% if i%2==0 and j%2==1 %}
+                    {% set bgcolor= c1 %}
+                    <div class='box' style='background-color:{{bgcolor}}'></div>
+                {% elif i%2==0 and j%2==0 %}
+                    {% set bgcolor= c2 %}
+                    <div class='box' style='background-color:{{bgcolor}}'></div>
+                {% elif i%2==1 and j%2==1 %}
+                    {% set bgcolor= c2 %}
+                    <div class='box' style='background-color:{{bgcolor}}'></div>
+                {% elif i%2==1 and j%2==0 %}
+                    {% set bgcolor= c1 %}
                     <div class='box' style='background-color:{{bgcolor}}'></div>
                 {% endif %}
             {% endfor %}
