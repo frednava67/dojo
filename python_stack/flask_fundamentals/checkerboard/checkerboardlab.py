@@ -3,11 +3,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def buildDefaultBoard():
-    return render_template('index.html', rows=8, columns=8)                            
+    return render_template('index.html', rows=8, columns=8, c1="red", c2="black")                            
 
 @app.route('/<rows>/<columns>')
 def buildCustomSizeBoard(rows, columns):
-    return render_template('index.html', rows=int(rows), columns=int(columns))                            
+    return render_template('index.html', rows=int(rows), columns=int(columns), c1="red", c2="black")                            
 
 @app.route('/<rows>/<columns>/<color1>/<color2>')
 def buildCustomSizeAndColorBoard(rows, columns, color1, color2):
