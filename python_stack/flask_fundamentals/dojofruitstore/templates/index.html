@@ -1,6 +1,9 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -21,7 +24,7 @@
                     <tr>
                         <td class="padded">Strawberry</td>
                         <td class="padded">
-                            <select name="strawberry_quantity">
+                            <select class="form-control" name="strawberry_quantity">
                                 <option value="0" name="strawberry_quantity">0</option>
                                 <option value="1" name="strawberry_quantity">1</option>
                                 <option value="2" name="strawberry_quantity">2</option>
@@ -38,7 +41,7 @@
                     <tr class="padded">
                         <td class="padded">Raspberry</td>
                         <td class="padded">
-                            <select name="raspberry_quantity">
+                            <select class="form-control" name="raspberry_quantity">
                                 <option value="0" name="raspberry_quantity">0</option>
                                 <option value="1" name="raspberry_quantity">1</option>
                                 <option value="2" name="raspberry_quantity">2</option>
@@ -55,7 +58,7 @@
                     <tr class="padded">
                         <td class="padded">Apple</td>
                         <td class="padded">
-                            <select name="apple_quantity">
+                            <select class="form-control" name="apple_quantity">
                                 <option value="0" name="apple_quantity">0</option>
                                 <option value="1" name="apple_quantity">1</option>
                                 <option value="2" name="apple_quantity">2</option>
@@ -76,11 +79,11 @@
                 <table>
                     <tr>
                         <td>Name:</td>
-                        <td><input type='text' name='name'></td>
+                        <td><input class="form-control" type='text' name='name'></td>
                     </tr>
                     <tr>
                         <td>Your Student ID:</td>
-                        <td><input type='text' name='student_id'></td>
+                        <td><input class="form-control" type='text' name='student_id'></td>
                     </tr>
                 </table>
                 <br>
