@@ -48,6 +48,8 @@ JOIN cities ON countries.name = "Argentina"
 
 8. What query would you run to summarize the number of countries in each region? The query should display the name of the region and the number of countries. Also, the query should arrange the result by the number of countries in descending order. (2)
 
-SELECT countries.region, COUNT(countries.id) AS total_in_region FROM countries
-GROUP BY countries.region
-ORDER BY total_in_region DESC;
+SELECT DISTINCT countries.name FROM countries
+JOIN languages ON countries.id = languages.country_id
+JOIN cities ON cities.country_id = languages.country_id
+WHERE countries.region = "Caribbean"
+ORDER BY countries.name;
