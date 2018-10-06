@@ -6,6 +6,7 @@ app.secret_key = 'antidisestablishmentarianism'
 
 @app.route('/')
 def index():
+    print("index()")
     sn = 0
     if 'secretnumber' not in session:
         sn = rnd.randrange(0,101)
@@ -19,19 +20,25 @@ def index():
 
 @app.route('/destroy_session')
 def destroyTheSession():
+    print("destroyTheSession")
     session.clear()
     return redirect('/')
 
 @app.route('/reset_game', methods=['POST'])
 def resetTheGame():
+    print("resetTheGame()")    
     session.clear()
     return redirect('/')
 
 @app.route('/check_guess', methods=['POST'])
 def check_guess():
+    print("check_guess()")
     sn = int(session['secretnumber'])
-    session['guessesclasses']
-    userguess = int(request.form['theguess'])
+    tg = request.form['theguess']
+
+    if tg == "":
+        tg = "0"
+    userguess = int(tg)
 
     if sn > userguess:
         session['guess_result'] = "Too low!"
@@ -42,7 +49,7 @@ def check_guess():
     elif sn == userguess:
         session['guess_result'] = str(sn) + " was the number!"      
         session['guessesclasses'] = " greenbox resultdiv center-block text-center "
-        session['btnclasses'] = " btn btn-primary "
+        session['btnclasses'] = " btn btn-info "
         session['userguessdiv'] = " hidden "
     return redirect('/') 
 
