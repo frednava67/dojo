@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Great Number Game Lab</title>
+    </head>
+    <body>
+        <div class="toplevelcontainer text-center">
+            <form action="/check_guess" method='post'>
+                <h2>Welcome to the Great Number Game!</h2>
+                <br>
+                <h4>I am thinking of a number between 1 and 100</h4>
+                <h4>Take a guess!</h4>
+                <br>
+                <div class="resultbox {{ divclasses }}">
+                    <div class="feedback">
+                        <div>{{ guessaccuracy }}</div>
+                        <br>
+                        <button class="btn btn-primary">Play Again!</button>
+                    </div>
+                </div>
+                <div id="userguessdiv">
+                    <input type="text" name="theguess">
+                    <br>
+                    <br>
+                    <input class="btn btn-info" type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
