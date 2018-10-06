@@ -20,10 +20,10 @@
                     <div class="feedback">
                         <div>{{ guessaccuracy }}</div>
                         <br>
-                        <button class="btn btn-primary">Play Again!</button>
+                        <input type="submit" class="{{ playagainbtn }}" value="Play Again!" formaction="/reset_game">
                     </div>
                 </div>
-                <div id="userguessdiv">
+                <div id="userguessdiv" class="{{ ugdiv }}">
                     <input type="text" name="theguess">
                     <br>
                     <br>
