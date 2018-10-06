@@ -28,10 +28,10 @@ def goldGeneration(strChoice):
 @app.route('/')
 def index():
     print("index()")
-    show_restart_button = " btn btn-primary btn-block "
+    show_restart_button = " btn btn-danger btn-block "
 
     if 'activity_log' not in session:
-        show_restart_button = " btn btn-primary btn-block hidden "
+        show_restart_button = " btn btn-danger btn-block hidden "
         logDictionary = []
         session['activity_log'] = logDictionary
         session['current_gold'] = 0

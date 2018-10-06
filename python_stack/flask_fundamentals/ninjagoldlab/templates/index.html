@@ -16,7 +16,6 @@
                     <input class="inlineblock goldtotal" type="text" name="gold_total" value="{{ winnings }}" readonly>
                 </div>
                 <br>
-                <br>
                 <div class="maindiv text-center">
                     <div class="choicediv">
                         <form action="/process_money" method='post'>
@@ -56,8 +55,6 @@
                     </div>
                 </div>
                 <div class="turnlogdiv">
-                    <br>
-                    <br>
                     <div class="labeldiv">Activities:</div>
                     <div class="turnlog">
                         {% for record in summary %}
