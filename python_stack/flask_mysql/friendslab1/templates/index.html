@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>All the friends I have</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="toplevelcontainer">
+        <hr>
+        <div class="header">These all all my friends!</div>
+        <div class="scrollinglist text-center ">
+            <table class="table table-striped">
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Occupation</th>                                                
+                </tr>
+                {% for friend in friendsList %}                    
+                    <tr>
+                        <td>{{ friend['first_name'] }}</td>
+                        <td>{{ friend['last_name'] }}</td>
+                        <td>{{ friend['occupation'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <hr>
+        </div>
+        <div class="addfrienddiv text-center">
+            <div class="addfriendheader">Add a friend</div>
+            <div class="addfriendform">
+                <form action="create_friend" method="POST">
+                    <table id="addTable" class=" text-center">
+                        <tr>
+                            <td><label for="firstname">First name:</label></td>
+                            <td> <input type="text" class="form-control" id="firstname" name="first_name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="lastname">Last name:</label></td>
+                            <td> <input type="text" class="form-control" id="lastname" name="last_name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="occupation">Occupation:</label></td>
+                            <td> <input type="text" class="form-control" id="occupation" name="occupation"></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td><button type="submit" class="btn btn-primary float-right">Submit</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
