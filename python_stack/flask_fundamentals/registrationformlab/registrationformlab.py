@@ -5,6 +5,7 @@ app = Flask(__name__)
 app.secret_key = "ThisIsSecret!"
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 NAME_REGEX  = re.compile('[0-9]')
+PASSWORD_REGEX = re.compile('(?=\w{8})')
 
 @app.route('/')
 def showForm():
@@ -42,16 +43,13 @@ def processForm():
         bFlashMessage = True
 
     # First and Last Name cannot contain any numbers
-    print(f_name)
-    print(NAME_REGEX)
-    print(NAME_REGEX.match(f_name))
-    #if NAME_REGEX.match(f_name):
-        #flash("First Name cannot contain numbers.")
-        #bFlashMessage = True
+    if NAME_REGEX.search(f_name):
+        flash("First Name cannot contain numbers.")
+        bFlashMessage = True
 
-    #if NAME_REGEX.match(l_name):
-    #    flash("Last Name cannot contain numbers.")
-    #    bFlashMessage = True
+    if NAME_REGEX.search(l_name):
+        flash("Last Name cannot contain numbers.")
+        bFlashMessage = True
 
     # Password should be more than 8 characters
     if len(pwd) < 9:
@@ -71,7 +69,7 @@ def processForm():
     if bFlashMessage:
         return redirect('/')
 
-    return render_template("display_info.html", full_name=full_name, loc=loc, fav_lang=fav_lang, remarks=remarks)    
+    return render_template("display_info.html", emailaddress=email, first_name=f_name, last_name=l_name)    
 
 if __name__=="__main__":
     app.run(debug=True)                   # Run the app in debug mode.
