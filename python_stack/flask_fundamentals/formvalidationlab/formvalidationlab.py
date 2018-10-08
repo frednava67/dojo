@@ -18,6 +18,9 @@ def showResult():
     if len(request.form['comment']) < 1:
         flash("Comment box cannot be blank!")
         return redirect('/')      
+    elif len(request.form['comment']) > 120:
+        flash("Comment box cannot be greater than 120 characters!")
+        return redirect('/')          
     return render_template("display_info.html", full_name=full_name, loc=loc, fav_lang=fav_lang, remarks=remarks)    
 
 if __name__=="__main__":
