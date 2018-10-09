@@ -6,6 +6,7 @@ import re
 
 app = Flask(__name__)
 app.secret_key = "Pneumonoultramicroscopicsilicovolcanoconiosis"
+bcrypt = Bcrypt(app)
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 NAME_REGEX  = re.compile('[0-9]')
@@ -20,8 +21,23 @@ res = mysql.query_db("SELECT * FROM accounts WHERE id=100;")
 if res == ():
     print("blank")
 
-def performSQLCall(query, data=None)
+def performSQLCall(query, data=None):
     mysql = connectToMySQL('registerdb')
+    return mysql.query_db(query, data)
+
+
+@app.route('/runonce')
+def update():
+    #UPDATE table_name
+    #SET column1 = value1, column2 = value2, ...
+    #WHERE condition;
+
+    badpassword1 = "abcd1234"
+    pwhash = bcrypt.generate_password_hash(badpassword1)
+    query = "UPDATE accounts SET pwhashval='%(hash)s', updated_at=NOW() WHERE first_name='Big'"
+    data =  {'hash': pwhash }
+    performSQLCall(query, data)
+    return redirect('/')
 
 
 @app.route('/')
@@ -29,9 +45,23 @@ def index():
 
     if 'newentry' in session:
         return redirect('/success')
-    
 
-    return render_template('index.html')
+    if 'first_name' in session:
+        f_name = session['first_name']
+    else:
+        f_name = ""
+
+    if 'last_name' in session:
+        l_name = session['last_name']
+    else:
+        l_name = ""
+
+    if 'email' in session:
+        eml = session['email']
+    else:
+        eml = ""        
+
+    return render_template('index.html', first_name=f_name, last_name=l_name, email=eml)
 
 @app.route('/perform_check', methods=['POST'])
 def performCheck():
@@ -41,6 +71,8 @@ def performCheck():
     session['email'] = request.form['email']  
     session['pwd'] = request.form['password']
     session['confpwd'] = request.form['confirm_password']
+
+    bFlashMessage = False
 
     #1. First Name - letters only, at least 2 characters and that it was submitted
 
@@ -69,7 +101,6 @@ def performCheck():
         bFlashMessage = True        
 
     #Email shouldn't be in database already
-    mysql = connectToMySQL('registerdb')
     query = "SELECT accounts.emailaddress FROM accounts WHERE emailaddress=%(email)s;"
     data =  { 'email': email }
     query_result = performSQLCall(query, data)
@@ -93,8 +124,16 @@ def performCheck():
     if bFlashMessage:
         return redirect('/')
     else:
-        # INSERT STATEMENT
-        # session('newentry') = f_name
+        pwhash = bcrypt.generate_password_hash(pwd)
+        query = "INSERT INTO accounts (emailaddress, pwhashval, created_at, updated_at, first_name) VALUES (%(email)s, %(pwhash)s, NOW(), NOW(), %(first_name)s);"
+        print(query)
+        data =  {   'email': email,
+                    'pwhash': pwhash,
+                    'first_name': f_name
+                }
+        print(data)
+        performSQLCall(query,data)
+        return render_template('success.html', first_name=f_name)
 
 @app.route('/success')
 def displaySummary():
@@ -103,11 +142,26 @@ def displaySummary():
     else:
         return redirect('/')
 
-@app.route('/login')
+@app.route('/login', methods=['POST'])
 def login():
+    postedemail = request.form['email']
+    postedpassword = request.form['password']
+    
+    query = "SELECT * FROM accounts WHERE emailaddress=%(email)s;"
+    data =  {
+                'email': postedemail,
+            }
+    result = performSQLCall(query,data)
 
+    returnedhash = result[0]['pwhashval']
+    hashcheck = bcrypt.check_password_hash(returnedhash, postedpassword)
 
-@app.route('/logout')
+    if result!=() and hashcheck:
+        return render_template('success.html', first_name=result[0]['first_name'])
+    else:
+        return redirect('/')
+
+@app.route('/logout', methods=['POST'])
 def logout():
     session.clear()
     return redirect('/')
