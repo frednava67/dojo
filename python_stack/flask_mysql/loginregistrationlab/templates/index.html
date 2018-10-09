@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration Page</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="toplevelcontainer">
+            <div class="header">
+                <div class="headertext">Login and Registration</div>
+            </div>
+            <div class="mainsection">
+                <div class="leftsection">
+                    <p class="sectionheader">Register here!</p>
+                    <form action="perform_check" method="POST">
+                        <label class="formlabel" for="first_name">First name:</label>
+                        <input type="text" class="form-control tenpxmargin" id="first_name" name="first_name">
+                        {% with errors = get_flashed_messages(category_filter=["fname"]) %}
+                            {% if errors %}
+                                <div>
+                                    {%- for msg in errors %}
+                                        <p class="alerttext">{{ msg }}</p>
+                                    {% endfor -%}
+                                </div>
+                            {% endif %}
+                        {% endwith %}                        
+                        <br>
+                        <label class="formlabel" for="last_name">Last name:</label>
+                        <input type="text" class="form-control tenpxmargin" id="last_name" name="last_name">
+                        {% with errors = get_flashed_messages(category_filter=["lname"]) %}
+                            {% if errors %}
+                                <div>
+                                    {%- for msg in errors %}
+                                        <p class="alerttext">{{ msg }}</p>
+                                    {% endfor -%}
+                                </div>
+                            {% endif %}
+                        {% endwith %}                        
+                        <br>
+                        <label class="formlabel" for="email">Email:</label>
+                        <input type="text" class="form-control tenpxmargin" id="email" name="email">
+                        {% with errors = get_flashed_messages(category_filter=["emailaddress"]) %}
+                            {% if errors %}
+                                <div>
+                                    {%- for msg in errors %}
+                                        <p class="alerttext">{{ msg }}</p>
+                                    {% endfor -%}
+                                </div>
+                            {% endif %}
+                        {% endwith %}                        
+                        <br>
+                        <label class="formlabel" for="password">Password:</label>
+                        <input type="password" class="form-control tenpxmargin" id="password" name="password">
+                        {% with errors = get_flashed_messages(category_filter=["pwd"]) %}
+                            {% if errors %}
+                                <div>
+                                    {%- for msg in errors %}
+                                        <p class="alerttext">{{ msg }}</p>
+                                    {% endfor -%}
+                                </div>
+                            {% endif %}
+                        {% endwith %}                        
+                        <br>
+                        <label class="formlabel" for="confirm_password">Confirm password:</label>
+                        <input type="password" class="form-control tenpxmargin" id="confirm_password" name="confirm_password">
+                        <br>
+                        <input type="submit" class="btn btn-primary submitbutton" name="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="rightsection">
+                    <p class="sectionheader">Login here!</p>                    
+                    <form action="process_login" method="POST">
+                        <label class="formlabel" for="first_name">Email:</label>
+                        <input type="text" class="form-control tenpxmargin" id="email" name="email">
+                        <br>
+                        <label class="formlabel" for="first_name">Password:</label>
+                        <input type="text" class="form-control tenpxmargin" id="password" name="password">
+                        <br>
+                        <input type="submit" class="btn btn-primary submitbutton" name="submit" value="Submit">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
