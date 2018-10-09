@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Only the best emails</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="toplevelcontainer">
+        <div class="header">
+
+        </div>
+        <br>
+        <div class="flashalerts center {{ alertclass }} ">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}                
+        </div>
+        <br>        
+        <div class="emailsection">
+            <div class="formcontainer center">
+                <form action="perform_check" method="POST">
+                        <label class="formlabel" for="email">Emai Address:</label>
+                        <input type="text" class="forminput tenpxmargin" id="email" name="emailaddress">
+                        <br>
+                        <input type="submit" class="tenpxmargin submitbutton" align="right" name="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
