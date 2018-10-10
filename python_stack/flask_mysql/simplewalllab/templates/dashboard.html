@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Wall Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="toplevelcontainer">
+        <div class="header">
+            <div class="dbheadertext">Coding Dojo Wall (Simplified)</div>
+            <label class="headerlabel">Welcome {{ first_name }}!</label>
+            <form class="logoutbuttonform" action="/logout" method="POST">
+                <input class="logoutbutton btn btn-primary" type="submit" value="Logout">
+            </form>
+        </div>
+        <br>
+        <div class="mainsection">
+            <div class="leftsection">
+                <p>{{ lenmessageList }} message(s) for you {{ first_name }}</p>
+                <table class="table">
+                    {% for messageItem in messagesToList %}                    
+                        <tr>
+                            <td class="messagesrow1">{{ messageItem['first_name'] }} said on {{ messageItem['created_at'] }}<p>{{ messageItem['content'] }}</td>
+                            <td>{{ messageItem['id'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="rightsection">
+                <p>Send a message.</p>
+                <p>You have sent a total of {{ messageSentCount }} messages so far.</p>
+                <table>
+                    {% for account in otherAccountsList %}                    
+                        <tr>
+                            <td class="messagesrow">TO: {{ account['first_name'] }} ({{ account['id'] }})</td>
+                            <td><textarea></textarea></td>
+                            <td><button class="btn btn-primary">Send</button></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

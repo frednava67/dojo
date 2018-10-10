@@ -1,0 +1,105 @@
+/*CSS reset settings here*/
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .toplevelcontainer {
+        width: 1250px;
+        height: 1000px;
+        margin-top: 50px;
+    }
+
+    .header {
+        border: 1px solid black; /* temp */
+        border-bottom: 2px solid black;
+        height: 50px;
+        background-color: darkkhaki; /* temp */
+        font-size: 30px;
+        font-weight: bold;        
+    }
+
+    .headertext {
+        margin: 5px 0px 5px 50px;
+        text-align: left;
+        width: 50%;
+    }
+
+    .headerlabel {
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .dbheadertext {
+        margin: 5px 0px 5px 50px;
+        display: inline-block;
+        text-align: left;
+        width: 700px;        
+    }
+
+    .mainsection {
+        height: auto;
+        padding: 10px 0px 10px 0px;
+        background-color: gray; /* temp */
+        text-align: center;
+    }
+
+    .leftsection {
+        padding: 10px;
+        vertical-align: top;
+        text-align: left;
+        display: inline-block;
+        background-color: darkgray; /* temp */
+        width: 45%;
+        border: 1px solid black;  /* temp */
+    }
+
+    .rightsection {
+        padding: 10px;
+        vertical-align: top;
+        text-align: left;
+        display: inline-block;
+        background-color: darkgray;  /* temp */
+        width: 45%;
+        border: 1px solid black;  /* temp */
+    }
+
+    .sectionheader {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .submitbutton {
+        float: right;
+
+    }
+
+    .logoutbutton {
+        width: 100px;
+        vertical-align: middle;
+        margin-top: 5px;
+        font-size: 20px;
+    }
+
+    .alerttext {
+        color: red;
+        font-weight: bold;
+    }
+
+    .logoutbuttonform {
+        display: inline-block;
+        width: 100px;
+        margin-right: 50px;
+        float: right;
+        vertical-align: middle;
+    }
+
+    .messagesrow1 {
+        margin-left: 5px;
+    }
+
+    .messagesrow2 {
+        margin-left: 15px;
+    }
