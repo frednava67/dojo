@@ -14,7 +14,9 @@ NAME_REGEX  = re.compile('[0-9]')
 SQL_MESSAGES_TO_ACCOUNT = "SELECT * FROM messages JOIN accounts ON accounts.id=messages.fromaccount_id WHERE toaccount_id = %(account_id)s ORDER BY messages.created_at DESC;"
 SQL_MESSAGES_FROM_ACCOUNT = "SELECT * FROM messages JOIN accounts ON accounts.id=messages.toaccount_id WHERE fromaccount_id = %(account_id)s;"
 SQL_INSERT_NEW_ACCOUNT = "INSERT INTO accounts (email, pwhashval, created_at, updated_at, first_name, last_name) VALUES (%(email)s, %(pwhash)s, NOW(), NOW(), %(first_name)s, %(last_name)s);"
+SQL_INSERT_NEWLY_SENT_MESSAGE = "INSERT INTO messages (fromaccount_id, toaccount_id, content, created_at, updated_at) VALUES (%(from_id)s, %(to_id)s, %(msg_text)s, NOW(), NOW());"
 SQL_ALL_USERS_EXCEPT_CURRENT_USER = "SELECT * FROM accounts WHERE id!=%(account_id)s;"
+SQL_DELETE_SELECTED_MESSAGE = "DELETE FROM messages WHERE id=%(message_id)s;"
 
 # invoke the connectToMySQL function and pass it the name of the database we're using
 # connectToMySQL returns an instance of MySQLConnection, which we will store in the variable 'mysql'
@@ -78,7 +80,7 @@ def index():
         messagesSent = performSQLCall(query,data)
         totalMessagesSent = len(messagesSent)     
 
-        return render_template('dashboard.html', first_name=currentuser[0]['first_name'], messageSentCount=totalMessagesSent, lenmessageList=str(len(messagesTo)), messagesToList=messagesTo, otherAccountsList=allOtherAccounts)
+        return render_template('dashboard.html', curUser=currentuser[0], messageSentCount=totalMessagesSent, lenmessageList=str(len(messagesTo)), messagesToList=messagesTo, otherAccountsList=allOtherAccounts)
         
     if 'first_name' in session:
         f_name = session['first_name']
@@ -204,6 +206,32 @@ def login():
     else:
         flash(u"You were unable to login.",'login')       
     
+    return redirect('/')
+
+@app.route('/post_message', methods=['POST'])
+def postMessage():
+    print("postMessage")
+    # SQL_INSERT_NEW_SENT_MESSAGE = "INSERT INTO messages (fromaccount_id, toaccount_id, content, created_at, updated_at) 
+    # VALUES (%(from_id)s, %(to_id)s, %(msg_text)s, NOW(), NOW());"
+
+    query = SQL_INSERT_NEWLY_SENT_MESSAGE
+    data =  {
+                'from_id': request.form['from_id'],
+                'to_id': request.form['to_id'],
+                'msg_text': request.form['msg_text']             
+            }
+    result = performSQLCall(query,data)
+    return redirect('/')
+
+
+@app.route('/delete_message/<id>')
+def deleteMessage(id):
+    print("deleteMessage")
+    query = SQL_DELETE_SELECTED_MESSAGE
+    data =  {
+                'message_id': id,
+            }
+    result = performSQLCall(query,data)
     return redirect('/')
 
 @app.route('/logout', methods=['POST'])

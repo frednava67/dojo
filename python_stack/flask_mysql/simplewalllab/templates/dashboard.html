@@ -14,7 +14,7 @@
     <div id="toplevelcontainer">
         <div class="header">
             <div class="dbheadertext">Coding Dojo Wall (Simplified)</div>
-            <label class="headerlabel">Welcome {{ first_name }}!</label>
+            <label class="headerlabel">Welcome {{ curUser['first_name'] }}!</label>
             <form class="logoutbuttonform" action="/logout" method="POST">
                 <input class="logoutbutton btn btn-primary" type="submit" value="Logout">
             </form>
@@ -22,25 +22,31 @@
         <br>
         <div class="mainsection">
             <div class="leftsection">
-                <p>{{ lenmessageList }} message(s) for you {{ first_name }}</p>
+                <p class="sectionheader">{{ lenmessageList }} message(s) for you {{ first_name }}</p>
                 <table class="table">
                     {% for messageItem in messagesToList %}                    
                         <tr>
                             <td class="messagesrow1">{{ messageItem['first_name'] }} said on {{ messageItem['created_at'] }}<p>{{ messageItem['content'] }}</td>
-                            <td>{{ messageItem['id'] }}</td>
+                            <td><a href="delete_message/{{ messageItem['id'] }}"><img border="0" alt="Delete Message" src="../static/img/trashcan.png" width="20" height="20"></a></td>
                         </tr>
                     {% endfor %}
                 </table>
             </div>
             <div class="rightsection">
-                <p>Send a message.</p>
+                <p class="sectionheader">Send a message.</p>
                 <p>You have sent a total of {{ messageSentCount }} messages so far.</p>
-                <table>
+                <table class="sendMessageTable">
                     {% for account in otherAccountsList %}                    
-                        <tr>
-                            <td class="messagesrow">TO: {{ account['first_name'] }} ({{ account['id'] }})</td>
-                            <td><textarea></textarea></td>
-                            <td><button class="btn btn-primary">Send</button></td>
+                        <tr >
+                            <form action="post_message" method="POST">
+                                <td class="messagesrow">
+                                    {{ account['first_name'] }}
+                                    <input type="hidden" name="to_id" value="{{ account['id'] }}">
+                                    <input type="hidden" name="from_id" value="{{ curUser['id'] }}">                                
+                                </td>
+                                <td><textarea class="msgStyle" name="msg_text" rows="4"></textarea></td>
+                                <td><input type="submit" class="btn btn-primary" value="Send"></td>
+                            </form>
                         </tr>
                     {% endfor %}
                 </table>

@@ -12,10 +12,10 @@
     }
 
     .header {
-        border: 1px solid black; /* temp */
+        /* border: 1px solid black; temp */
         border-bottom: 2px solid black;
         height: 50px;
-        background-color: darkkhaki; /* temp */
+        /* background-color: darkkhaki; temp */
         font-size: 30px;
         font-weight: bold;        
     }
@@ -42,7 +42,7 @@
     .mainsection {
         height: auto;
         padding: 10px 0px 10px 0px;
-        background-color: gray; /* temp */
+        /* background-color: gray; temp */
         text-align: center;
     }
 
@@ -51,9 +51,9 @@
         vertical-align: top;
         text-align: left;
         display: inline-block;
-        background-color: darkgray; /* temp */
+        /* background-color: darkgray; temp */
         width: 45%;
-        border: 1px solid black;  /* temp */
+        /* border: 1px solid black;  temp */
     }
 
     .rightsection {
@@ -61,14 +61,15 @@
         vertical-align: top;
         text-align: left;
         display: inline-block;
-        background-color: darkgray;  /* temp */
+        /* background-color: darkgray;  temp */
         width: 45%;
-        border: 1px solid black;  /* temp */
+        /* border: 1px solid black;  temp */
     }
 
     .sectionheader {
         font-size: 20px;
         font-weight: bold;
+        text-decoration: underline;
     }
 
     .submitbutton {
@@ -102,4 +103,12 @@
 
     .messagesrow2 {
         margin-left: 15px;
+    }
+
+    .msgStyle {
+        width: 350px;
+    }
+
+    .sendMessageTable {
+        width:  500px;
     }
