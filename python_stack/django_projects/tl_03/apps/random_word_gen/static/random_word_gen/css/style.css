@@ -17,21 +17,36 @@
         height: 35px;
         text-align: center;
         padding-top: 15px;
+    }
+
+    .middlediv {
+        margin: auto;
+        margin-top: 20px;
+        padding-top: 20px;
+        width: 500px;
+        height: 60px;
         border: 1px solid black;
-        background-color: lightblue;
     }
 
     .bottomdiv {
         margin: auto;
         margin-top: 20px;
         padding-top: 20px;
-        width: 700px;
-        height: 110px;
-        border: 1px solid black;
-        background-color: beige;        
+        width: 100px;
+        height: 60px;
     }
+
 
     .bigtext {
         text-align: center;
         font-size: 36px;
+    }
+
+    .generateBtn {
+        margin: auto;
+        width: 80px;
+        height: 25px;
+        font-size: 14px;
+        box-shadow: 3px 3px 3px;
+        border-radius: 3px;
     }
