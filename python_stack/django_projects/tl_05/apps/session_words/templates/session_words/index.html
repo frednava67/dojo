@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Session Words</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'session_words/css/style.css' %}">
+    <!-- Put the static files in the static folder inside your app.  
+            Django collects files within all static folders and puts them within a single folder -->
+</head>
+
+<body>
+    <div class="toplevelcontainer">
+        <div class="topdiv">
+
+        </div>
+        <div class="middlediv">
+            <div class="leftsection">
+                    <form action="session_words/add_word" class="sessionform">
+                    <p class="addlabel">Add a new word</p>
+                    <input type="text" class="wordbox">
+                    <br>
+                    <p class="choosecolor">Choose a color</p>
+                    <div class="radiodiv">
+                        <input type="radio" name="colorchoice" value="red" checked> Red<br>
+                        <input type="radio" name="colorchoice" value="green"> Green<br>
+                        <input type="radio" name="colorchoice" value="blue"> Blue
+                    </div>
+                    <input type="checkbox" name="big_font" value="1">Show in BIG fonts!<br>
+                    <input class="btnsubmit" type="submit" value="Add to Session">
+                </form>
+            </div>
+            <div class="rightsection">
+                <a href="session_words/clear"> <button class="clearbutton">Clear Session</button></a>
+                <br>
+                <div class="wordslist">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="bottomdiv">
+
+        </div>
+
+    </div>
+</body>
+
+</html>
