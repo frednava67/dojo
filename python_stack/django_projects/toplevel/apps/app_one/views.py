@@ -5,8 +5,11 @@ from django.shortcuts import render, HttpResponse, redirect
 # the index function is called when root is visited
 
 def index(request):
-    response = "Hello, I am your first request!"
-    return HttpResponse(response)
+    context = {
+        "email" : "blog@gmail.com",
+        "name" : "mike"
+    }
+    return render(request, "app_one/index.html", context)
 
 def new(request):
     response = "placeholder to display a new form to create a new blog"
@@ -22,3 +25,15 @@ def edit_blog_number(request, blog_number):
 
 def destroy(request, blog_number):
     return redirect('/')
+
+def create(request):
+    if request.method == "POST":
+        print("*"*50)
+        print(request.POST['name'])
+        print(request.POST['desc'])
+        request.session['name'] = "test"  # more on session below
+        request.session['desc'] = request.POST['desc']
+        print("*"*50)
+        return redirect("/")
+    else:
+        return redirect("/")
