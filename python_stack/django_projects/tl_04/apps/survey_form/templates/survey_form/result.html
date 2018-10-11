@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey Form</title>
+        {% load static %}
+        <!-- The line above tells Django to be ready to listen for static files -->
+        <link rel="stylesheet" href="{% static 'survey_form/css/style.css' %}">
+        <!-- Put the static files in the static folder inside your app.  
+            Django collects files within all static folders and puts them within a single folder -->
+    </head>
+    <body>
+        <div class="toplevelcontainer">
+            <div class="topdiv">
+                Thanks for submitting this form! You have submitted this for {{current_count}} times now.
+            </div>
+            <div class="resultdiv">
+                    <p class="infolabel">Submitted Information</p>
+                    <table class="surveytable">
+                        <tr class="tablerow">
+                            <td>Name:</td>
+                            <td>{{current_name}}</td>
+                        </tr>
+                        <tr class="tablerow">
+                            <td>Dojo Location:</td>
+                            <td>{{current_location}}</td>
+                        </tr>
+                        <tr class="tablerow">
+                            <td>Favorite Language:</td>
+                            <td>{{current_language}}</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class="commentdiv">
+                        <p>Comment:</p>
+                        <div class="commentarea">{{current_comment}}</div>
+                        <a href='/'><button class="formsubmit">Go Back</button></a>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>
