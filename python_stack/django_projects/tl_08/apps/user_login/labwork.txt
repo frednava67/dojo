@@ -1,0 +1,22 @@
+User.objects.create(first_name="Wilma", last_name="Flintstone", email_address="wilmaf@bedrock.usa", age=33)
+User.objects.create(first_name="Barney", last_name="Rubble", email_address="barneyr@bedrock.usa", age=34)
+User.objects.create(first_name="Betty", last_name="Rubble", email_address="bettyr@bedrock.usa", age=33)
+User.objects.create(first_name="Bam Bam", last_name="Rubble", email_address="bambamr@bedrock.usa", age=3)
+User.objects.create(first_name="Pebbles", last_name="Flintstone", email_address="pebblesf@bedrock.usa", age=3)
+User.objects.create(first_name="Great", last_name="Gazoo", email_address="gazoo@outerspace.uk", age=99999)
+User.objects.create(first_name="G", last_name="Gazoo", email_address="gazoo@outerspace.uk", age=99999)
+User.objects.create(first_name="Great", last_name="G", email_address="gazoo@outerspace.uk", age=99999)
+User.objects.create(first_name="Great", last_name="Gazoo", email_address="gazoo.uk", age=99999)
+
+
+User.objects.order_by("created_at").values()
+User.objects.order_by("-created_at").values()
+User.objects.raw("SELECT * from user_login_user")
+first33 = User.objects.raw("SELECT * from user_login_user WHERE age=33")[0]
+
+>>> first33 = User.objects.raw("SELECT * from user_login_user WHERE age=33")[1]
+>>> first33.first_name
+u'Betty'
+
+u = User.objects.get(id=7)
+u.delete()
