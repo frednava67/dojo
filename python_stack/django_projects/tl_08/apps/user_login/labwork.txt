@@ -9,6 +9,24 @@ User.objects.create(first_name="Great", last_name="G", email_address="gazoo@oute
 User.objects.create(first_name="Great", last_name="Gazoo", email_address="gazoo.uk", age=99999)
 
 
+Dojo.objects.create(name="CodingDojo Silicon Valley", city="Mountain View", state="CA")
+Dojo.objects.create(name="CodingDojo Seattle", city="Seattle", state="WA")
+Dojo.objects.create(name="CodingDojo New York", city="New Yorkw", state="NY")
+
+Ninja.objects.create(dojo_id=4, first_name="Perry", last_name="White")
+Ninja.objects.create(dojo_id=4, first_name="Clark", last_name="Kent")
+Ninja.objects.create(dojo_id=4, first_name="Lois", last_name="Lane")
+Ninja.objects.create(dojo_id=5, first_name="Oliver", last_name="Queen")
+Ninja.objects.create(dojo_id=5, first_name="Daniel", last_name="Jackson")
+Ninja.objects.create(dojo_id=5, first_name="Samantha", last_name="Carter")
+Ninja.objects.create(dojo_id=6, first_name="Steve", last_name="Wozniak")
+Ninja.objects.create(dojo_id=6, first_name="Lisa", last_name="Jobs")
+Ninja.objects.create(dojo_id=6, first_name="Arnold", last_name="Schwarzenegger")
+
+
+
+
+
 User.objects.order_by("created_at").values()
 User.objects.order_by("-created_at").values()
 User.objects.raw("SELECT * from user_login_user")
@@ -20,3 +38,51 @@ u'Betty'
 
 u = User.objects.get(id=7)
 u.delete()
+
+
+
+(djangoPy27Env) Freds-MacBook-Pro:tl_08 fred$ python manage.py shell
+Python 2.7.10 (default, Oct  6 2017, 22:29:07)
+[GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.dojo_ninjas.models import *
+>>> Dojo.objects.create(name="CodingDojo Silicon Valley", city="Mountain View", state="CA")
+<Dojo: Dojo object>
+>>> Dojo.objects.create(name="CodingDojo Seattle", city="Seattle", state="WA")
+<Dojo: Dojo object>
+>>> Dojo.objects.create(name="CodingDojo New York", city="New Yorkw", state="NY")
+<Dojo: Dojo object>
+>>> Dojo.objects.values()
+<QuerySet [{'city': u'Mountain View', 'state': u'CA', u'id': 4, 'name': u'CodingDojo Silicon Valley'}, {'city': u'Seattle', 'state': u'WA', u'id': 5, 'name': u'CodingDojo Seattle'}, {'city': u'New Yorkw', 'state': u'NY', u'id': 6, 'name': u'CodingDojo New York'}]>
+>>> Ninja.objects.create(dojo_id=4, first_name="Perry", last_name="White")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(dojo_id=4, first_name="Clark", last_name="Kent")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(dojo_id=4, first_name="Lois", last_name="Lane")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(dojo_id=5, first_name="Oliver", last_name="Queen")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(dojo_id=5, first_name="Daniel", last_name="Jackson")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(dojo_id=5, first_name="Samantha", last_name="Carter")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(dojo_id=6, first_name="Steve", last_name="Wozniak")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(dojo_id=6, first_name="Lisa", last_name="Jobs")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(dojo_id=6, first_name="Arnold", last_name="Schwarzenegger")
+<Ninja: Ninja object>
+>>> Ninja.objects.all()
+<QuerySet [<Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninjaobject>, <Ninja: Ninja object>]>
+>>> Ninja.objects.values()
+<QuerySet [{u'dojo_id': 4, 'first_name': u'Perry', 'last_name': u'White', u'id': 1}, {u'dojo_id': 4, 'first_name': u'Clark', 'last_name': u'Kent', u'id': 2}, {u'dojo_id': 4, 'first_name': u'Lois', 'last_name': u'Lane', u'id': 3}, {u'dojo_id': 5, 'first_name': u'Oliver', 'last_name': u'Queen', u'id': 4}, {u'dojo_id': 5, 'first_name': u'Daniel', 'last_name': u'Jackson', u'id': 5}, {u'dojo_id': 5, 'first_name': u'Samantha', 'last_name': u'Carter', u'id': 6}, {u'dojo_id': 6, 'first_name': u'Steve', 'last_name': u'Wozniak', u'id': 7}, {u'dojo_id': 6, 'first_name': u'Lisa', 'last_name': u'Jobs', u'id': 8}, {u'dojo_id': 6, 'first_name': u'Arnold', 'last_name': u'Schwarzenegger', u'id': 9}]>
+>>> Dojo.objects.first().ninjas.all()
+<QuerySet [<Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>]>
+>>> Dojo.objects.first().ninjas.values()
+<QuerySet [{u'dojo_id': 4, 'first_name': u'Perry', 'last_name': u'White', u'id': 1}, {u'dojo_id': 4, 'first_name': u'Clark', 'last_name': u'Kent', u'id': 2}, {u'dojo_id': 4, 'first_name': u'Lois', 'last_name': u'Lane', u'id': 3}]>
+>>> Dojo.objects.last().ninjas.values()
+<QuerySet [{u'dojo_id': 6, 'first_name': u'Steve', 'last_name': u'Wozniak', u'id': 7}, {u'dojo_id': 6, 'first_name': u'Lisa', 'last_name': u'Jobs', u'id': 8}, {u'dojo_id': 6, 'first_name': u'Arnold', 'last_name': u'Schwarzenegger', u'id': 9}]>
+>>> Ninja.objects.first().dojo
+<Dojo: Dojo object>
+>>>
