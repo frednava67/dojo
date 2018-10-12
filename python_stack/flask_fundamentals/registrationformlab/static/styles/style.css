@@ -1,0 +1,18 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tableLabel {
+    width: 175px;
+}
+
+.alertred {
+    color: red;
+}
+
+tr td {
+    padding: 5px;
+}

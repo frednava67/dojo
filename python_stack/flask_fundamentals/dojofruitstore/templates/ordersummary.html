@@ -1,0 +1,56 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+    <div class="rootcontainer">
+        <div class="header bigleftpadding">
+            <h1>Thank you for your order!</h1>
+        </div>
+
+        <div class="leftsection bigleftpadding">
+            <h4 class="bigtoppadding">We ordered {{total_ordered}} items for you and charged your student account on {{order_date}}</h4>
+            <br>
+            <br>
+            <table class="padded" id="purchasetable">
+                <tr class="padded">
+                    <th class="padded">Fruit Name</th>
+                    <th class="padded">Quantity</th>
+                </tr>
+                <tr class="padded">
+                    <td class="padded">Strawberry</td>
+                    <td class="padded">
+                        {{strawberries_ordered}}
+                    </td class="padded">
+                </tr>
+                <tr class="padded">
+                    <td class="padded">Raspberry</td>
+                    <td class="padded">
+                        {{raspberries_ordered}}
+                    </td>
+                </tr>
+                <tr class="padded">
+                    <td class="padded">Apple</td>
+                    <td class="padded">
+                        {{apples_ordered}}
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <h4 class="bolded underlined bigtoppadding">Your Information</h4>
+            <br>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{order_name}}</td>
+                </tr>
+                <tr>
+                    <td>Your Student ID:</td>
+                    <td>{{ order_student_id }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="empty">.</div>
+    </div>
+</body>

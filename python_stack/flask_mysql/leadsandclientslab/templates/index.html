@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Leads Clients Lab</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+
+<script>
+        window.onload = function () {
+        var options = {
+            title: {
+                text: "Total Leads"
+            },
+            subtitles: [{
+                text: "within a date range"
+            }],
+            animationEnabled: true,
+            data: [{
+                type: "pie",
+                startAngle: 40,
+                toolTipContent: "<b>{label}</b>: {y}",
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabelFontSize: 16,
+                indexLabel: "{label} - {y}",
+                dataPoints: [
+
+            {% for leadline in leadsList %}
+                { y: {{ leadline['total_leads'] }}, label: "{{ leadline['first_name'] }} {{ leadline['last_name'] }}" },
+            {% endfor %}
+                ]
+            }]
+        };
+        $("#chartContainer").CanvasJSChart(options);
+        }
+        </script>
+</head>
+
+<body>
+    <div id="toplevelcontainer">
+        <div class="header">
+            <form action="update_list" method="POST">
+                <p></p>
+                <input type="date" name="from_date">
+                <input type="date" name="to_date">
+                <button type="submit" class="btn btn-primary float-right">Update</button>
+            </form>
+        </div>
+        <div class="listsection">
+            <p>List of all customers and # of leads</p>
+            <table class="table">
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Number of Leads</th>                
+                </tr>
+                {% for leadline in leadsList %}                    
+                    <tr>
+                        <td>{{ leadline['first_name'] }} {{ leadline['last_name'] }}</td>
+                        <td>{{ leadline['total_leads'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="chartsection">
+            <p>Customers and number of new leads</p>
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        </div>
+
+    </div>
+</body>
+
+</html>

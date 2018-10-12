@@ -1,0 +1,52 @@
+/*CSS reset settings here*/
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .toplevelcontainer {
+        width: 1250px;
+        height: 1000px;
+        margin-top: 50px;
+    }
+
+    .topdiv {
+        margin: auto;
+        width: 300px;
+        height: 35px;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .middlediv {
+        margin: auto;
+        margin-top: 20px;
+        padding-top: 20px;
+        width: 500px;
+        height: 60px;
+        border: 1px solid black;
+    }
+
+    .bottomdiv {
+        margin: auto;
+        margin-top: 20px;
+        padding-top: 20px;
+        width: 100px;
+        height: 60px;
+    }
+
+
+    .bigtext {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .generateBtn {
+        margin: auto;
+        width: 80px;
+        height: 25px;
+        font-size: 14px;
+        box-shadow: 3px 3px 3px;
+        border-radius: 3px;
+    }

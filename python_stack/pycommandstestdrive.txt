@@ -1,0 +1,304 @@
+Freds-MacBook-Pro:~ fred$ python3
+Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 26 2018, 23:26:24) 
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
+Freds-MacBook-Pro:~ fred$ pip3 install virtualenv  
+Collecting virtualenv
+  Downloading https://files.pythonhosted.org/packages/b6/30/96a02b2287098b23b875bc8c2f58071c35d2efe84f747b64d523721dc2b5/virtualenv-16.0.0-py2.py3-none-any.whl (1.9MB)
+    100% |████████████████████████████████| 1.9MB 2.4MB/s 
+Installing collected packages: virtualenv
+Successfully installed virtualenv-16.0.0
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Freds-MacBook-Pro:~ fred$ pip install --upgrade pip
+-bash: pip: command not found
+Freds-MacBook-Pro:~ fred$ which pip
+Freds-MacBook-Pro:~ fred$ which pip
+Freds-MacBook-Pro:~ fred$ which pip3
+/Library/Frameworks/Python.framework/Versions/3.7/bin/pip3
+Freds-MacBook-Pro:~ fred$ sudo easy_install pip
+Password:
+Searching for pip
+Reading https://pypi.python.org/simple/pip/
+Best match: pip 18.0
+Downloading https://files.pythonhosted.org/packages/69/81/52b68d0a4de760a2f1979b0931ba7889202f302072cc7a0d614211bc7579/pip-18.0.tar.gz#sha256=a0e11645ee37c90b40c46d607070c4fd583e2cd46231b1c06e389c5e814eed76
+Processing pip-18.0.tar.gz
+Writing /tmp/easy_install-BEV9av/pip-18.0/setup.cfg
+Running pip-18.0/setup.py -q bdist_egg --dist-dir /tmp/easy_install-BEV9av/pip-18.0/egg-dist-tmp-60Q7FO
+/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'python_requires'
+  warnings.warn(msg)
+warning: no previously-included files found matching '.coveragerc'
+warning: no previously-included files found matching '.mailmap'
+warning: no previously-included files found matching '.travis.yml'
+warning: no previously-included files found matching 'tox.ini'
+warning: no previously-included files found matching 'appveyor.yml'
+warning: no previously-included files found matching 'src/pip/_vendor/six'
+warning: no previously-included files found matching 'src/pip/_vendor/six/moves'
+warning: no previously-included files matching '*.pyi' found under directory 'src/pip/_vendor'
+no previously-included directories found matching '.github'
+no previously-included directories found matching 'docs/build'
+no previously-included directories found matching 'news'
+no previously-included directories found matching 'tasks'
+no previously-included directories found matching 'tests'
+no previously-included directories found matching 'tools'
+creating /Library/Python/2.7/site-packages/pip-18.0-py2.7.egg
+Extracting pip-18.0-py2.7.egg to /Library/Python/2.7/site-packages
+Adding pip 18.0 to easy-install.pth file
+Installing pip script to /usr/local/bin
+Installing pip2.7 script to /usr/local/bin
+Installing pip2 script to /usr/local/bin
+
+Installed /Library/Python/2.7/site-packages/pip-18.0-py2.7.egg
+Processing dependencies for pip
+Finished processing dependencies for pip
+Freds-MacBook-Pro:~ fred$ which pip
+/usr/local/bin/pip
+Freds-MacBook-Pro:~ fred$ pip3 install virtualenv
+Requirement already satisfied: virtualenv in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (16.0.0)
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Freds-MacBook-Pro:~ fred$ pip install --upgrade pip
+Requirement already up-to-date: pip in /Library/Python/2.7/site-packages/pip-18.0-py2.7.egg (18.0)
+Freds-MacBook-Pro:~ fred$ pip3 install --upgrade pip
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/5f/25/e52d3f31441505a5f3af41213346e5b6c221c9e086a166f3703d2ddaf940/pip-18.0-py2.py3-none-any.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 5.4MB/s 
+Installing collected packages: pip
+  Found existing installation: pip 10.0.1
+    Uninstalling pip-10.0.1:
+      Successfully uninstalled pip-10.0.1
+Successfully installed pip-18.0
+Freds-MacBook-Pro:~ fred$ cd Dev
+Freds-MacBook-Pro:Dev fred$ ls
+collab	dojo
+Freds-MacBook-Pro:Dev fred$ cd dogo
+-bash: cd: dogo: No such file or directory
+Freds-MacBook-Pro:Dev fred$ cd dojo
+Freds-MacBook-Pro:dojo fred$ mkdir python_stack
+Freds-MacBook-Pro:dojo fred$ cd python_stack/
+Freds-MacBook-Pro:python_stack fred$ mkdir myEnvironments
+Freds-MacBook-Pro:python_stack fred$ virtualenv -p python3 py3Env
+Running virtualenv with interpreter /Library/Frameworks/Python.framework/Versions/3.7/bin/python3
+Using base prefix '/Library/Frameworks/Python.framework/Versions/3.7'
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/virtualenv.py:1041: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+New python executable in /Users/fred/Dev/dojo/python_stack/py3Env/bin/python3
+Also creating executable in /Users/fred/Dev/dojo/python_stack/py3Env/bin/python
+Installing setuptools, pip, wheel...done.
+Freds-MacBook-Pro:python_stack fred$ ls
+myEnvironments	py3Env
+Freds-MacBook-Pro:python_stack fred$ source py3Env/bin/activate
+(py3Env) Freds-MacBook-Pro:python_stack fred$ pip install Django==1.11.9
+Collecting Django==1.11.9
+  Downloading https://files.pythonhosted.org/packages/c8/a6/291039f0ce4b9818e0399359866337e6dfe9c0e23d8d94f00e657edbfcd8/Django-1.11.9-py2.py3-none-any.whl (6.9MB)
+    100% |████████████████████████████████| 7.0MB 2.6MB/s 
+Collecting pytz (from Django==1.11.9)
+  Downloading https://files.pythonhosted.org/packages/30/4e/27c34b62430286c6d59177a0842ed90dc789ce5d1ed740887653b898779a/pytz-2018.5-py2.py3-none-any.whl (510kB)
+    100% |████████████████████████████████| 512kB 24.9MB/s 
+Installing collected packages: pytz, Django
+Successfully installed Django-1.11.9 pytz-2018.5
+(py3Env) Freds-MacBook-Pro:python_stack fred$ pip list
+Package    Version
+---------- -------
+Django     1.11.9 
+pip        18.0   
+pytz       2018.5 
+setuptools 40.4.3 
+wheel      0.32.0 
+(py3Env) Freds-MacBook-Pro:python_stack fred$ deactivate
+Freds-MacBook-Pro:python_stack fred$ pip list
+Package    Version  
+---------- ---------
+certifi    2018.8.24
+pip        18.0     
+setuptools 39.0.1   
+virtualenv 16.0.0   
+Freds-MacBook-Pro:python_stack fred$ pip freeze
+certifi==2018.8.24
+virtualenv==16.0.0
+Freds-MacBook-Pro:python_stack fred$ ls
+myEnvironments	py3Env
+Freds-MacBook-Pro:python_stack fred$ source py3Env/bin/activate
+(py3Env) Freds-MacBook-Pro:python_stack fred$ deactivate
+Freds-MacBook-Pro:python_stack fred$ ls
+myEnvironments
+Freds-MacBook-Pro:python_stack fred$ source py3Env/bin/activate
+-bash: py3Env/bin/activate: No such file or directory
+Freds-MacBook-Pro:python_stack fred$ source myEnvironments/py3Env/bin/activate
+(py3Env) Freds-MacBook-Pro:python_stack fred$ pip freeze
+certifi==2018.8.24
+virtualenv==16.0.0
+(py3Env) Freds-MacBook-Pro:python_stack fred$ pip uninstall Django
+Skipping Django as it is not installed.
+(py3Env) Freds-MacBook-Pro:python_stack fred$ ls
+myEnvironments
+(py3Env) Freds-MacBook-Pro:python_stack fred$ cd myEnvironments/
+(py3Env) Freds-MacBook-Pro:myEnvironments fred$ ls
+py3Env
+(py3Env) Freds-MacBook-Pro:myEnvironments fred$ cd py3Env
+(py3Env) Freds-MacBook-Pro:py3Env fred$ ls
+bin			include			lib			pip-selfcheck.json
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pip uninstall Django
+Skipping Django as it is not installed.
+(py3Env) Freds-MacBook-Pro:py3Env fred$ ls
+bin			include			lib			pip-selfcheck.json
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pip install Django==1.11.9
+Collecting Django==1.11.9
+  Using cached https://files.pythonhosted.org/packages/c8/a6/291039f0ce4b9818e0399359866337e6dfe9c0e23d8d94f00e657edbfcd8/Django-1.11.9-py2.py3-none-any.whl
+Collecting pytz (from Django==1.11.9)
+  Using cached https://files.pythonhosted.org/packages/30/4e/27c34b62430286c6d59177a0842ed90dc789ce5d1ed740887653b898779a/pytz-2018.5-py2.py3-none-any.whl
+Installing collected packages: pytz, Django
+Successfully installed Django-1.11.9 pytz-2018.5
+(py3Env) Freds-MacBook-Pro:py3Env fred$ ls
+bin			include			lib			pip-selfcheck.json
+(py3Env) Freds-MacBook-Pro:py3Env fred$ cd include/
+(py3Env) Freds-MacBook-Pro:include fred$ ls
+python3.7m
+(py3Env) Freds-MacBook-Pro:include fred$ cd ..
+(py3Env) Freds-MacBook-Pro:py3Env fred$ ls
+bin			include			lib			pip-selfcheck.json
+(py3Env) Freds-MacBook-Pro:py3Env fred$ cd bin
+(py3Env) Freds-MacBook-Pro:bin fred$ ls
+__pycache__		activate_this.py	easy_install-3.7	python			wheel
+activate		django-admin		pip			python-config
+activate.csh		django-admin.py		pip3			python3
+activate.fish		easy_install		pip3.7			python3.7
+(py3Env) Freds-MacBook-Pro:bin fred$ cd ..
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pip freeze
+certifi==2018.8.24
+Django==1.11.9
+pytz==2018.5
+virtualenv==16.0.0
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pip uninstall Django
+Uninstalling Django-1.11.9:
+  Would remove:
+    /Library/Frameworks/Python.framework/Versions/3.7/bin/django-admin
+    /Library/Frameworks/Python.framework/Versions/3.7/bin/django-admin.py
+    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Django-1.11.9.dist-info/*
+    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/*
+Proceed (y/n)? y
+  Successfully uninstalled Django-1.11.9
+(py3Env) Freds-MacBook-Pro:py3Env fred$ ls
+bin			include			lib			pip-selfcheck.json
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pip show Django
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pep search Flask
+-bash: pep: command not found
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pip search Flask
+Flask-OrientDB (0.1)        - A Flask extension for using OrientDB with Flask
+Flask-Pure (0.5)            - Flask-Pure - a Flask extension for Pure.css
+Flask-SimpleMDE (0.3.0)     - Flask-SimpleMDE - a Flask extension for SimpleMDE
+sockjs-flask (0.3)          - SockJs for Flask
+Fifty-Flask (1.4.0)         - Flask enhancements.
+Flask-AutoIndex (0.6.2)     - The mod_autoindex for Flask
+Flask-BDEA (0.1.0)          - Flask-BDEA
+Flask-Chargebee (0.0.1)     - Flask-Chargebee
+Flask-Clearbit (0.1.0)      - Flask-Clearbit
+Flask-ElasticUtils (0.1.7)  - ElasticUtils for Flask
+Flask-FileRev (0.1.0)       - Flask-FileRev
+Flask-FontAwesome (0.1.2)   - FontAwesome for Flask
+Flask-Gears (0.2)           - Gears for Flask
+Flask-GripControl (0.0.1)   - Flask GripControl
+Flask-Helper (0.19)         - Flask Helper
+Flask-Intercom (0.1.0)      - Flask-Intercom
+Flask-Keen (0.1.0)          - Flask-Keen
+Flask-Mustache (0.4.1)      - Mustache for Flask
+Flask-NextCaller (0.1.0)    - Flask-NextCaller
+Flask-OAuthlib (0.9.5)      - OAuthlib for Flask
+Flask-PubSub (0.1.0)        - Flask-PubSub
+Flask-Quik (0.1.1)          - Quik for Flask
+Flask-Shopify (0.2)         - Shopify Flask
+Flask-SPF (0.0.0)           - Flask-SPF
+Flask-SRI (0.1.0)           - Flask-SRI
+Flask-Stripe (0.1.0)        - Flask-Stripe
+Flask-TaskTiger (0.0.1)     - Flask TaskTiger
+flask-toolbox (0.0.2)       - A flask toolbox.
+Flask-Turbolinks (0.2.0)    - Turbolinks for Flask.
+Flask-Watson (0.1.0)        - Flask-Watson
+Flask-Weixin (0.5.0)        - Weixin for Flask.
+flask-ws (0.0.1.0)          - Websocket for flask.
+flask-ypaginate (0.1.3)     - Pagination for Flask
+Flask-Diced (0.3)           - Flask-Diced - CRUD views generator for Flask
+Flask-GeoIP (0.1.3)         - Flask-GeoIP -------------  Simple Flask extension for pygeoip.
+flask-myapi (0.1)           - Flask-MyAPI - RESTful support library for Flask
+airbrake-flask (1.0.7)      - airbrake-flask - Airbrake client for Python Flask
+Flask-LoginManager (1.1.6)  - Flask-Loginmanager supports multiple roles and permissions for Flask, inspired by Flask-
+                              Login
+Flask-RESTive (0.0.3)       - Flask RESTive is a REST API Flask extension based on Flask-RESTful & Marshmallow.
+Flask-FlatPagesCut (0.5.1)  - Flask-FlatPagesCut is fork Flask-FlatPages (Provides flat static pages to a Flask
+                              application)
+flask-coffee2js (0.1.2)     - A small Flask extension that adds CoffeScript support to Flask.
+Flask-Collect (1.3.2)       - Flask-Collect -- Collect static files in Flask application
+flask-filters (0.3)         - The Flask Filter to use with flask-restful and Relational DB
+flask-lesscss (0.9.1)       - A small Flask extension that adds LessCSS support to Flask.
+flask-shell (0.1.3)         - Flask extension to improve shell command for the Flask CLI.
+flask-stylus2css (0.1)      - A small Flask extension that adds Stylus support to Flask.
+thunderdome-flask (1.0.2)   - Thunderdome Flask integration
+nailpack-flask (0.1.0)      - Flask support for nails
+protean-flask (0.0.1)       - Protean Flask Extension
+hyperdns-flask (0.9.4)      - HyperDNS Flask Utilities
+lantern-flask (0.0.45)      - Lantern Flask Tools
+Flask-Airbrake (0.0.3)      - Flask extension for Airbrake
+Flask-Alchy (0.5.0)         - Flask extension for alchy
+Flask-Auth (0.85)           - Auth extension for Flask.
+Flask-Autodoc (0.1.2)       - Documentation generator for flask
+Flask-Avatar (0.1.3)        - To generate avatar for flask
+Flask-Bcrypt (0.7.1)        - Brcrypt hashing for Flask.
+flask-blitzdb (0.1)         - Flask extension for blitzdb
+flask-bluelogin (0.2.7)     - Flask BlueLogin module
+flask-blueprint (1.2.2)     - Flask blueprint generator
+flask-bluestatic (0.1.0)    - Flask BlueStatic module
+Flask-Breve (0.2)           - Breve templating with Flask
+Flask-Builder (0.9)         - Flask-application factory
+Flask-Captain (0.1.1)       - Handle webhooks with Flask
+Flask-CAS (1.0.1)           - Flask extension for CAS
+Flask-CassandraDB (0.0.1)   - connect cassandra to flask
+Flask-Celery (2.4.3)        - Celery integration for Flask
+Flask-CKEditor (0.4.2)      - CKEditor integration for Flask.
+Flask-Config (0.2.1)        - Flask configuration class
+Flask-CuttlePool (0.2.0)    - A Flask extension for CuttlePool
+Flask-DBKit (0.0.1)         - dbkit integration for Flask.
+flask-discoverer (0.0.5)    - Flask API autodiscovery
+flask-dynamo (0.1.2)        - DynamoDB integration for Flask.
+Flask-Edits (0.8)           - Editable Content in Flask
+Flask-Enterprise (1.0)      - Enterprise capabilities for Flask
+flask-erppeek (1.0.1)       - ERPPeek Connector for Flask
+Flask-Extension (1.0)       - Demo for flask extension.
+Flask-Failsafe (0.2)        - A failsafe for the Flask reloader
+Flask-Flarf (0.0.5)         - Flask request filtering
+Flask-Fleem (0.0.5)         - Theming for Flask applications
+Flask-FluidDB (0.1)         - Fluiddb access for flask
+Flask-Formspree (0.3)       - formspree flask extension
+Flask-Fulfil (0.2.1)        - Fulfil.IO for Flask Apps
+Flask-Funnel (0.1.10)       - Asset management for Flask.
+flask-handlers (0.0.1)      - Handlers for Flask applications
+Flask-HttpCaching (0.01)    - flask http caching
+flask-hype (0.1.4)          - Flask extension for hype
+flask-iMail (0.1)           - Mailgun integration for Flask.
+flask-journey (0.1.4)       - Flask blueprint management
+flask-kser (0.2.1)          - Flask KSer example
+Flask-Lastuser (0.3.12)     - Flask extension for Lastuser
+Flask-Latch (0.1.0)         - Latch extension for Flask
+flask-logmanager (0.2.10)   - Flask LogManager module
+flask-logsocketio (0.1.4)   - Flask LogSocketIo module
+flask-macros (0.1.5)        - macros for flask projects
+flask-manager (0.0.1)       - A CRUD manager for Flask
+Flask-mongobit (0.1.2)      - MongoBit support in Flask
+Flask-MongoDB (0.0.1a8)     - MongoDB flask extension
+flask-monitor (0.2.6)       - Flask Monitor module
+Flask-MySQLdb (0.2.0)       - MySQLdb extension for Flask
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pip install Django==1.11.9
+Collecting Django==1.11.9
+  Using cached https://files.pythonhosted.org/packages/c8/a6/291039f0ce4b9818e0399359866337e6dfe9c0e23d8d94f00e657edbfcd8/Django-1.11.9-py2.py3-none-any.whl
+Requirement already satisfied: pytz in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from Django==1.11.9) (2018.5)
+Installing collected packages: Django
+Successfully installed Django-1.11.9
+(py3Env) Freds-MacBook-Pro:py3Env fred$ pip freeze > requirements.txt
+(py3Env) Freds-MacBook-Pro:py3Env fred$ ls
+bin			include			lib			pip-selfcheck.json	requirements.txt
+(py3Env) Freds-MacBook-Pro:py3Env fred$ cat requirements.txt 
+certifi==2018.8.24
+Django==1.11.9
+pytz==2018.5
+virtualenv==16.0.0
+(py3Env) Freds-MacBook-Pro:py3Env fred$ 

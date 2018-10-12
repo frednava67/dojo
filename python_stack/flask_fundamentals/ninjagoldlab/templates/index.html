@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Ninja Gold</title>
+    </head>
+    <body>
+        <div class="toplevelcontainer">
+            <div class="margindiv">
+                <div class="headerdiv">
+                    <div class="labeldiv inlineblock">Your Gold:</div>
+                    <input class="inlineblock goldtotal" type="text" name="gold_total" value="{{ winnings }}" readonly>
+                </div>
+                <br>
+                <div class="maindiv text-center">
+                    <div class="choicediv">
+                        <form action="/process_money" method='post'>
+                            <p class="choiceheader">Farm</p>
+                            <p>(earns 10-20 gold)</p>
+                            <br>
+                            <input type='hidden' name='action_choice' value='farm'>
+                            <input class="btn btn-primary" type='submit' value='Find Gold!'>
+                        </form>
+                    </div>
+                    <div class="choicediv">
+                        <form action="/process_money" method='post'>
+                            <p class="choiceheader">Cave</p>
+                            <p>(earns 5-10 gold)</p>
+                            <br>
+                            <input type='hidden' name='action_choice' value='cave'>
+                            <input class="btn btn-primary" type='submit' value='Find Gold!'>
+                        </form>
+                    </div>
+                    <div class="choicediv">
+                        <form action="/process_money" method='post'>
+                            <p class="choiceheader">House</p>
+                            <p>(earns 2-5 gold)</p>
+                            <br>
+                            <input type='hidden' name='action_choice' value='house'>
+                            <input class="btn btn-primary" type='submit' value='Find Gold!'>
+                        </form>
+                    </div>
+                    <div class="choicediv">
+                        <form action="/process_money" method='post'>
+                            <p class="choiceheader">Casino</p>
+                            <p>(earns/takes 0-50 gold)</p>
+                            <br>
+                            <input type='hidden' name='action_choice' value='casino'>
+                            <input class="btn btn-primary" type='submit' value='Find Gold!'>
+                        </form>
+                    </div>
+                </div>
+                <div class="turnlogdiv">
+                    <div class="labeldiv">Activities:</div>
+                    <div class="turnlog">
+                        {% for record in summary %}
+                            <p class="logentry {{ record['result'] }}">{{ record['description'] }}</p>
+                        {% endfor %}
+                    </div>
+                    <br>
+                    <form action="/process_money" method='post'>
+                        <input type='hidden' name='action_choice' value='kaboom'>
+                        <input class="{{ restart }}" type='submit' value='RESTART GAME'>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

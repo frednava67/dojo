@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Index</title>
+        {% load static %}
+        <!-- The line above tells Django to be ready to listen for static files -->
+        <link rel="stylesheet" href="{% static 'time_display/css/style.css' %}">
+        <!-- Put the static files in the static folder inside your app.  
+            Django collects files within all static folders and puts them within a single folder -->
+    </head>
+
+    <body>
+        <div class="toplevelcontainer">
+            <div class="topdiv">The current time and date:</div>
+            <div class="bottomdiv">
+                <p class="bigtext">{{date}}</p>
+                <p class="bigtext">{{time}}</p>                
+            </div>
+
+
+
+        </div>
+    </body>
+</html>

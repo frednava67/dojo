@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Here are the best emails</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="toplevelcontainer">
+        <div class="header">
+            <div class="successdiv center">
+                <p>The email address you entered ( {{ newemail }} )</p>
+                <p>is a VALID email address!  Thank you!</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="summarydiv">
+                <p>Email Addesses Entered:</p>
+                <table class="table table-striped">
+                    {% for emailitem in emailslist %}                    
+                        <tr>
+                            <td>{{ emailitem['emailaddress'] }}</td>
+                            <td>{{ emailitem['created_date'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
