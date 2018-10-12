@@ -27,5 +27,8 @@ def edit(request, blog_number):
     response = "placeholder to display blog " + str(blog_number)
     return HttpResponse(response)
 
+def form(request):
+    return render(request, "form.html")
+
 def destroy(request, blog_number):
     return redirect('/blogs')
