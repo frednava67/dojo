@@ -174,3 +174,117 @@ TypeError: first() got an unexpected keyword argument 'id'
 3
 >>> Author.objects.get(id=2).books.values()
 <QuerySet [{'updated_at': datetime.datetime(2018, 10, 13, 0, 30, 15, 43735, tzinfo=<UTC>), 'created_at': datetime.datetime(2018, 10, 13, 0, 23, 53, 228087, tzinfo=<UTC>), 'desc': u'The definitive work on the subject of C Sharp', u'id': 1, 'name': u'C Sharp'}, {'updated_at': datetime.datetime(2018, 10, 13, 0, 32, 21, 394803, tzinfo=<UTC>), 'created_at': datetime.datetime(2018, 10, 13, 0, 32, 21, 394748, tzinfo=<UTC>), 'desc': u'A beginners guide to the Java Programming Language', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2018, 10, 13, 0, 34, 2, 175699, tzinfo=<UTC>), 'created_at': datetime.datetime(2018, 10, 13, 0, 34, 2, 175655, tzinfo=<UTC>), 'desc': u'A Hacker-Centric tome on Python', u'id': 3, 'name': u'Python'}]>
+
+------------------------ LIKES BOOKS ------------------------
+
+User.objects.create(first_name="Wilma", last_name="Flintstone", email="wilmaf@bedrock.usa")
+User.objects.create(first_name="Barney", last_name="Rubble", email="barneyr@bedrock.usa")
+User.objects.create(first_name="Betty", last_name="Rubble", email="bettyr@bedrock.usa")
+User.objects.create(first_name="Bam Bam", last_name="Rubble", email="bambamr@bedrock.usa")
+User.objects.create(first_name="Pebbles", last_name="Flintstone", email="pebblesf@bedrock.usa")
+User.objects.create(first_name="Great", last_name="Gazoo", email="gazoo@outerspace.uk")
+
+Book.objects.create(name="C Sharp", desc="The definitive work on the subject of C Sharp", uploaded_by_id=1)
+Book.objects.create(name="Java", desc="A beginners guide to the Java Programming Language", uploaded_by_id=2)
+Book.objects.create(name="Python", desc="A Hacker-Centric tome on Python", uploaded_by_id=3)
+Book.objects.create(name="PHP", desc="If you only read one book on PHP, make it this one", uploaded_by_id=4)
+Book.objects.create(name="Ruby", desc="There are plenty of books about Ruby, this is right up there with the best", uploaded_by_id=5)
+Book.objects.create(name="COBOL", desc="If you learn this language, you can always get a job at an old bank!", uploaded_by_id=6)
+Book.objects.create(name="Pascal", desc="This book was written for those people who like dead languages", uploaded_by_id=2)
+Book.objects.create(name="Classic Visual Basic", desc="Make sure no one sees you buying this book, but take it home and treasure it!", uploaded_by_id=4)
+Book.objects.create(name="Lisp", desc="If you need this book, you should think seriously about your life choices.", uploaded_by=User.objects.get(id=6))
+
+
+>>> Book.objects.create(name="C Sharp", desc="The definitive work on the subject of C Sharp", uploaded_by_id=1)
+<Book: Book object>
+>>> Book.objects.create(name="Java", desc="A beginners guide to the Java Programming Language", uploaded_by_id=2)
+<Book: Book object>
+>>> Book.objects.create(name="Python", desc="A Hacker-Centric tome on Python", uploaded_by_id=3)
+<Book: Book object>
+>>> Book.objects.create(name="PHP", desc="If you only read one book on PHP, make it this one", uploaded_by_id=4)
+<Book: Book object>
+>>> Book.objects.create(name="Ruby", desc="There are plenty of books about Ruby, this is right up there with the best", uploaded_by_id=5)
+<Book: Book object>
+>>> Book.objects.create(name="COBOL", desc="If you learn this language, you can always get a job at an old bank!", uploaded_by_id=6)
+<Book: Book object>
+>>> Book.objects.create(name="Pascal", desc="This book was written for those people who like dead languages", uploaded_by_id=2)
+<Book: Book object>
+>>> Book.objects.create(name="Classic Visual Basic", desc="Make sure no one sees you buying this book, but take it home and treasure it!", uploaded_by_id=4)
+<Book: Book object>
+>>> Book.objects.count()
+8
+>>> Book.objects.first().uploaded_by
+<User: User object>
+>>> Book.objects.first().uploaded_by.values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'User' object has no attribute 'values'
+>>> Book.objects.first().values(0
+... Book.objects.first().values()
+  File "<console>", line 2
+    Book.objects.first().values()
+       ^
+SyntaxError: invalid syntax
+>>> b = Book.objects.first()
+>>> b.name
+u'C Sharp'
+>>> Book.objects.first().name
+u'C Sharp'
+>>> Book.objects.first().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'values'
+>>> b = Book.objects.first()
+>>> b.values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'values'
+>>> b = Book.objects.values()
+>>> b
+<QuerySet [{'name': u'C Sharp', 'created_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72745, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72822, tzinfo=<UTC>), u'uploaded_by_id': 1, u'id': 1, 'desc': u'The definitive work on the subject of C Sharp'}, {'name': u'Java', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 15, 911359, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 15, 911435, tzinfo=<UTC>), u'uploaded_by_id': 2, u'id': 2, 'desc': u'A beginners guide to the Java Programming Language'}, {'name': u'Python', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 23, 159297, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 23, 159358, tzinfo=<UTC>), u'uploaded_by_id': 3, u'id': 3, 'desc': u'A Hacker-Centric tome on Python'}, {'name': u'PHP', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 30, 279205, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 30, 279282, tzinfo=<UTC>), u'uploaded_by_id': 4, u'id': 4, 'desc': u'If you only read one book on PHP, make it this one'}, {'name': u'Ruby', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 38, 406215, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 38, 406278, tzinfo=<UTC>), u'uploaded_by_id': 5, u'id': 5, 'desc': u'There are plenty of books about Ruby, this is right up there with the best'}, {'name': u'COBOL', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 46, 807427, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 46, 807502, tzinfo=<UTC>), u'uploaded_by_id': 6, u'id': 6, 'desc': u'If you learn this language, you can always get a job at an old bank!'}, {'name': u'Pascal', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 55, 383610, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 55, 383708, tzinfo=<UTC>), u'uploaded_by_id': 2, u'id': 7, 'desc': u'This book was written for those people who like dead languages'}, {'name': u'Classic Visual Basic', 'created_at': datetime.datetime(2018, 10, 13, 1, 47, 7, 207590, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 47, 7, 207664, tzinfo=<UTC>), u'uploaded_by_id': 4, u'id': 8, 'desc': u'Make sure no one sees you buying this book, but take it home and treasure it!'}]>
+>>> Book.objects.first().uploaded_by_id
+1
+>>> Book.objects.create(name="Lisp", desc="If you need this book, you should think seriously about your life choices.", uploaded_by=User.objects.get(id=6))
+<Book: Book object>
+>>> Book.objects.first().uploaded_by
+<User: User object>
+>>> Book.objects.first().uploaded_by.count()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'User' object has no attribute 'count'
+>>> Book.objects.values()
+<QuerySet [{'name': u'C Sharp', 'created_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72745, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72822, tzinfo=<UTC>), u'uploaded_by_id': 1, u'id': 1, 'desc': u'The definitive work on the subject of C Sharp'}, {'name': u'Java', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 15, 911359, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 15, 911435, tzinfo=<UTC>), u'uploaded_by_id': 2, u'id': 2, 'desc': u'A beginners guide to the Java Programming Language'}, {'name': u'Python', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 23, 159297, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 23, 159358, tzinfo=<UTC>), u'uploaded_by_id': 3, u'id': 3, 'desc': u'A Hacker-Centric tome on Python'}, {'name': u'PHP', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 30, 279205, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 30, 279282, tzinfo=<UTC>), u'uploaded_by_id': 4, u'id': 4, 'desc': u'If you only read one book on PHP, make it this one'}, {'name': u'Ruby', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 38, 406215, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 38, 406278, tzinfo=<UTC>), u'uploaded_by_id': 5, u'id': 5, 'desc': u'There are plenty of books about Ruby, this is right up there with the best'}, {'name': u'COBOL', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 46, 807427, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 46, 807502, tzinfo=<UTC>), u'uploaded_by_id': 6, u'id': 6, 'desc': u'If you learn this language, you can always get a job at an old bank!'}, {'name': u'Pascal', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 55, 383610, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 55, 383708, tzinfo=<UTC>), u'uploaded_by_id': 2, u'id': 7, 'desc': u'This book was written for those people who like dead languages'}, {'name': u'Classic Visual Basic', 'created_at': datetime.datetime(2018, 10, 13, 1, 47, 7, 207590, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 47, 7, 207664, tzinfo=<UTC>), u'uploaded_by_id': 4, u'id': 8, 'desc': u'Make sure no one sees you buying this book, but take it home and treasure it!'}, {'name': u'Lisp', 'created_at': datetime.datetime(2018, 10, 13, 2, 4, 45, 538963, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 2, 4, 45, 539018, tzinfo=<UTC>), u'uploaded_by_id': 6, u'id': 9, 'desc': u'If you need this book, you should think seriously about your life choices.'}]>
+>>> first_user = Book.objects.first().uploaded_by
+>>> first_user.values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'User' object has no attribute 'values'
+>>> first_user.first_name
+u'Wilma'
+>>> books_list = User.objects.get(id=6).books_uploaded
+>>> books_list.values()
+<QuerySet [{'name': u'COBOL', 'created_at': datetime.datetime(2018, 10, 13, 1, 46, 46, 807427, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 46, 46, 807502, tzinfo=<UTC>), u'uploaded_by_id': 6, u'id': 6, 'desc': u'If you learn this language, you can always get a job at an old bank!'}, {'name': u'Lisp', 'created_at': datetime.datetime(2018, 10, 13, 2, 4, 45, 538963, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 2, 4, 45, 539018, tzinfo=<UTC>), u'uploaded_by_id': 6, u'id': 9, 'desc': u'If you need this book, you should think seriously about your life choices.'}]>
+>>> User.objects.first().liked_books
+<django.db.models.fields.related_descriptors.ManyRelatedManager object at 0x10fb155d0>
+>>> User.objects.first().liked_books.values()
+<QuerySet []>
+>>> b1 = Book.objects.first()
+>>> User.objects.first().liked_books.add(b1)
+>>> User.objects.first().liked_books.values()
+<QuerySet [{'name': u'C Sharp', 'created_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72745, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72822, tzinfo=<UTC>), u'uploaded_by_id': 1, u'id': 1, 'desc': u'The definitive work on the subject of C Sharp'}]>
+>>> User.objects.first().liked_books.add(Book.objects.last())
+>>> User.objects.first().liked_books.values()
+<QuerySet [{'name': u'C Sharp', 'created_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72745, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72822, tzinfo=<UTC>), u'uploaded_by_id': 1, u'id': 1, 'desc': u'The definitive work on the subject of C Sharp'}, {'name': u'Lisp', 'created_at': datetime.datetime(2018, 10, 13, 2, 4, 45, 538963, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 2, 4, 45, 539018, tzinfo=<UTC>), u'uploaded_by_id': 6, u'id': 9, 'desc': u'If you need this book, you should think seriously about your life choices.'}]>
+>>> Book.objects.last().liked_books.values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'liked_books'
+>>> Book.objects.last().liked_books
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'liked_books'
+>>> User.objects.last().liked_books.values()
+<QuerySet []>
+>>> User.objects.first().liked_books.values()
+<QuerySet [{'name': u'C Sharp', 'created_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72745, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 1, 45, 54, 72822, tzinfo=<UTC>), u'uploaded_by_id': 1, u'id': 1, 'desc': u'The definitive work on the subject of C Sharp'}, {'name': u'Lisp', 'created_at': datetime.datetime(2018, 10, 13, 2, 4, 45, 538963, tzinfo=<UTC>), 'updated_at': datetime.datetime(2018, 10, 13, 2, 4, 45, 539018, tzinfo=<UTC>), u'uploaded_by_id': 6, u'id': 9, 'desc': u'If you need this book, you should think seriously about your life choices.'}]>
+>>>
