@@ -27,7 +27,7 @@
 }
 
 .fncol-1 {
-    width: 50px;
+    width: 100px;
 }
 
 .fncol-2 {
@@ -39,5 +39,8 @@
 }
 
 .formtextbox {
-    width: auto;
+    width: 100%;
+}
+td {
+    padding: 10px;
 }
