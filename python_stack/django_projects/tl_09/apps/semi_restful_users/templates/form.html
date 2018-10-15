@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test Form to practice CSS</title>
+        {% load static %}
+        <!-- The line above tells Django to be ready to listen for static files -->
+        <link rel="stylesheet" href="{% static 'blogs/css/style.css' %}">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+        <!-- Put the static files in the static folder inside your app.  
+            Django collects files within all static folders and puts them within a single folder -->
+    </head>
+    <body>
+        <div class="toplevelcontainer">
+            <div class="topdiv">
+            </div>
+            <div class="middlediv">
+                <div class="tablediv">
+                    <table class="formtable">
+                        <thead>
+                            <tr>
+                                <th class="fncol-1">Column One Head</th>
+                                <th class="fncol-2">Column Two Head</th>
+                                <th class="fncol-3">Column Three Head</th>                                                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Column One Body</td>
+                                <td>Column Two Body</td>
+                                <td>Column Three Body</td>                                                                
+                            </tr>
+                            <tr>
+                                    <td>Column One Body</td>
+                                    <td><input type="text" class="formtextbox"></td>
+                                    <td>Column Three Body</td>                                                                
+                            </tr>
+                            <tr>
+                                    <td>Column One Body</td>
+                                    <td>Column Two Body</td>
+                                    <td>Column Three Body</td>                                                                
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="bottomdiv">
+
+
+            </div>
+        </div>
+    </body>
+</html>

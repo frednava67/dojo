@@ -1,0 +1,75 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.toplevelcontainer {
+    width: 1000px;
+    height: 1000px;
+    margin-top: 50px;
+}
+
+.userdiv {
+    margin-left: 20px;
+}
+
+.header {
+    font-size: 36px;
+    margin-left: 20px;
+}
+
+.footer {
+    margin: 20px 0px 0px 20px;
+}
+
+.tablediv {
+    margin-left: 40px;
+}
+
+.formtable {
+    width: 880px;
+    border: 2px solid black;
+}
+
+.submitstyle {
+    width: 100px;
+    background-color: #5a7dae;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    color: white;
+}
+
+.fncol-1 {
+    width: 100px;
+}
+
+.fncol-2 {
+    width: 150px;    
+}
+
+.fncol-3 {
+    width: 300px;    
+}
+
+.formtextbox {
+    width: 100%;
+}
+
+td {
+    padding-left: 2px;
+    border-right: 2px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #cccccc;
+}
+
+.actiontext {
+    padding-left: 5px;
+}

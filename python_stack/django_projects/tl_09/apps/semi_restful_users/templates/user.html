@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'semi_restful_users/css/style.css' %}">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="header">User {{user.id}}</div>
+    <div class="userdiv">
+        <p class="userinfo">Full Name: {{user.first_name}} {{user.last_name}}</p>
+        <p class="userinfo">Email: {{user.email}}</p>
+        <p class="userinfo">Create at: {{user.created_at}}</p>
+    </div>
+    <div class="footer">
+        <a href="{{user.id}}/edit">Edit</a> | 
+        <a href="delete">Delete</a> | 
+        <a href="../../">Go Back</a>        
+    </div>
+</body>
+
+</html>
