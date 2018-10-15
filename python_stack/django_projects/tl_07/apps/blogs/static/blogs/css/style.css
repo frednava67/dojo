@@ -1,0 +1,43 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.toplevelcontainer {
+    width: 1000px;
+    height: 1000px;
+    margin-top: 50px;
+}
+
+.middlediv {
+    margin: auto; /* when the parent div is wider than the child, this will center the child div within the parent */
+    width: 900px;
+    height: 500px;
+    background-color: beige;
+    border: 1px solid black;
+}
+
+.formtable {
+    margin: auto;
+    width: 880px;
+    table-layout: auto;
+    border: 1px dotted red;
+}
+
+.fncol-1 {
+    width: 50px;
+}
+
+.fncol-2 {
+    width: 150px;    
+}
+
+.fncol-3 {
+    width: 300px;    
+}
+
+.formtextbox {
+    width: auto;
+}
