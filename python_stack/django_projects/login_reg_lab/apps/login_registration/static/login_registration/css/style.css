@@ -1,0 +1,42 @@
+
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headerlabel {
+    margin: 20px 0px 20px 20px;
+    font-size: 26px;
+}
+
+.formlabel {
+    text-align: right;
+}
+
+.fncol-1 {
+    width: 100px;
+}
+
+.fncol-2 {
+    width: 200px;    
+}
+
+.fncol-3 {
+    width: 400px;    
+}
+
+.formtextbox {
+    margin: 0px 0px 10px 10px;
+    border: 2px solid black;
+}
+
+.submitbtn {
+    width: 75px;
+    float: right;
+    color: white;
+    border: 2px solid black;
+    box-shadow: 3px 3px 3px black;
+    background-color: #5a7dae;
+}
