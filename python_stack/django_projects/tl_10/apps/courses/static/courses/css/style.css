@@ -1,0 +1,109 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headerlabel {
+    font-size: 24px;
+    margin: 20px 0px 0px 50px;
+}
+
+.tablediv {
+    margin-left: 50px;
+}
+
+.formtable {
+    width: 500px;
+}
+
+.coursetable {
+    width: 1000px;
+    border: 2px solid black;
+}
+
+.courseheader {
+    background-color: #cccccc;
+    border-right: 2px solid black;
+}
+
+.rowcell {
+    border-right: 2px solid black;
+    padding-left: 5px;
+}
+
+.courserow {
+    padding-left: 5px;
+}
+
+.courserow:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.submitstyle {
+    width: 50px;
+    background-color: green;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    color: white;
+    float: right;
+}
+
+.plainbtnstyle {
+    width: 50px;
+    margin-right: 20px;
+    background-color: #cccccc;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+}
+
+.deletebtnstyle {
+    width: 250px;
+    background-color: #980300;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    color: white;
+}
+
+
+
+
+
+.fncol-1 {
+    width: 50px;
+}
+
+.fncol-2 {
+    width: 200px;    
+}
+
+.fncol-3 {
+    width: 250px;
+}
+
+.fncol-4 {
+    width: 400px;    
+}
+
+.controlwidth {
+    width: 100%;    
+}
+
+.formtextbox {
+    width: 100%;
+}
+
+.descstyle {
+    margin: auto;
+    width: 100%;
+}
+
+td {
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+.actiontext {
+    padding-left: 5px;
+}
