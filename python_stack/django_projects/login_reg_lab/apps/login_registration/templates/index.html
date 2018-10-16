@@ -35,13 +35,13 @@
                             <div class="formlabel fncol-1">First Name:</div>
                         </td>
                         <td>
-                            <input type="text" class="formtextbox fncol-2" name="first_name">
+                            <input type="text" class="formtextbox fncol-2" name="first_name" value="{{ first_name }}">
                         </td>
                         <td>
                             <div class="formflash fncol-3">
                                 {% if messages %}
                                     {% for message in messages %}
-                                    {% if "fname" in message.tags %} {{ message }} {% endif %}
+                                        {% if "fname" in message.tags %} {{ message }} {% endif %}
                                     {% endfor %}
                                 {% endif %}
                             </div>
@@ -52,10 +52,16 @@
                             <div class="formlabel fncol-1">Last Name:</div>
                         </td>
                         <td>
-                            <input type="text" class="formtextbox fncol-2" name="last_name">
+                            <input type="text" class="formtextbox fncol-2" name="last_name" value="{{ last_name }}">
                         </td>
                         <td>
-                                <div class="formflash fncol-3"></div>
+                            <div class="formflash fncol-3">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if "lname" in message.tags %} {{ message }} {% endif %}
+                                    {% endfor %}
+                                {% endif %}                                
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -63,10 +69,16 @@
                             <div class="formlabel fncol-1">Email:</div>
                         </td>
                         <td>
-                            <input type="text" class="formtextbox fncol-2" name="email">
+                            <input type="text" class="formtextbox fncol-2" name="email" value="{{ email }}">
                         </td>
                         <td>
-                                <div class="formflash fncol-3"></div>
+                            <div class="formflash fncol-3">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if "email" in message.tags %} {{ message }} {% endif %}
+                                    {% endfor %}
+                                {% endif %}                                    
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -77,7 +89,13 @@
                             <input type="password" class="formtextbox fncol-2" name="password">
                         </td>
                         <td>
-                                <div class="formflash fncol-3"></div>
+                            <div class="formflash fncol-3">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if "pwd" in message.tags %} {{ message }} {% endif %}
+                                    {% endfor %}
+                                {% endif %}                                  
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -117,7 +135,16 @@
                             <div class="formlabel fncol-1">Email:</div>
                         </td>
                         <td>
-                            <input type="text" class="formtextbox fncol-2" name="email">
+                            <input type="text" class="formtextbox fncol-2" name="loginemail">
+                        </td>
+                        <td>
+                            <div class="formflash fncol-3">
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if "login" in message.tags %} {{ message }} {% endif %}
+                                {% endfor %}
+                            {% endif %}     
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -125,7 +152,10 @@
                             <div class="formlabel fncol-1">Password:</div>
                         </td>
                         <td>
-                            <input type="password" class="formtextbox fncol-2" name="password">
+                            <input type="password" class="formtextbox fncol-2" name="loginpassword">
+                        </td>
+                        <td>
+                                <div class="formflash fncol-3"></div>
                         </td>
                     </tr>
                     <tr>

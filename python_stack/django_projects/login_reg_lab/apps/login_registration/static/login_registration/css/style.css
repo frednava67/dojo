@@ -11,6 +11,12 @@
     font-size: 26px;
 }
 
+.secondline {
+    margin: 20px 0px 20px 20px;
+    font-size: 16px;
+    color: green;
+}
+
 .formlabel {
     text-align: right;
 }
@@ -24,7 +30,7 @@
 }
 
 .fncol-3 {
-    width: 400px;    
+    width: 500px;    
 }
 
 .formtextbox {
@@ -39,4 +45,10 @@
     border: 2px solid black;
     box-shadow: 3px 3px 3px black;
     background-color: #5a7dae;
+}
+
+.formflash {
+    margin-left: 10px;
+    color: red;
+    font-size: 12px;
 }
