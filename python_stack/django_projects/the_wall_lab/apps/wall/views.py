@@ -5,8 +5,11 @@ from django.shortcuts import render, HttpResponse, redirect
 from apps.wall.models import User, Message, Comment
 
 # the index function is called when root is visited
-def wall(request):
-    print("wall/wall()")
+def thewall(request):
+    print("wall/thewall()")
+
+    if "first_name" not in request.session:
+        return redirect("login_registration")
 
     all_messages_comments = []
     comments_dict = []
@@ -23,6 +26,7 @@ def wall(request):
             comments_dict.append(comments_dict_item)
 
         message_dict = {
+                            "message_id": message.id,
                             "poster": message.user.first_name + " " + message.user.last_name,
                             "posted_at": message.created_at,
                             "message": message.message,
@@ -33,10 +37,42 @@ def wall(request):
 
     context = {
         "first_name": request.session["first_name"],
+        "user_id": request.session["user_id"],
         "messagesList": all_messages_comments
     }
 
     return render(request, "wall.html", context)
+
+def processpost(request):
+    print("wall/processpost()")
+
+    if request.method == "POST":
+        u_id = int(request.POST['user_id'])
+        content = request.POST['content']
+        print(u_id, content)
+        Message.objects.create(user_id=u_id, message=content)
+
+    return redirect(thewall)
+
+def processcomment(request):
+    print("wall/processcomment()")
+
+    if request.method == "POST":
+        u_id = int(request.POST['user_id'])
+        m_id = int(request.POST['message_id'])
+        content = request.POST['content']
+
+        print(u_id, m_id, content)
+
+        Comment.objects.create(message_id=m_id, user_id=u_id, comment=content)
+
+    return redirect(thewall)
+
+def logoff(request):
+    print("wall/logoff()")
+    request.session.clear()
+    return redirect("login_registration/")
+
 
 
 def runonce(request):

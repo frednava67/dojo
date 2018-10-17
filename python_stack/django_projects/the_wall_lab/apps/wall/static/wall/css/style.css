@@ -11,6 +11,11 @@
     font-size: 26px;
 }
 
+.headerwelcome {
+    width: 65%;
+    text-align: right;
+}
+
 .topdiv {
     height: 100px;
     background-color: azure;
@@ -18,8 +23,17 @@
 }
 
 .headerp {
+    display: inline-block;
     padding: 20px 0px 20px 20px;
     font-size: 36px;
+}
+
+.headerlogoff {
+    display: inline;
+    padding: 40px 10px 20px 20px;
+    float: right;
+    vertical-align: middle;
+
 }
 
 .secondline {

@@ -13,15 +13,17 @@ NAME_REGEX  = re.compile('[0-9]')
 # the index function is called when root is visited
 
 def index(request):
-    print("index()")
+    print("login_registration/index()")
 
     if "last_name" in request.session:
-        context = {
+        print("found last_name")
+        context = {   
             "first_name": request.session["first_name"],
             "last_name": request.session["last_name"],
             "email": request.session["email"]
         }
     else:
+        print("last_name WAS NOT FOUND")
         context = {
             "first_name": "",
             "last_name": "",
@@ -31,7 +33,7 @@ def index(request):
     return render(request, "index.html", context)
 
 def process_registration(request):
-    print("process_registration()")
+    print("login_registration/process_registration()")
 
     bFlashMessage = False
 
@@ -87,12 +89,13 @@ def process_registration(request):
             request.session["first_name"] = f_name
             passwordToHash = pwd
             pwhash = bcrypt.hashpw(passwordToHash.encode(), bcrypt.gensalt())
-            User.objects.create(first_name=f_name, last_name=l_name, email=email, pwhashval=pwhash.decode())
+            new_id = User.objects.create(first_name=f_name, last_name=l_name, email=email, pwhashval=pwhash.decode())
+            request.session["user_id"] = new_id
 
     return redirect("wall/")    
 
 def process_login(request):
-    print("process_login")
+    print("login_registration/process_login")
 
     if request.method == "POST":
         print("INSIDE IF")
@@ -101,26 +104,32 @@ def process_login(request):
         loginpassword = request.POST['loginpassword']
         obj = User.objects.filter(email=loginemail)
         i = obj.count()
-        tempHash = obj[0].pwhashval
-        print(tempHash)
-        bPasswordCheck = bcrypt.checkpw(loginpassword.encode(), tempHash.encode())
-        print("bPasswordCheck", bPasswordCheck)
-        request.session.clear()
-        if (i == 0 or bPasswordCheck != True):
+        if (i > 0):
+            tempHash = obj[0].pwhashval
+            print(tempHash)
+            bPasswordCheck = bcrypt.checkpw(loginpassword.encode(), tempHash.encode())
+            print("bPasswordCheck", bPasswordCheck)
+            request.session.clear()
+            if (i == 0 or bPasswordCheck != True):
+                request.session["loginemail"] = loginemail                        
+                messages.error(request, u"You were not able to login.", 'login')
+                return redirect(index)
+            else:
+                request.session["first_name"] = obj[0].first_name
+                request.session["user_id"] = obj[0].id
+        else:
             request.session["loginemail"] = loginemail                        
             messages.error(request, u"You were not able to login.", 'login')
             return redirect(index)
-        else:
-            request.session["first_name"] = obj[0].first_name
 
-    return redirect('/wall')       
+    return redirect("/")       
 
-def runonce(request):
-    print("runonce()")
-    #password
-    badpassword1 = "password"
-    hash1 = bcrypt.hashpw(badpassword1.encode(), bcrypt.gensalt())
-    print(User.objects.create(first_name="Foghorn", last_name="Leghorn", email="rooster@farm.com", pwhashval=hash1.decode()))
+# def runonce(request):
+#     print("runonce()")
+#     #password
+#     badpassword1 = "password"
+#     hash1 = bcrypt.hashpw(badpassword1.encode(), bcrypt.gensalt())
+#     print(User.objects.create(first_name="Foghorn", last_name="Leghorn", email="rooster@farm.com", pwhashval=hash1.decode()))
 
-    response = "Hello, I ran your RUNONCE request!"
-    return HttpResponse(response)
+#     response = "Hello, I ran your RUNONCE request!"
+#     return HttpResponse(response)

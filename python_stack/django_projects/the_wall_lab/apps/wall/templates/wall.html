@@ -23,11 +23,13 @@
 
 <body>
     <div class="topdiv">
-        <p class="headerp">CodingDojo Wall! Welcome, {{ first_name }}</p>
+        <p class="headerp">CodingDojo Wall!</p>
+        <label class="headerwelcome">Welcome, {{ first_name }}</label>
+        <a class="headerlogoff" href="logoff">Log off</a>
     </div>
     <div class="posterdiv">
         <div class="posttableenclosure">
-            <form action="process_message" class="posterform">
+            <form action="processpost" class="posterform" method="POST">
                 <table class="postertable fullwidth">
                     {% csrf_token %}
                     <tr>
@@ -42,6 +44,7 @@
                     </tr>
                     <tr>
                         <td>
+                            <input type="hidden" value="{{ user_id }}" name="user_id">
                             <input class="postbtn" type="submit" name="submit" value="Post a message">
                         </td>
                     </tr>
@@ -68,7 +71,7 @@
                         <tr>
                             <td>
                                 <div class="commentsenclosure">
-                                    <form action="process_comment" class="fullwidth">
+                                    <form action="processcomment" class="fullwidth" method="POST">
                                         <table class="commentortable fullwidth">
                                             {% csrf_token %}
                                             <tr class="fullwidth">
@@ -83,6 +86,8 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <input type="hidden" value="{{ messageItem.message_id }}" name="message_id">
+                                                    <input type="hidden" value="{{ user_id }}" name="user_id">
                                                     <input class="commentbtn" type="submit" name="submit" value="Post a comment">
                                                 </td>
                                             </tr>
