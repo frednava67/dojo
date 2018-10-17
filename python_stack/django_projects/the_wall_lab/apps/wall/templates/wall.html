@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CodingDojo Wall</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'wall/css/style.css' %}">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="topdiv">
+        <p class="headerp">CodingDojo Wall! Welcome, {{ first_name }}</p>
+    </div>
+    <div class="posterdiv">
+        <div class="posttableenclosure">
+            <form action="process_message" class="posterform">
+                <table class="postertable fullwidth">
+                    {% csrf_token %}
+                    <tr>
+                        <td>
+                            <div class="postheader">Post a message</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            <textarea name="content" class="fullwidth" cols="30" rows="6"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="postbtn" type="submit" name="submit" value="Post a message">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+        </div>
+    </div>
+    <div class="messagesdiv">
+        <div class="messagesenclosure">
+            <table class="messagestable">
+                {% for messageItem in messagesList %}
+                <tr>
+                    <td class="messagesrow fullwidth"><span class="boldedheader">{{ messageItem.poster }} - {{ messageItem.posted_at }}</span><p class="messagetext">{{ messageItem.message }}</p></td>
+                </tr>
+                <tr>
+                    <table class="messagestable fullwidth">
+                        {% for comment in messageItem.comments %}
+                        <tr>
+                            <td class="commentsrow fullwidth"><span class="boldedheader">{{ comment.commentor }} - {{ comment.commented_at }}</span><p class="commenttext">{{ comment.comment }}</p></td>
+                        </tr>
+                        {% endfor %}
+
+                        <tr>
+                            <td>
+                                <div class="commentsenclosure">
+                                    <form action="process_comment" class="fullwidth">
+                                        <table class="commentortable fullwidth">
+                                            {% csrf_token %}
+                                            <tr class="fullwidth">
+                                                <td>
+                                                    <div class="commentheader">Post a comment</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <textarea name="content" class="fullwidth" cols="30" rows="4"></textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input class="commentbtn" type="submit" name="submit" value="Post a comment">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <br>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
