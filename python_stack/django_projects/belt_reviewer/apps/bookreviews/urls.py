@@ -3,8 +3,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    # url(r'^process_registration$', views.process_registration),
-    # url(r'^process_login$', views.process_login),    
-    url(r'^books$', views.show_home),        
+    url(r'^books$', views.show_home),  
+    url(r'^books/add$ß', views.add),     
+    url(r'^logoff$', views.logoff),        
     url(r'^reset$', views.reset),            
 ]

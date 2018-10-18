@@ -15,67 +15,51 @@
 <body>
     <div class="topdiv">
         <p class="headerp">Welcome!</p>
+        <p><a href="books/add">Add Book and Review</a></p>        
+        <p><a href="logoff">Logoff</a></p>
     </div>
     <div class="leftdiv">
         <p class="sectionheader">Recent Book Reviews:</p>
         <br>
-        <br>
         <table class="recentreviews">
             {% for review in threerecentreviews %}
-            <tr class="booktitle">
-                <td>
-                    {{ review.book.name}}
-                </td> 
-            </tr>
-            <tr class="bookrating">
+                <tr>
                     <td>
-                        {{ review.rating}}
+                        <div class="booktitle">
+                            {{ review.book.name }}
+                        </div>
                     </td> 
-            </tr>
-            <tr>
-                <td>
-                    {{ review.content}}
-                </td>                
-            </tr>
-            {% endfor %}       
-
-
-
-
-
-
-
-            <tr class="booktitle">
+                </tr>
+                <tr>
                     <td>
-                    This is the title of book ONE
-                    </td>
-            </tr>
-            <tr class="bookrating">
-                <td>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                </td>
-            </tr>
-            <tr class="bookreview">
-                <td>
-                    This is the text of the review of book ONE
-                </td>
-            </tr>
-            <tr class="reviewedat">
+                        <div class="bookrating">
+                        {% for x in tempratinglist %}
+                            {% if x <= review.rating %}
+                                <span class="fa fa-star checked"></span>
+                            {% else %}
+                                <span class="fa fa-star"></span>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                    </td>           
+                </tr>
+                <tr>
                     <td>
-                        Posted on October 17th, 2018
-                    </td>
-            </tr>
+                        <div  class="bookreviewtext">
+                            {{ review.user.first_name }} says {{ review.content }}
+                        </div>
+                    </td>      
+                </tr>
+            {% endfor %}      
         </table>
     </div>
     <div class="rightdiv">
         <p class="sectionheader">Other Books with Reviews:</p>
         <br>
         <div class="otherreviewslist">
-            Text
+            {% for review in otherreviews %}
+                <p>{{ review.book.name }}</p>
+            {% endfor %}
         </div>
     
     </div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'bookreviews/css/addbookstyle.css' %}">
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="topdiv">
+        <p class="headerp">Welcome!</p>
+        <p><a href="/books">Home</a></p>
+        <p><a href="/logoff">Logoff</a></p>
+    </div>
+    <div class="seconddiv">
+        <p>Add a New Book Title and a Review</p>
+        <form action="process_add" method="POST">
+        <label>Book Title</label><br>
+        <input type="text" name="book_title"><br>
+        <label>Choose from the list</label><br>
+        <label>Or add another Author</label><br>
+        <label for="">Review:</label><br>
+        <label for="">Rating</label><br>
+        </form>
+    </div>
+</body>
+</html>
