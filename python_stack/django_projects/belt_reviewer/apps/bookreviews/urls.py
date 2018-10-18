@@ -4,7 +4,13 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^books$', views.show_home),  
-    url(r'^books/add$ß', views.add),     
+    url(r'^books/add$', views.add),     
+    url(r'^books/process_add$', views.process_add),
+    url(r'^books/(?P<bookid>[0-9]+)$', views.show_book),    
     url(r'^logoff$', views.logoff),        
-    url(r'^reset$', views.reset),            
+    url(r'^reset$', views.reset),        
+
+
+
+        
 ]

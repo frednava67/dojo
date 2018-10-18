@@ -15,6 +15,9 @@ class Author(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     books = models.ManyToManyField(Book, related_name = "authors")
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
 
 class Review(models.Model):
     content = models.TextField(max_length=1000, blank=True, null=True) 
