@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'bookreviews/css/showuserstyle.css' %}">
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <div class="topdiv">
+        <h2 class="lefttop">.</h2>
+        <div class="righttop">
+            <a href="/books">Home</a>
+            <a href="/books/add">Add Book and Review</a>
+            <a href="/logoff">Logout</a>
+        </div
+    </div>   
+    <div class="userdiv">
+        <h3>User Alias: {{ userinfo.first_name }}</h3>
+        <p>Name: {{ userinfo.first_name }} {{ userinfo.last_name }}</p>
+        <p>Email: {{ userinfo.email }}</p>        
+        <p>Total Reviews: {{ userreviews.count }}</p>       
+        <br>
+        <p>Posted Reviews on the following books:</p>
+        {% for review in userreviews %}
+            <p><a href="/books/{{ review.book.id }}">{{ review.book.name }}</a></p>
+
+        {% endfor %}
+    </div>
+</body>
+</html>

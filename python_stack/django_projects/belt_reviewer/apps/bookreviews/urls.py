@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^books/add$', views.add),     
     url(r'^books/process_add$', views.process_add),
     url(r'^books/(?P<bookid>[0-9]+)$', views.show_book),    
+    url(r'^users/(?P<userid>[0-9]+)$', views.show_user),    
     url(r'^logoff$', views.logoff),        
     url(r'^reset$', views.reset),        
 

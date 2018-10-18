@@ -102,3 +102,12 @@ from apps.bookreviews.models import *
 # uid = 3
 # bid =  1
 # Review.objects.create(content=c, rating=r, book_id=bid, user_id=uid)
+
+
+c = "My favorite characted did not make it to the end of this book.  I hated that!  OK otherwise."
+r = 2
+uid = 4
+u = User.objects.get(id=uid)
+bid =  26
+b = Book.objects.get(id=bid)
+Review.objects.create(content=c, rating=r, book=b, user=u)

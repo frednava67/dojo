@@ -14,36 +14,45 @@
 </head>
 <body>
     <div class="topdiv">
-        <p class="headerp">Welcome!</p>
-        <p><a href="/books">Home</a></p>
-        <p><a href="/logoff">Logoff</a></p>
-    </div>
+        <h2 class="lefttop">.</h2>
+        <div class="righttop">
+            <a href="/books">Home</a>
+            <a href="/logoff">Logout</a>
+        </div
+    </div>    
+
     <div class="seconddiv">
-        <p>Add a New Book Title and a Review</p>
+        <h4>Add a New Book Title and a Review</h4>
+        <br>
         <form action="process_add" method="POST">
-                {% csrf_token %}
-        <label>Book Title</label><br>
-        <input type="text" name="book_title"><br>
-        <label>Author:</label>
-        <label>Choose from the list</label>
-        <select name="book_author">
+        {% csrf_token %}
+        <label class="bottomspacing">Book Title:</label>
+        <input class="inputtext bottomspacing" type="text" name="book_title"><br>
+        <label>Author:</label><br>
+        <label class="inputtext indentedlabel bottomspacing">Choose from the list</label>
+        <select  class="inputtext bottomspacing" name="book_author">
                 {% for author in authorslist %}
-                    <option value="{{ author.first_name }} {{ author.last_name }}">{{ author.first_name }} {{ author.last_name }}</option>
+                    <option value="{{ author.id }}">{{ author.first_name }} {{ author.last_name }}</option>
                 {% endfor %}
         </select><br>
-        <label>Or add another Author</label>
-        <input type="text" name="book_new_author" value=""><br>
-        <label for="">Review:</label><br>
-        <textarea name="review_text" id="" cols="30" rows="10"></textarea><br>
+        <label class="indentedlabel bottomspacing">Or add another Author</label><br><br>
+        <label class="bottomspacing">First Name:</label><input  class="inputtext" type="text" name="book_new_author_fname" value=""><br><br>
+        <label class="bottomspacing">Last Name:</label><input  class="inputtext" type="text" name="book_new_author_lname" value=""><br><br>
+        <div>
+            <div class="reviewdiv"ß>Review:</div>
+            <textarea name="review_text" id="" cols="50" rows="10"></textarea><br><br>
+        </div>
         <label for="">Rating</label>
-        <select name="book_rating">
+        <select class="inputtext" name="book_rating">
                 <option value="1">1 Star</option>
                 <option value="2">2 Stars</option>
                 <option value="3">3 Stars</option>
                 <option value="4">4 Stars</option>
                 <option value="4">5 Stars</option>                
         </select><br>
-        <input type="submit" class="submitbtn" value="Add Book and Review">
+        <div class="submitdiv">
+            <input type="submit" class="submitbtn" value="Add Book and Review">
+        </div>        
         </form>
     </div>
 </body>

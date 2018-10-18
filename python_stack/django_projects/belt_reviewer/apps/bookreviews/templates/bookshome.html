@@ -14,9 +14,11 @@
 </head>
 <body>
     <div class="topdiv">
-        <p class="headerp">Welcome!</p>
-        <p><a href="books/add">Add Book and Review</a></p>        
-        <p><a href="logoff">Logoff</a></p>
+        <h2 class="lefttop">Welcome!, {{ userinfo.first_name }}</h2>
+        <div class="righttop">
+                <a href="books/add">Add Book and Review</a>
+                <a href="logoff">Logout</a>
+        </div
     </div>
     <div class="leftdiv">
         <p class="sectionheader">Recent Book Reviews:</p>
@@ -46,10 +48,17 @@
                 <tr>
                     <td>
                         <div  class="bookreviewtext">
-                            {{ review.user.first_name }} says {{ review.content }}
+                            <a href="/users/{{ review.user.id }}">{{ review.user.first_name }}</a> says {{ review.content }}
                         </div>
                     </td>      
                 </tr>
+                <tr>
+                    <td>
+                        <div  class="bookreviewposted">
+                            Posted on {{ review.created_at }}
+                        </div>
+                    </td>      
+                </tr>                
             {% endfor %}      
         </table>
     </div>
@@ -58,7 +67,7 @@
         <br>
         <div class="otherreviewslist">
             {% for review in otherreviews %}
-                <p>{{ review.book.name }}</p>
+                <p><a href="/books/{{ review.book.id }}">{{ review.book.name }}</a></p>
             {% endfor %}
         </div>
     
