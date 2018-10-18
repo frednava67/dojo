@@ -8,32 +8,10 @@ from apps.wall.models import User, Message, Comment
 def thewall(request):
     print("wall/thewall()")
 
-    if "first_name" not in request.session:
-        return redirect("login_registration")
+    if "user_id" not in request.session:
+        return redirect("/login_registration")
 
-    all_messages_comments = []
-    comments_dict = []
-    all_messages = Message.objects.all().order_by("-created_at");
-
-    for message in all_messages:
-        message_comments = Comment.objects.filter(message_id=message.id)
-        for comment in message_comments:
-            comments_dict_item = {
-                                "commentor": comment.user.first_name + " " + comment.user.last_name,
-                                "commented_at": comment.created_at,
-                                "comment": comment.comment
-                            }
-            comments_dict.append(comments_dict_item)
-
-        message_dict = {
-                            "message_id": message.id,
-                            "poster": message.user.first_name + " " + message.user.last_name,
-                            "posted_at": message.created_at,
-                            "message": message.message,
-                            "comments": comments_dict
-                        }
-        all_messages_comments.append(message_dict)
-        comments_dict = []
+    all_messages_comments = Message.objects.all().order_by("-created_at");
 
     context = {
         "first_name": request.session["first_name"],
@@ -71,7 +49,7 @@ def processcomment(request):
 def logoff(request):
     print("wall/logoff()")
     request.session.clear()
-    return redirect("login_registration/")
+    return redirect("/login_registration")
 
 
 

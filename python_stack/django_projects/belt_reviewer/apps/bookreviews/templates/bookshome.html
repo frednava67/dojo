@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'bookreviews/css/bookshomestyle.css' %}">
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="topdiv">
+        <p class="headerp">Welcome!</p>
+    </div>
+    <div class="leftdiv">
+        <p class="sectionheader">Recent Book Reviews:</p>
+        <br>
+        <br>
+        <table class="recentreviews">
+
+            {% for review in threerecentreviews %}
+            <tr>
+                <td>
+                    {{ review.content}}
+                </td>                
+            </tr>
+            {% endfor %}       
+
+
+
+
+
+
+
+            <tr class="booktitle">
+                    <td>
+                    This is the title of book ONE
+                    </td>
+            </tr>
+            <tr class="bookrating">
+                <td>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                </td>
+            </tr>
+            <tr class="bookreview">
+                <td>
+                    This is the text of the review of book ONE
+                </td>
+            </tr>
+            <tr class="reviewedat">
+                    <td>
+                        Posted on October 17th, 2018
+                    </td>
+            </tr>
+        </table>
+    </div>
+    <div class="rightdiv">
+        <p class="sectionheader">Other Books with Reviews:</p>
+        <br>
+        <div class="otherreviewslist">
+            Text
+        </div>
+    
+    </div>
+</body>
+</html>

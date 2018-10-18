@@ -1,0 +1,43 @@
+
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topdiv {
+    height: 100px;
+    background-color: azure;
+    border: 1px solid black;
+}
+
+.leftdiv {
+    vertical-align: top;
+    display: inline-block;
+    width: 45%;
+    height: 400px;
+    border: 1px solid black;
+}
+
+.rightdiv {
+    vertical-align: top;    
+    display: inline-block;    
+    width: 45%;
+    height: 400px;    
+    border: 1px solid black;
+}
+
+.otherreviewslist {
+    width: 66%;
+    margin: auto;
+    height: 200px;    
+    border: 1px solid black;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+
+.checked {
+    color: orange;
+}

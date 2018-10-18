@@ -7,8 +7,7 @@ import re, bcrypt
 
 from .models import User
 
-EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
-NAME_REGEX  = re.compile('[0-9]')
+
 
 # the index function is called when root is visited
 
@@ -36,63 +35,30 @@ def process_registration(request):
     print("login_registration/process_registration()")
 
     bFlashMessage = False
+    print(request.POST)
 
     if request.method == "POST":
-        # First Name - Required; No fewer than 2 characters; letters only
+        bFlashMessage = User.objects.basic_validator(request)
+
         f_name = request.POST['first_name']
-        if len(f_name) < 2 or NAME_REGEX.search(f_name):
-            print("f_name failed validation")
-            messages.error(request, u"First Name can only contain letters and be at least 2 characters", extra_tags="fname")
-            bFlashMessage = True        
-
-        # Last Name - Required; No fewer than 2 characters; letters only
         l_name = request.POST['last_name']
-        if len(l_name) < 2 or NAME_REGEX.search(l_name):
-            print("l_name failed validation")
-            messages.error(request, u"Last Name can only contain letters and be at least 2 characters", extra_tags="lname")
-            bFlashMessage = True     
-
-        # Email - Required; Valid Format
         email = request.POST['email']
-        if not EMAIL_REGEX.match(email):
-            messages.error(request, u"Invalid Email Address!", extra_tags="email")
-            bFlashMessage = True      
-
-        #Email shouldn't be in database already
-        i = User.objects.filter(email=email).count()
-        if (i != 0):
-            messages.error(request, u"Email Address already registered, please login.", 'email')
-            bFlashMessage = True  
-
-        # Password - Required; No fewer than 8 characters in length; matches Password Confirmation
         pwd = request.POST['password']
-        confpwd = request.POST['confirmpw']
 
-        # Password should be more than 8 characters
-        if len(pwd) < 8:
-            messages.error(request,u"Password must be at least 8 characters in length.", extra_tags='pwd')
-            bFlashMessage = True
+    if bFlashMessage:
+        request.session.clear()
+        request.session["first_name"] = f_name
+        request.session["last_name"] = l_name
+        request.session["email"] = email                        
+        return redirect("/login_registration")
+    else:
+        request.session.clear()
+        request.session["first_name"] = f_name
+        pwhash = bcrypt.hashpw(pwd.encode(), bcrypt.gensalt())
+        new_user = User.objects.create(first_name=f_name, last_name=l_name, email=email, pwhashval=pwhash.decode())
+        request.session["user_id"] = new_user.id
 
-        # Password and Password Confirmation should match
-        if pwd != confpwd:
-            messages.error(request,"Password fields do not match!", extra_tags='pwd')
-            bFlashMessage = True
-
-        if bFlashMessage:
-            request.session.clear()
-            request.session["first_name"] = f_name
-            request.session["last_name"] = l_name
-            request.session["email"] = email                        
-            return redirect(index)
-        else:
-            request.session.clear()
-            request.session["first_name"] = f_name
-            passwordToHash = pwd
-            pwhash = bcrypt.hashpw(passwordToHash.encode(), bcrypt.gensalt())
-            new_id = User.objects.create(first_name=f_name, last_name=l_name, email=email, pwhashval=pwhash.decode())
-            request.session["user_id"] = new_id
-
-    return redirect("wall/")    
+    return redirect("/")    
 
 def process_login(request):
     print("login_registration/process_login")

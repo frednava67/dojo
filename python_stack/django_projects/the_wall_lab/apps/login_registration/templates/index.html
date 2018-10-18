@@ -28,7 +28,7 @@
     <div class="tablediv">
         <table class="formtable">
             <tbody>
-                <form action="login_registration/process_registration" method="POST">
+                <form action="/login_registration/process_registration" method="POST">
                 {% csrf_token %}
                     <tr>
                         <td>
@@ -128,7 +128,7 @@
     <div class="tablediv">
         <table class="logintable">
             <tbody>
-                <form action="process_login" method="POST">
+                <form action="/login_registration/process_login" method="POST">
                 {% csrf_token %}
                     <tr>
                         <td class="">

@@ -58,13 +58,21 @@
             <table class="messagestable">
                 {% for messageItem in messagesList %}
                 <tr>
-                    <td class="messagesrow fullwidth"><span class="boldedheader">{{ messageItem.poster }} - {{ messageItem.posted_at }}</span><p class="messagetext">{{ messageItem.message }}</p></td>
+                    <td class="messagesrow fullwidth">
+                        <img src="{% static 'wall/img/post.png' %}" alt="Post Icon" height="20" width="20">
+                        <span class="boldedheader">{{ messageItem.user }} - {{ messageItem.created_at }}</span>
+                        <p class="messagetext">{{ messageItem.message }}</p>
+                    </td>
                 </tr>
                 <tr>
                     <table class="messagestable fullwidth">
-                        {% for comment in messageItem.comments %}
+                        {% for comment in messageItem.message_comments.all %}
                         <tr>
-                            <td class="commentsrow fullwidth"><span class="boldedheader">{{ comment.commentor }} - {{ comment.commented_at }}</span><p class="commenttext">{{ comment.comment }}</p></td>
+                            <td class="commentsrow fullwidth">
+                                <img src="{% static 'wall/img/comment.png' %}" alt="Comment Icon Icon" height="20" width="20">
+                                <span class="boldedheader">{{ comment.user }} - {{ comment.created_at }}</span>
+                                <p class="commenttext">{{ comment.comment }}</p>
+                            </td>
                         </tr>
                         {% endfor %}
 
@@ -86,7 +94,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <input type="hidden" value="{{ messageItem.message_id }}" name="message_id">
+                                                    <input type="hidden" value="{{ messageItem.id }}" name="message_id">
                                                     <input type="hidden" value="{{ user_id }}" name="user_id">
                                                     <input class="commentbtn" type="submit" name="submit" value="Post a comment">
                                                 </td>
