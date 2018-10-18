@@ -21,8 +21,17 @@
         <br>
         <br>
         <table class="recentreviews">
-
             {% for review in threerecentreviews %}
+            <tr class="booktitle">
+                <td>
+                    {{ review.book.name}}
+                </td> 
+            </tr>
+            <tr class="bookrating">
+                    <td>
+                        {{ review.rating}}
+                    </td> 
+            </tr>
             <tr>
                 <td>
                     {{ review.content}}
