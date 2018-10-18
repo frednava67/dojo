@@ -20,13 +20,11 @@ class UserManager(models.Manager):
 
         # First Name - Required; No fewer than 2 characters; letters only
         if len(f_name) < 2 or NAME_REGEX.search(f_name):
-            print("f_name failed validation")
             messages.error(newrequest, u"First Name can only contain letters and be at least 2 characters", extra_tags="fname")
             bFlashMessage = True  
 
         # Last Name - Required; No fewer than 2 characters; letters only
         if len(l_name) < 2 or NAME_REGEX.search(l_name):
-            print("l_name failed validation")
             messages.error(newrequest, u"Last Name can only contain letters and be at least 2 characters", extra_tags="lname")
             bFlashMessage = True     
 

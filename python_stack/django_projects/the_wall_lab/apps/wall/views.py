@@ -27,7 +27,6 @@ def processpost(request):
     if request.method == "POST":
         u_id = int(request.POST['user_id'])
         content = request.POST['content']
-        print(u_id, content)
         Message.objects.create(user_id=u_id, message=content)
 
     return redirect(thewall)
@@ -39,9 +38,6 @@ def processcomment(request):
         u_id = int(request.POST['user_id'])
         m_id = int(request.POST['message_id'])
         content = request.POST['content']
-
-        print(u_id, m_id, content)
-
         Comment.objects.create(message_id=m_id, user_id=u_id, comment=content)
 
     return redirect(thewall)
@@ -50,8 +46,6 @@ def logoff(request):
     print("wall/logoff()")
     request.session.clear()
     return redirect("/login_registration")
-
-
 
 def runonce(request):
     print("runonce()")
@@ -69,7 +63,6 @@ def runonce(request):
     # Comment.objects.create(message_id=6,user_id=3, comment="What's the Super Bowl")
     # Comment.objects.create(message_id=6,user_id=4, comment="The Cowboys beat the Bills")
     # Comment.objects.create(message_id=7,user_id=1, comment="Sure...")
-
 
     response = "Hello, I have completed RUNONCE commands"
     return HttpResponse(response)    
