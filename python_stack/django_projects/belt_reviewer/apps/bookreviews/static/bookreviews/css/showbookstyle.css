@@ -52,15 +52,6 @@ a {
     height: 400px;    
 }
 
-.otherreviewslist {
-    width: 66%;
-    margin: auto;
-    height: 200px;    
-    border: 1px solid black;
-    overflow: auto;
-    overflow-x: hidden;
-}
-
 .booktitle {
     margin-left: 20px;  
 }
