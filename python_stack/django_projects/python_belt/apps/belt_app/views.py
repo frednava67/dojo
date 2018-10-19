@@ -33,6 +33,8 @@ def index(request):
 def show_add(request):
     print("show_add()")
 
+    context = {}
+
     if 'add_attempt_failed' not in request.session:
         context = {
             "job_title": "",
@@ -41,7 +43,7 @@ def show_add(request):
         }
         return render(request, "addjob.html", context)
 
-    if request.session['add_attempt_failed'] == True:
+    if request.session['add_attempt_failed'] == "YES":
         context = {
             "job_title": request.session['job_title'],
             "job_description": request.session['job_description'],
@@ -57,7 +59,7 @@ def process_add(request):
         bFlashMessage = Job.objects.basic_validator(request)
 
         if bFlashMessage == True:
-            request.session["add_attempt_failed"] = True
+            request.session["add_attempt_failed"] = "YES"
             request.session['job_title'] = request.POST['job_title']
             request.session['job_description'] = request.POST['job_description']
             request.session['job_location'] = request.POST['job_location']
@@ -124,7 +126,6 @@ def edit_job(request, jobid):
     }
 
     if 'edit_attempt_failed' not in request.session:
-        print("BOOM")
         context = {
             "job": current_job,
         }
@@ -149,6 +150,11 @@ def process_edit(request):
         print(request.POST['job_id'])
 
         if bFlashMessage == True:
+            request.session["edit_attempt_failed"] = "YES"
+            request.session['job_title'] = request.POST['job_title']
+            request.session['job_description'] = POST['job_description']
+            request.session['job_location'] = request.POST['job_location']
+            
             print('/edit/' + request.POST['job_id'])  
             return redirect('/edit/' + request.POST['job_id'])
         
@@ -183,9 +189,6 @@ def cancel_job(request, jobid):
         return redirect("/login_registration")
 
     current_job = Job.objects.get(id=jobid)  
-
-    if current_job.user.id != request.session['user_id']:
-        return redirect('/')    
 
     objJob = Job.objects.get(id=jobid)
     objJob.delete()
