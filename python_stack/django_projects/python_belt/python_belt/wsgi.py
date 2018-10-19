@@ -1,5 +1,5 @@
 """
-WSGI config for python_belt_exam project.
+WSGI config for python_belt project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "python_belt_exam.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "python_belt.settings")
 
 application = get_wsgi_application()
