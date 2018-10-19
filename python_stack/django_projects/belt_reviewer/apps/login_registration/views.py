@@ -11,18 +11,18 @@ from .models import User
 def index(request):
     print("login_registration/index()")
 
-    if "user_id" in request.session:
+    if "user_id" not in request.session:
+        context = {
+            "first_name": "",
+            "last_name": "",
+            "email": ""
+        }     
+    if "reg_attempt_failed" in request.session:
         context = {   
             "first_name": request.session["first_name"],
             "last_name": request.session["last_name"],
             "email": request.session["email"]
         }
-    else:
-        context = {
-            "first_name": "",
-            "last_name": "",
-            "email": ""
-        }        
 
     return render(request, "index.html", context)
 
@@ -34,13 +34,22 @@ def process_registration(request):
     if request.method == "POST":
         bFlashMessage = User.objects.basic_validator(request)
 
+        request.session["first_name"] = request.POST['first_name']
+        request.session["last_name"] = request.POST['last_name']
+        request.session["email"] = request.POST['email']
+
         f_name = request.POST['first_name']
         l_name = request.POST['last_name']
         email = request.POST['email']
         pwd = request.POST['password']
 
+        request.session["first_name"] = f_name
+        request.session["last_name"] = l_name
+        request.session["email"] = email
+
+
     if bFlashMessage:
-        request.session.clear()
+        request.session["reg_attempt_failed"] = True
         return redirect("/login_registration")
     else:
         request.session.clear()
@@ -82,7 +91,13 @@ def process_login(request):
             messages.error(request, u"You were not able to login.", 'login')
             return redirect('/')
 
-    return redirect('/')       
+    return redirect('/')    
+
+def reset(request):
+    print("reset()")
+
+    request.session.clear()
+    return redirect('/')    
 
 # def runonce(request):
 #     print("runonce()")

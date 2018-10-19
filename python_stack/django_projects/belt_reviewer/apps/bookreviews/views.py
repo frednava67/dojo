@@ -79,6 +79,9 @@ def add(request):
 def process_add(request):
     print("process_add")
 
+    if "user_id" not in request.session:
+        return redirect("/login_registration")
+
     if request.method == "POST":
         print(request.POST['book_title'])
         print(request.POST['book_author'])
@@ -141,6 +144,9 @@ def process_add_review(request):
 def show_book(request, bookid):
     print("show_book()")
 
+    if "user_id" not in request.session:
+        return redirect("/login_registration")
+
     print(request.session['user_id'])
     print(Book.objects.get(id=bookid).name)
 
@@ -170,6 +176,9 @@ def show_book(request, bookid):
 def show_user(request, userid):
     print("show_user()")
 
+    if "user_id" not in request.session:
+        return redirect("/login_registration")
+
     print(User.objects.get(id=userid))
     print(User.objects.get(id=userid).email)
     print("Total Reviews:", User.objects.get(id=userid).reviewsByUser.count())
@@ -187,7 +196,18 @@ def show_user(request, userid):
 
     return render(request, "showuser.html", context)
 
+def delete_review(request):
+    print("delete_review()")
 
+    if request.method == "POST":
+        review_id = request.POST['review_to_delete']
+        book_id = request.POST['active_book']
+        print(review_id)
+        print(book_id)
+        r = Review.objects.get(id=review_id)
+        r.delete()
+
+    return redirect(show_book, book_id)
 
 def logoff(request):
     request.session.clear()
