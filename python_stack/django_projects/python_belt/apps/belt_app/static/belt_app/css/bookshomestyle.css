@@ -1,0 +1,82 @@
+
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    margin-left: 10px;
+}
+
+.topdiv {
+    margin-left: 20px;
+    height: 100px;
+}
+
+.lefttop{
+    display: inline-block;
+    width: 48%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.righttop {
+    display: inline-block;
+    width: 50%;
+    height: 100px;
+    text-align: right;
+    margin-top: 20px;    
+}
+
+.leftdiv {
+    vertical-align: top;
+    display: inline-block;
+    width: 45%;
+    height: 400px;
+}
+
+.rightdiv {
+    vertical-align: top;    
+    display: inline-block;    
+    width: 45%;
+    height: 400px;    
+}
+
+.sectionheader {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.otherreviewslist {
+    width: 66%;
+    margin: auto;
+    height: 200px;    
+    border: 1px solid black;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.booktitle {
+    margin-left: 20px;  
+}
+
+.bookrating {
+    margin-left: 40px;    
+}
+
+.bookreviewtext {
+    margin-left: 40px;
+    margin-bottom: 15px;
+}
+
+.bookreviewposted {
+    margin-left: 40px;
+    margin-bottom: 15px;
+    font-style: italic; 
+}
+
+.checked {
+    color: orange;
+}

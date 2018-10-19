@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>User Quotes</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'belt_app/css/addjobstyle.css' %}">
+</head>
+<body>
+    <div class="topdiv">
+        <div class="topleft">
+            <div class="headerlabel">Edit Your Job Posting</div>
+        </div>
+        <div class="topright">
+            <a href="/">Back</a>
+            <a href="/logoff">Logout</a>
+        </div>
+
+        <div class="maindiv">
+            <div class="leftmain">
+                <form action="/process_edit" method="POST">
+                {% csrf_token %}
+                <table class="tablestyles">
+                    <tr>
+                        <td>
+                            <div  class="editformrow">Title</div>
+                        </td>
+                        <td>
+                            <input type="text" class="onehundredpercent" name="job_title" value="{{ job.title }}">
+                        </td>
+                        <td>
+                            <div class="formflash">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if "jobtitle" in message.tags %} {{ message }} {% endif %}
+                                    {% endfor %}
+                                {% endif %}                                    
+                            </div>
+                        </td>                        
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div  class="editformrow">Description</div>
+                        </td>
+                        <td>
+                            <textarea class="addjobtextarea" name="job_description" >{{ job.description }}</textarea>
+                            <br />
+                        </td>
+                        <td>
+                                <div class="formflash">
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                {% if "jobdescription" in message.tags %} {{ message }} {% endif %}
+                                            {% endfor %}
+                                        {% endif %}      
+                                </div>
+
+                        </td>                        
+                    </tr>
+
+                    <tr >
+                        <td>
+                            <div class="editformrow">Location</div>
+                        </td>
+                        <td>
+                            <input type="text" class="onehundredpercent" name="job_location" value="{{ job.location }}">
+                        </td>
+                        <td>
+                                <div class="formflash">
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                {% if "joblocation" in message.tags %} {{ message }} {% endif %}
+                                            {% endfor %}
+                                        {% endif %}      
+                                </div>
+                        </td>                        
+                    </tr>
+                    <td>
+                            <div class="editformrow"></div>
+                        </td>
+                        <td>
+                            <input type="hidden" name="job_id" value="{{ job.id }}">
+                            <input type="submit" class="submitbtn" name="submitedit" value="Submit">
+                        </td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

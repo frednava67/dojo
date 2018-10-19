@@ -1,0 +1,95 @@
+
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    margin-left: 10px;
+}
+
+
+.topdiv {
+    margin-left: 20px;
+    height: 75px;
+}
+
+.lefttop{
+    display: inline-block;
+    width: 48%;
+    height: 75px;
+    margin-top: 20px;
+    color: white;
+}
+
+.righttop {
+    display: inline-block;
+    width: 50%;
+    height: 75px;
+    text-align: right;
+    margin-top: 20px;    
+}
+
+.seconddiv {
+    height: 100px;
+    margin-left: 40px;
+}
+
+.leftdiv {
+    vertical-align: top;
+    display: inline-block;
+    width: 45%;
+    height: 400px;
+    margin-left: 40px;
+}
+
+.rightdiv {
+    vertical-align: top;    
+    display: inline-block;    
+    width: 45%;
+    height: 400px;    
+    margin-left: 40px;
+}
+
+.booktitle {
+    margin-left: 20px;  
+}
+
+.bookrating {
+    margin-left: 40px;    
+}
+
+.bookreviewtext {
+    margin-left: 40px;
+    margin-bottom: 15px;
+}
+
+.checked {
+    color: orange;
+}
+
+.submitdiv {
+    width: 72%;
+}
+
+.submitbtn {
+    width: 150px;
+    height: 30px;
+    float: right;
+    color: white;
+    border: 2px solid black;
+    box-shadow: 3px 3px 3px black;
+    background-color: #5a7dae;
+}
+
+.deletebtn {
+    width: 150px;
+    height: 30px;
+    float: right;
+    color: white;
+    border: 2px solid black;
+    box-shadow: 3px 3px 3px black;
+    background-color: red;
+}

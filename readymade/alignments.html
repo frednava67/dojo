@@ -47,6 +47,27 @@
             width: 500px;
             height: 300px;
         }
+        
+        .leftdiv {
+            width: 45%;
+            display: inline-block;   
+            border: 1px solid black;
+        }
+
+        .rightdiv {
+                    width: 45%;
+            display: inline-block;   
+                        border: 1px solid black;
+                        padding: 10px;
+        }
+
+        .selectstyle {
+            width: 200px;
+            font-size: 15px;
+            background-color: gray;
+            color: black;
+        }
+
 
     </style>
 
@@ -83,7 +104,7 @@
             </tr>
             <tr>
                 <td>
-                    <div class="textright"><input type="button" value="Submit" ></div>
+                    <div class="textright"><input type="button" value="Submit"></div>
                 </td>
                 <td>
                     <input type="text" class="onehundredpercent">
@@ -93,9 +114,76 @@
         <br>
 
         <textarea name="youtextarea">SOME CONTENT</textarea>
+        <br />
+
+
+        <select class="selectstyle">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+        </select>
 
 
 
+        <br />
+        <div class="leftdiv">
+            <table class="tablestyles">
+                <tr>
+                    <td>
+                        <div class="textright">Label</div>
+                    </td>
+                    <td>
+                        <input type="text" class="onehundredpercent">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Label</div>
+                    </td>
+                    <td>
+                        <input type="text" class="onehundredpercent">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="textright"><input type="button" value="Submit"></div>
+                    </td>
+                    <td>
+                        <input type="text" class="onehundredpercent">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="rightdiv">
+            <table class="tablestyles">
+                <tr>
+                    <td>
+                        <div class="textright">Label</div>
+                    </td>
+                    <td>
+                        <input type="text" class="onehundredpercent">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Label</div>
+                    </td>
+                    <td>
+                        <input type="text" class="onehundredpercent">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="textright"><input type="button" value="Submit"></div>
+                    </td>
+                    <td>
+                        <input type="text" class="onehundredpercent">
+                    </td>
+                </tr>
+            </table>
+
+        </div>
 
 
 

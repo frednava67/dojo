@@ -1,0 +1,108 @@
+
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    margin-left: 10px;
+}
+
+
+.topdiv {
+    margin-left: 20px;
+    height: 75px;
+}
+
+.topleft{
+    display: inline-block;
+    width: 48%;
+    height: 75px;
+    margin-top: 20px;
+}
+
+.headerlabel {
+    display: inline-block;
+}
+
+.topright {
+    display: inline-block;
+    width: 50%;
+    height: 75px;
+    text-align: right;
+    margin-top: 20px;    
+}
+
+.seconddiv {
+    height: 100px;
+
+}
+
+.leftmain {
+    vertical-align: top;
+    display: inline-block;
+    width: 50%;
+    height: 300px;
+    border: 1px solid black;
+
+}
+
+.rightmain {
+    vertical-align: top;    
+    display: inline-block;    
+    width: 35%;
+    height: 300px;    
+    border: 1px solid black;    
+}
+
+.booktitle {
+    margin-left: 20px;  
+}
+
+.bookrating {
+    margin-left: 40px;    
+}
+
+.bookreviewtext {
+    margin-left: 40px;
+    margin-bottom: 15px;
+}
+
+.checked {
+    color: orange;
+}
+
+.submitdiv {
+    width: 72%;
+}
+
+.submitbtn {
+    width: 150px;
+    height: 30px;
+    float: right;
+    color: white;
+    border: 2px solid black;
+    box-shadow: 3px 3px 3px black;
+    background-color: #5a7dae;
+}
+
+.claimform {
+    display: inline;
+}
+
+.linksubmitbtn {
+    display: inline-block;
+    background:none!important;
+    color:inherit;
+    border:none; 
+    padding:0!important;
+    font: inherit;
+    /*border is optional*/
+    border-bottom:1px solid #444; 
+    cursor: pointer;
+    text-align: center;
+    margin-left: 1px;
+
+}

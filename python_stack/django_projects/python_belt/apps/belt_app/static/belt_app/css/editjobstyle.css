@@ -1,0 +1,85 @@
+
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    margin-left: 10px;
+}
+
+
+.topdiv {
+    margin-left: 20px;
+    height: 75px;
+}
+
+.topleft{
+    display: inline-block;
+    width: 48%;
+    height: 75px;
+    margin-top: 20px;
+}
+
+.headerlabel {
+    display: inline-block;
+}
+
+.topright {
+    display: inline-block;
+    width: 50%;
+    height: 75px;
+    text-align: right;
+    margin-top: 20px;    
+}
+
+.seconddiv {
+    height: 100px;
+
+}
+
+.leftmain {
+    vertical-align: top;
+    display: inline-block;
+    width: 45%;
+    height: 400px;
+    border: 1px solid black;
+
+}
+
+.rightmain {
+    vertical-align: top;    
+    display: inline-block;    
+    width: 45%;
+    height: 400px;    
+    border: 1px solid black;    
+}
+
+.addjobtextarea {
+    padding: 10px;
+    width: 150px;
+    height: 100px;
+}
+
+.editformrow {
+    margin: 10px 10px 10px 10px;
+}
+
+.submitdiv {
+    width: 72%;
+}
+
+.submitbtn {
+    width: 50px;
+    height: 20px;
+    border: 2px solid black;
+    box-shadow: 3px 3px 3px black;
+}
+
+.formflash {
+    margin-left: 10px;
+    color: red;
+    font-size: 12px;
+}

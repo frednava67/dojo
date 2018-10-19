@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>View Job</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'belt_app/css/viewjobstyle.css' %}">
+</head>
+<body>
+    <div class="topdiv">
+        <div class="topleft">
+
+        </div>
+        <div class="topright">
+            <a href="/">Back</a>
+            <a href="/logoff">Logout</a>
+        </div>
+
+        <div class="maindiv">
+            <p>{{ job.title }}</p>
+            <div class="leftmain">
+                <table class="tablestyles">
+                    <tr>
+                        <td>
+                            <div class="textright">{{ job.description }}</div>
+                            <br>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <div class="textright">Location: {{ job.location }}</div>
+                            <br>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <div class="textright"> Posted by: {{ job.user }}</div>
+                            <br>
+                        </td>
+
+                    </tr>   
+                    <tr>
+                        <td>
+                            <div class="textright">Posted on: {{ job.created_at }}</div>
+                        </td>
+                    </tr>   
+                </table>
+            </div>
+        </div>
+        <form action="/process_claim" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="user_id" value={{ user_id }}>
+            <input type="hidden" name="job_id" value={{ job.id }}>
+            <br>            
+            <input type="submit" class="submitbtn" value="Add to My Jobs">
+        </form>
+    </div>
+</body>
+</html>
