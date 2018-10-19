@@ -45,9 +45,10 @@
     </div>
     <div class="rightdiv">
         <h4>Add a Review:</h4>
-        <form action="process_add" method="POST">
+        <form action="process_add_review" method="POST">
             {% csrf_token %}        
-            <input type="hidden" name="book_title" value={{ book_name }}>
+            <input type="hidden" name="book_id" value="{{ book_id }}">
+            <input type="hidden" name="book_title" value="{{ book_name }}">
             <input type="hidden" name="book_new_author_fname" value="">
             <input type="hidden" name="book_new_author_lname" value="">
             {% for book_author in book_authors %}

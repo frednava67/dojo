@@ -113,6 +113,30 @@ def process_add(request):
 
     return redirect("/books/" + str(objNewBook.id))
 
+def process_add_review(request):
+    print("process_add")
+
+    if request.method == "POST":
+        print(request.POST['book_id'])
+        print(request.POST['book_title'])
+        print(request.POST['book_author'])
+        print(request.POST['book_new_author_fname'])
+        print(request.POST['book_new_author_lname'])        
+        print(request.POST['review_text'])
+        print(request.POST['book_rating'])
+        print(request.session['user_id'])
+        print(User.objects.get(id=request.session['user_id']))
+
+
+# c = "I read this as a child and loved it.  The identity of the king at the beginning of the book surprised the heck out of me.  So fond of this book."
+# r = 5
+# uid = 6
+# bid =  12
+        objNewReview = Review.objects.create(content=request.POST['review_text'], rating=int(request.POST['book_rating']), book_id=request.POST['book_id'], user_id=request.session['user_id'])
+        print(objNewReview.id)
+
+    return redirect("/books/" + request.POST['book_id'])
+
 
 def show_book(request, bookid):
     print("show_book()")
@@ -135,6 +159,7 @@ def show_book(request, bookid):
         "tempratinglist": {1,2,3,4,5},        
         "user_id": request.session['user_id'],
         "book_name": Book.objects.get(id=bookid).name,
+        "book_id": bookid,
         "book_authors": Book.objects.get(id=bookid).authors.values(),
         "book_reviews": Book.objects.get(id=bookid).reviewsOfBook.all(),
         "all_users": User.objects.all().values(),
