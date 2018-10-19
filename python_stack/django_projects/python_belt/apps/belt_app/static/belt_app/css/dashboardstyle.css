@@ -43,7 +43,7 @@ a {
 .leftmain {
     vertical-align: top;
     display: inline-block;
-    width: 50%;
+    width: 52%;
     height: 300px;
     border: 1px solid black;
 
@@ -52,7 +52,7 @@ a {
 .rightmain {
     vertical-align: top;    
     display: inline-block;    
-    width: 35%;
+    width: 25%;
     height: 300px;    
     border: 1px solid black;    
 }
