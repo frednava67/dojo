@@ -48,7 +48,7 @@
                         {% csrf_token %}
                         <input type="hidden" name="review_to_delete" value="{{ review.id }}">
                         <input type="hidden" name="active_book" value="{{ book_id }}">
-                        <input type="submit" class="submitbtn" value="Delete this Review">
+                        <input type="submit" class="deletebtn" value="Delete this Review">
                     </form>
                 {% endif %}
                 <br><br>

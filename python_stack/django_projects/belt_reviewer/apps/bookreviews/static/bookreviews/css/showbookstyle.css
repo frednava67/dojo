@@ -83,3 +83,13 @@ a {
     box-shadow: 3px 3px 3px black;
     background-color: #5a7dae;
 }
+
+.deletebtn {
+    width: 150px;
+    height: 30px;
+    float: right;
+    color: white;
+    border: 2px solid black;
+    box-shadow: 3px 3px 3px black;
+    background-color: red;
+}
