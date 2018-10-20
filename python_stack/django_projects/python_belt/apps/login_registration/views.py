@@ -58,7 +58,7 @@ def process_registration(request):
         request.session["user_id"] = new_user.id
         request.session["first_name"] = f_name
 
-    return redirect("/dashboard")    
+    return redirect("/")    
 
 def process_login(request):
     print("login_registration/process_login")
@@ -89,7 +89,7 @@ def process_login(request):
         else:
             request.session["loginemail"] = loginemail                        
             messages.error(request, u"You were not able to login.", 'login')
-            return redirect('/dashboard')
+            return redirect('/')
 
     return redirect('/')    
 
