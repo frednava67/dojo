@@ -16,7 +16,7 @@ class JobManager(models.Manager):
 
         # Job description - No fewer than 10 characters
         if len(newrequest.POST['job_description']) < 11:
-            messages.error(newrequest, u"Job Descption must be greater than 10 characters", extra_tags="jobdescription")
+            messages.error(newrequest, u"Job Description must be greater than 10 characters", extra_tags="jobdescription")
             bFlashMessage = True  
 
         # Job location - Can't be blank

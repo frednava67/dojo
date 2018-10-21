@@ -117,7 +117,6 @@ def edit_job(request, jobid):
         return redirect("/login_registration")
 
     current_job = Job.objects.get(id=jobid)  
-
     if current_job.user.id != request.session['user_id']:
         return redirect('/')
 
@@ -134,11 +133,17 @@ def edit_job(request, jobid):
     if 'edit_attempt_failed' in request.session:
         context = {
             "job": {
+                "id":           jobid,
                 "title":        request.session['job_title'],
                 "description":  request.session['job_description'],
                 "location":     request.session['job_location'],
             }
         }
+        del request.session['job_title']
+        del request.session['job_description']
+        del request.session['job_location']
+        del request.session['edit_attempt_failed']
+        
     
     return render(request, "editjob.html", context)
 
@@ -152,7 +157,7 @@ def process_edit(request):
         if bFlashMessage == True:
             request.session["edit_attempt_failed"] = "YES"
             request.session['job_title'] = request.POST['job_title']
-            request.session['job_description'] = POST['job_description']
+            request.session['job_description'] = request.POST['job_description']
             request.session['job_location'] = request.POST['job_location']
             
             print('/edit/' + request.POST['job_id'])  
@@ -171,7 +176,7 @@ def process_edit(request):
         print(edit_user_id)                
         print(edit_job_id)                        
 
-        job_to_edit = Job.objects.get(id=edit_job_id)
+        job_to_edit = Job.objects.get(id=int(edit_job_id))
         job_to_edit.title = edit_title
         job_to_edit.description = edit_description
         job_to_edit.location = edit_location
