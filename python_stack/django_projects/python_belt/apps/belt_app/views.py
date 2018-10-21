@@ -36,10 +36,6 @@ def show_add(request):
     context = {}
 
     if 'add_attempt_failed' not in request.session:
-        del request.session["add_attempt_failed"]
-        del request.session['job_title']
-        del request.session['job_description']
-        del request.session['job_location']
         context = {
             "job_title": "",
             "job_description": "",
@@ -53,6 +49,10 @@ def show_add(request):
             "job_description": request.session['job_description'],
             "job_location": request.session['job_location'],
         }
+        del request.session["add_attempt_failed"]
+        del request.session['job_title']
+        del request.session['job_description']
+        del request.session['job_location']        
     
     return render(request, "addjob.html", context)
 
